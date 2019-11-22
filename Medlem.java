@@ -37,12 +37,12 @@ public class Medlem {
                 this.betalingsHistorik = betalingsHistorik;
 		    }
 	    
-	 /* public LocalDate addUdloebsDato(){
-        
-        if(betalingsHistorik != null){
-            LocalDate nuvaerende = betalingsHistorik.get(betalingsHistorik.size() - 1)
-    }else{
-                nuvaerende = LocalDate.now();
+	  public LocalDate addUdloebsDato(){
+            LocalDate nuvaerende;
+        if(!betalingsHistorik.isEmpty()){
+            nuvaerende = betalingsHistorik.get(betalingsHistorik.size());
+         }else{
+            nuvaerende = LocalDate.now();
             }
         
 
@@ -60,7 +60,7 @@ public class Medlem {
             System.out.println(udloebsdato);
 
             return udloebsdato;
-	    }*/
+	    }
 	    
 	    
 
