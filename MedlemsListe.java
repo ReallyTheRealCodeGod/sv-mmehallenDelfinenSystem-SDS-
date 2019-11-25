@@ -20,7 +20,6 @@ class MedlemsListe{
 			Scanner line = new Scanner(f);	
 			//Skan gennem filen, indtil der ikke er flere linjer
 		while(line.hasNext()){
-			betalingsHistorik.clear();
 			Scanner sc = new Scanner(line.nextLine());
 			sc.useDelimiter(";");
 
@@ -37,12 +36,14 @@ class MedlemsListe{
 
 			//scanner betalings historiken
 			sc.useDelimiter(",");
-			sc.next();
+			sc.skip(";");
 			while(sc.hasNext()){
 				betalingsHistorik.add(LocalDate.parse(sc.next()));
 			}
 			//lav medlem og adder til arraylisten
-			liste.add(new Medlem(navn, foedselsdato, koen, adresse, email, medlemsskabstype, aktivitetstype, betalingsHistorik));}
+			liste.add(new Medlem(navn, foedselsdato, koen, adresse, email, medlemsskabstype, aktivitetstype, betalingsHistorik));
+			betalingsHistorik.clear();
+		}
 		}catch(FileNotFoundException e){System.out.println("Fejl i dannelse af medlemsliste");}
 	
 	}
