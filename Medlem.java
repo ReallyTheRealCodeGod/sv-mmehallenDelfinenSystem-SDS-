@@ -1,39 +1,42 @@
+package sample;
+
 import java.time.LocalDate;
 import java.util.ArrayList;
 
 public class Medlem {
-	    private String navn;
-	    private LocalDate foedselsdato;
-	    private String koen;
+
+	private String navn;
+	    private LocalDate Alder;
+	    private String køn;
 	    private String adresse;
 	    private String email;
 	    private String medlemstype;
 	    private String aktivitetstype;
 	    private ArrayList<LocalDate> betalingsHistorik;
-	    private LocalDate udloebsdato;
+	    private LocalDate betalingsdato;
 	    private double pris;
 	    
 	    
 	   
 
-	    Medlem(String navn, int aar, int maaned, int dag, String koen, String adresse, String email, String medlemstype,
+	    Medlem(String navn, int aar, int maaned, int dag, String køn, String adresse, String email, String medlemstype,
 	           String aktivitetstype, ArrayList<LocalDate> betalingsHistorik) {
 
-	       this(navn, LocalDate.of(aar, maaned, dag), koen, adresse, email, medlemstype,
+	       this(navn, LocalDate.of(aar, maaned, dag), køn, adresse, email, medlemstype,
                    aktivitetstype, betalingsHistorik);
 
 	    }
 	    
-	    Medlem(String navn, LocalDate foedelsdato, String koen, String adresse, String email, String medlemstype,
+	    Medlem(String navn, LocalDate foedelsdato, String køn, String adresse, String email, String medlemstype,
 		           String aktivitetstype, ArrayList<LocalDate> betalingsHistorik) {
                 this.navn = navn;
-		        this.foedselsdato = foedelsdato;
-		        this.koen = koen;
+		        this.Alder = foedelsdato;
+		        this.køn = køn;
 		        this.adresse = adresse;
 		        this.email = email;
 		        this.medlemstype = medlemstype;
 		        this.aktivitetstype = aktivitetstype;
-		        this.pris = Kontingent.getPris(this.foedselsdato, medlemstype);
+		        this.pris = Kontingent.getPris(this.Alder, medlemstype);
 
                 //initiasere betalingshistorikken
                 //kopiere listen fra variablen til attributen
@@ -52,24 +55,62 @@ public class Medlem {
             }
 
 	    	if(nuvaerende.isEqual(LocalDate.now())){
-                udloebsdato = LocalDate.now().plusYears(1);
+                betalingsdato = LocalDate.now().plusYears(1);
             }else if(nuvaerende.isAfter(LocalDate.now())){
-                udloebsdato = nuvaerende.plusYears(1);
+                betalingsdato = nuvaerende.plusYears(1);
             }else if(nuvaerende.isBefore(LocalDate.now())){
-                udloebsdato = LocalDate.now().plusYears(1);
+                betalingsdato = LocalDate.now().plusYears(1);
             }
-	    	this.udloebsdato = udloebsdato;
-            System.out.println(this.udloebsdato);
-            return udloebsdato;
-	    }
-	    
-	    
 
-	    // Override af toString. Bare lavet noget som et eksempel på hvordan vi kunne gøre det.
+            return betalingsdato;
+	    }
+
+	public String getNavn() {
+		return navn;
+	}
+
+	public LocalDate getAlder() {
+		return Alder;
+	}
+
+	public String getKøn() {
+		return køn;
+	}
+
+	public String getAdresse() {
+		return adresse;
+	}
+
+	public String getEmail() {
+		return email;
+	}
+
+	public String getMedlemstype() {
+		return medlemstype;
+	}
+
+	public String getAktivitetstype() {
+		return aktivitetstype;
+	}
+
+	public ArrayList<LocalDate> getBetalingsHistorik() {
+		return betalingsHistorik;
+	}
+
+	public LocalDate getbetalingsdato() {
+		return betalingsdato;
+	}
+
+	public double getPris() {
+		return pris;
+	}
+
+
+	// Override af toString. Bare lavet noget som et eksempel på hvordan vi kunne gøre det.
 	    @Override
 	    public String toString() {
 	        
-	        return navn + ";" + foedselsdato +";"+ adresse +";"+email+";"+koen+";"+medlemstype+";"+aktivitetstype+";";
+	        return navn + ";" + Alder +";"+ adresse +";"+email+";"+køn+";"+medlemstype+";"+aktivitetstype+";";
 	               
 	    }
 	}

@@ -1,14 +1,16 @@
+package sample;
+
 import java.io.*;
 import java.io.IOException.*;
 import java.util.Scanner;
 import java.util.ArrayList;
 import java.time.LocalDate;
 
-class MedlemsListe{
+class MedlemsListe implements ListeInterface{
 	//danner liste som en attribute i MedlemsListe
 	ArrayList<Medlem> liste = new ArrayList<Medlem>();
 	//etablere filen der bliver redigeret
-	File f = new File("medlemsliste.txt");
+	File f = new File("C:\\Users\\123al\\Desktop\\Programming-Design\\coding\\Misc\\Tester\\src\\sample\\medlemer");
 
 	MedlemsListe(){
 
@@ -17,7 +19,7 @@ class MedlemsListe{
 			ArrayList<LocalDate> betalingsHistorik = new ArrayList<LocalDate>();
 			String navn, adresse, email, koen, medlemsskabstype, aktivitetstype;
 			LocalDate foedselsdato;
-			Scanner line = new Scanner(f);	
+			Scanner line = new Scanner(f);
 			//Skan gennem filen, indtil der ikke er flere linjer
 		while(line.hasNext()){
 			Scanner sc = new Scanner(line.nextLine());
@@ -33,7 +35,6 @@ class MedlemsListe{
 			koen = sc.next();
 			medlemsskabstype = sc.next();
 			aktivitetstype = sc.next();
-
 			//scanner betalings historiken
 			sc.useDelimiter(",");
 			sc.skip(";");
@@ -54,12 +55,12 @@ class MedlemsListe{
 		updateList();
 	}
 	
-	public void sletMedlem(int medlemsIndex){
+	public void deleteMedlem(int medlemsIndex){
 		liste.remove(medlemsIndex);
 		updateList();
 	}
 
-	public void redigerMedlem(int medlemsIndex, String navn,  int aar, int maaned, int dag, String koen, String adresse, String email, String medlemstype,
+	public void editMedlem(int medlemsIndex, String navn,  int aar, int maaned, int dag, String koen, String adresse, String email, String medlemstype,
            String aktivitetstype, ArrayList<LocalDate> betalingsHistorik){
 		liste.set(medlemsIndex, new Medlem(navn, aar, maaned, dag, koen, adresse, email, medlemstype, aktivitetstype, betalingsHistorik));
 		updateList();
