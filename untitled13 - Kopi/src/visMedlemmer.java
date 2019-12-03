@@ -1,20 +1,35 @@
+import javafx.application.Application;
+import javafx.beans.InvalidationListener;
 import javafx.collections.FXCollections;
+import javafx.collections.ListChangeListener;
+import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Group;
+import javafx.scene.Node;
+import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
+import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.layout.BorderPane;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
+import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-import java.util.ArrayList;
+import javax.swing.table.TableColumn;
+import javax.swing.text.TableView;
+import java.util.*;
 
-public class visMedlemmer{
+public class visMedlemmer extends Application {
 
-   visMedlemmer(Stage primaryStage) throws Exception{
+    @Override
+    public void start(Stage primaryStage) throws Exception{
         VBox root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Delfinen Svømmeklub");
 

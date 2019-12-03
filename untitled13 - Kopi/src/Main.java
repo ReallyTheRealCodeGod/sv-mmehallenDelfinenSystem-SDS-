@@ -17,6 +17,10 @@ public class Main extends Application {
 
             // Indsæt forside/login dialog GUI her ( Mads )
 
+
+
+
+
             // Kasser GUI efter login skærm -
             GridPane grid = new GridPane();
             grid.setGridLinesVisible(false);
@@ -36,6 +40,8 @@ public class Main extends Application {
             grid.add(visMedlemKasser, 0, 0);
             grid.add(logUdKasser, 0, 1);
             grid.setStyle("-fx-background-color: ALICEBLUE;");
+
+
 
 
             // Formand GUI efter login skærm
@@ -61,6 +67,8 @@ public class Main extends Application {
             grid1.add(visMedlemFormand, 2, 0);
             grid1.add(logUd, 1, 1);
             grid1.setStyle("-fx-background-color: ALICEBLUE;");
+
+
 
 
             Group root = new Group(grid);
