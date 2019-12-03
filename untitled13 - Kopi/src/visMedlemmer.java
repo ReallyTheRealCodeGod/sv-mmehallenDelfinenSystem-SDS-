@@ -22,9 +22,11 @@ import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import javax.swing.table.TableColumn;
+import javax.swing.text.TableView;
 import java.util.*;
 
-public class Main extends Application {
+public class visMedlemmer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
@@ -65,9 +67,5 @@ public class Main extends Application {
             col.setCellValueFactory(new PropertyValueFactory<>(s));
             table.getColumns().add(col);
         }
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }
