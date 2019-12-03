@@ -33,6 +33,7 @@ public class Main extends Application {
         generateTable(s, sc);
 
 
+        //8-------->
         primaryStage.setTitle("Medlem liste");
         primaryStage.setResizable(false);
         primaryStage.setScene(sc);
