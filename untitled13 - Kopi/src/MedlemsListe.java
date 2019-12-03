@@ -51,9 +51,9 @@ class MedlemsListe implements ListeInterface{
 	
 	}
 	//tilføjer et nyt medlems element til arraylisten og kalder derefter for opdateringen af data filen
-	public void addMedlem(String navn,  int aar, int maaned, int dag, String koen, String adresse, String email, String medlemstype,
+	public void addMedlem(String navn,  LocalDate dato, String koen, String adresse, String email, String medlemstype,
            String aktivitetstype){
-		liste.add(new Medlem(navn, aar, maaned, dag, koen, adresse, email, medlemstype, aktivitetstype));
+		liste.add(new Medlem(navn, dato, koen, adresse, email, medlemstype, aktivitetstype));
 		updateList();
 	}
 	
@@ -62,9 +62,9 @@ class MedlemsListe implements ListeInterface{
 		updateList();
 	}
 
-	public void editMedlem(int medlemsIndex, String navn,  int aar, int maaned, int dag, String koen, String adresse, String email, String medlemstype,
+	public void editMedlem(int medlemsIndex, String navn,  LocalDate dato, String koen, String adresse, String email, String medlemstype,
            String aktivitetstype){
-		liste.set(medlemsIndex, new Medlem(navn, aar, maaned, dag, koen, adresse, email, medlemstype, aktivitetstype));
+		liste.set(medlemsIndex, new Medlem(navn, dato, koen, adresse, email, medlemstype, aktivitetstype));
 		updateList();
 
 	}

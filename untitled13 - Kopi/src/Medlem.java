@@ -13,13 +13,6 @@ public class Medlem {
 	    private ArrayList<BetalingsHistorik> betalinger;
 	    private double pris;
 
-	    Medlem(String navn, int aar, int maaned, int dag, String gender, String adresse, String email, String medlemstype,
-	           String aktivitetstype) {
-
-	       this(navn, LocalDate.of(aar, maaned, dag), gender, adresse, email, medlemstype,
-                   aktivitetstype);
-
-	    }
 	    
 	    Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
 		           String aktivitetstype, ArrayList<BetalingsHistorik> betalinger) {
