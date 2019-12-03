@@ -24,13 +24,12 @@ public class Medlem {
 		        this.medlemstype = medlemstype;
 		        this.aktivitetstype = aktivitetstype;
 		        this.pris = Kontingent.getPris(this.alder, medlemstype);
-
                 //initiasere betalingshistorikken
-				this.betalinger = new ArrayList<>();
+                this.betalinger = new ArrayList<>();
                 //kopiere listen fra variablen til attributen
-				for(BetalingsHistorik b: betalinger){
-					this.betalinger.add(b);
-				}
+                for(BetalingsHistorik b: betalinger){
+                    this.betalinger.add(b);
+              }
 		    }
 
 		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
@@ -43,6 +42,9 @@ public class Medlem {
 			this.medlemstype = medlemstype;
 			this.aktivitetstype = aktivitetstype;
 			this.pris = Kontingent.getPris(this.alder, medlemstype);
+			for(BetalingsHistorik b: betalinger){
+			    this.betalinger.add(b);
+            }
 		}
 
 	  /*public LocalDate addUdloebsDato(){
@@ -67,6 +69,10 @@ public class Medlem {
 	public String getNavn() {
 		return navn;
 	}
+
+	public ArrayList<BetalingsHistorik> getBetalingsHistorik(){
+	    return betalinger;
+    }
 
 	public LocalDate getalder() {
 		return alder;
