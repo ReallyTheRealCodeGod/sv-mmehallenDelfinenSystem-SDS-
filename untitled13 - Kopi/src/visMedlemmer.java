@@ -44,7 +44,7 @@ public class visMedlemmer extends Application {
         generateTable(s, sc);
 
 
-        //8-------->4
+
         primaryStage.setTitle("Medlem liste");
         primaryStage.setResizable(false);
         primaryStage.setScene(sc);

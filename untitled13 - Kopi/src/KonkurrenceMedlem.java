@@ -27,9 +27,6 @@ public class KonkurrenceMedlem extends Medlem {
         Collections.sort(listClone);
         System.out.println(listClone);
 
-
-
-
     }
 
 
