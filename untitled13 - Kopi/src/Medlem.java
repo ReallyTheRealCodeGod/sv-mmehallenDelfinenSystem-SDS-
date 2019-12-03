@@ -34,7 +34,7 @@ public class Medlem {
 		    }
 
 		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
-		   String aktivitetstype) {
+		   String aktivitetstype ArrayList<BetalingsHistorik> betalinger) {
 			this.navn = navn;
 			this.alder = foedelsdato;
 			this.gender = gender;
@@ -43,6 +43,9 @@ public class Medlem {
 			this.medlemstype = medlemstype;
 			this.aktivitetstype = aktivitetstype;
 			this.pris = Kontingent.getPris(this.alder, medlemstype);
+			for(BetalingsHistorik b: betalinger){
+			    this.betalinger.add(b);
+            }
 		}
 
 	  /*public LocalDate addUdloebsDato(){
@@ -67,6 +70,10 @@ public class Medlem {
 	public String getNavn() {
 		return navn;
 	}
+
+	public ArrayList<BetalingsHistorik> getBetalingsHistorik(){
+	    return betalinger;
+    }
 
 	public LocalDate getalder() {
 		return alder;
@@ -102,7 +109,7 @@ public class Medlem {
 	    @Override
 	    public String toString() {
 	        
-	        return navn + ";" + alder +";"+ adresse +";"+email+";"+gender+";"+medlemstype+";"+aktivitetstype+";";
+	        return navn + ";" + alder +";"+ adresse +";"+email+";"+gender+";"+medlemstype+";"+aktivitetstype+";"+;
 	               
 	    }
 	}

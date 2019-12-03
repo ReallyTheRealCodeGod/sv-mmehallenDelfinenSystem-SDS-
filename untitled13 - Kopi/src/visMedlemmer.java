@@ -25,7 +25,7 @@ public class visMedlemmer{
 
         Scene sc = new Scene(root, stagesizex, stagesizey);
         sc.getStylesheets().add("sample/Tester.css");
-        String[] s = {"Navn", "Alder", "Adresse", "Medlemstype", "Aktivitetstype", "Betalingsdato"};
+        String[] s = {"Navn", "Alder", "Adresse", "Medlemstype", "Aktivitetstype"};
         generateTable(s, sc);
 
 
