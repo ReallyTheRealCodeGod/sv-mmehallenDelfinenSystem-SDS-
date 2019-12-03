@@ -7,9 +7,9 @@ import java.util.Scanner;
 
 class MedlemsListe implements ListeInterface{
 	//danner liste som en attribute i MedlemsListe
-	ArrayList<Medlem> liste = new ArrayList<Medlem>();
+	private ArrayList<Medlem> liste = new ArrayList<Medlem>();
 	//etablere filen der bliver redigeret
-	File f = new File("C:\\Users\\123al\\Desktop\\Programming-Design\\coding\\Misc\\Tester\\src\\sample\\medlemer");
+	private File f = new File("C:\\Users\\123al\\Desktop\\Programming-Design\\coding\\Misc\\Tester\\src\\sample\\medlemer");
 
 	MedlemsListe(){
 
@@ -35,9 +35,17 @@ class MedlemsListe implements ListeInterface{
 			medlemsskabstype = sc.next();
 			aktivitetstype = sc.next();
 			//scanner betalings historiken
-
+			ArrayList<BetalingsHistorik> betaling = new ArrayList<>();
+			if(sc.hasNext()){
+				sc.useDelimiter("]");
+				Scanner b = new Scanner(sc.next());
+				b.useDelimiter(",");
+					while(b.hasNext()){
+						betaling.add(new BetalingsHistorik(b.nextDouble(), b.next(), b.next()));
+					}
+			}
 			//lav medlem og adder til arraylisten
-			liste.add(new Medlem(navn, foedselsdato, koen, adresse, email, medlemsskabstype, aktivitetstype));
+			liste.add(new Medlem(navn, foedselsdato, koen, adresse, email, medlemsskabstype, aktivitetstype, betaling));
 		}
 		}catch(FileNotFoundException e){System.out.println("Fejl i dannelse af medlemsliste");}
 	

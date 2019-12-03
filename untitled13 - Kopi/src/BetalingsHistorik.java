@@ -5,6 +5,9 @@
         private LocalDate betalingsDato;
         private String bankNummer;
 
+        BetalingsHistorik(double pris, String betalingsDato, String bankNummer){
+            this(pris, LocalDate.parse(betalingsDato), bankNummer);
+        }
         BetalingsHistorik(double pris, LocalDate betalingsDato, String bankNummer){
             this.pris = pris;
             this.betalingsDato = betalingsDato;

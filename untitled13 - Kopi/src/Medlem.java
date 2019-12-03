@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.util.ArrayList;
 
 public class Medlem {
 
@@ -9,6 +10,7 @@ public class Medlem {
 	    private String email;
 	    private String medlemstype;
 	    private String aktivitetstype;
+	    private ArrayList<BetalingsHistorik> betalinger;
 	    private double pris;
 
 	    Medlem(String navn, int aar, int maaned, int dag, String gender, String adresse, String email, String medlemstype,
@@ -20,7 +22,7 @@ public class Medlem {
 	    }
 	    
 	    Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
-		           String aktivitetstype) {
+		           String aktivitetstype, ArrayList<BetalingsHistorik> betalinger) {
                 this.navn = navn;
 		        this.alder = foedelsdato;
 		        this.gender = gender;
@@ -31,10 +33,25 @@ public class Medlem {
 		        this.pris = Kontingent.getPris(this.alder, medlemstype);
 
                 //initiasere betalingshistorikken
+				this.betalinger = new ArrayList<>();
                 //kopiere listen fra variablen til attributen
-
+				for(BetalingsHistorik b: betalinger){
+					this.betalinger.add(b);
+				}
 		    }
-	    
+
+		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
+		   String aktivitetstype) {
+			this.navn = navn;
+			this.alder = foedelsdato;
+			this.gender = gender;
+			this.adresse = adresse;
+			this.email = email;
+			this.medlemstype = medlemstype;
+			this.aktivitetstype = aktivitetstype;
+			this.pris = Kontingent.getPris(this.alder, medlemstype);
+		}
+
 	  /*public LocalDate addUdloebsDato(){
             LocalDate nuvaerende;
         if(!betalingsHistorik.isEmpty()){
