@@ -1,0 +1,12 @@
+Text{
+    -fx-font-size: 19;
+    -fx-font-family: "Roboto Light";
+}
+
+GridPane{
+    -fx-background-color: aliceblue;
+}
+TextField, DatePicker, ChoiceBox, Button{
+    -fx-effect: dropshadow(one-pass-box, black, 3, 1, 1.25, 1);
+
+}
