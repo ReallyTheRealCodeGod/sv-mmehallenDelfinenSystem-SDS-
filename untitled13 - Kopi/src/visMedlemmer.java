@@ -5,6 +5,7 @@ import javafx.collections.ListChangeListener;
 import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Group;
 import javafx.scene.Node;
 import javafx.scene.Parent;
@@ -18,21 +19,32 @@ import javafx.scene.layout.GridPane;
 import javafx.scene.layout.StackPane;
 import javafx.scene.layout.VBox;
 import javafx.scene.text.Text;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
+import javax.swing.table.TableColumn;
+import javax.swing.text.TableView;
 import java.util.*;
 
-public class Main extends Application {
+public class visMedlemmer extends Application {
 
     @Override
     public void start(Stage primaryStage) throws Exception{
         VBox root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        Scene sc = new Scene(root, 720, 580);
+        primaryStage.setTitle("Delfinen Svømmeklub");
+
+        // Find computerens resolution og sæt størrelsen på stage ud fra disse.
+        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+        double stagesizex = primScreenBounds.getWidth() / 2;
+        double stagesizey = primScreenBounds.getHeight() / 1.5;
+
+        Scene sc = new Scene(root, stagesizex, stagesizey);
         sc.getStylesheets().add("sample/Tester.css");
         String[] s = {"Navn", "Alder", "Adresse", "Medlemstype", "Aktivitetstype", "Betalingsdato"};
         generateTable(s, sc);
 
 
+        //8-------->4
         primaryStage.setTitle("Medlem liste");
         primaryStage.setResizable(false);
         primaryStage.setScene(sc);
@@ -55,9 +67,5 @@ public class Main extends Application {
             col.setCellValueFactory(new PropertyValueFactory<>(s));
             table.getColumns().add(col);
         }
-    }
-
-    public static void main(String[] args) {
-        launch(args);
     }
 }
