@@ -27,6 +27,6 @@
         }
 
         public String toString(){
-            return "[" +pris +", "+ betalingsDato +", "+ bankNummer + "]";
+            return "" +pris +", "+ betalingsDato +", "+ bankNummer + "";
         }
     }
