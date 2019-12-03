@@ -44,8 +44,8 @@ class MedlemsListe implements ListeInterface{
 	}
 	//tilføjer et nyt medlems element til arraylisten og kalder derefter for opdateringen af data filen
 	public void addMedlem(String navn,  int aar, int maaned, int dag, String koen, String adresse, String email, String medlemstype,
-           String aktivitetstype, ArrayList<LocalDate> betalingsHistorik){
-		liste.add(new Medlem(navn, aar, maaned, dag, koen, adresse, email, medlemstype, aktivitetstype, betalingsHistorik));
+           String aktivitetstype){
+		liste.add(new Medlem(navn, aar, maaned, dag, koen, adresse, email, medlemstype, aktivitetstype));
 		updateList();
 	}
 	
