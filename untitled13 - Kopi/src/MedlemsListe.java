@@ -1,8 +1,9 @@
-import java.io.*;
-import java.io.IOException.*;
-import java.util.Scanner;
-import java.util.ArrayList;
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.io.PrintStream;
 import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 class MedlemsListe implements ListeInterface{
 	//danner liste som en attribute i MedlemsListe
@@ -34,14 +35,9 @@ class MedlemsListe implements ListeInterface{
 			medlemsskabstype = sc.next();
 			aktivitetstype = sc.next();
 			//scanner betalings historiken
-			sc.useDelimiter(",");
-			sc.skip(";");
-			while(sc.hasNext()){
-				betalingsHistorik.add(LocalDate.parse(sc.next()));
-			}
+
 			//lav medlem og adder til arraylisten
-			liste.add(new Medlem(navn, foedselsdato, koen, adresse, email, medlemsskabstype, aktivitetstype, betalingsHistorik));
-			betalingsHistorik.clear();
+			liste.add(new Medlem(navn, foedselsdato, koen, adresse, email, medlemsskabstype, aktivitetstype));
 		}
 		}catch(FileNotFoundException e){System.out.println("Fejl i dannelse af medlemsliste");}
 	
@@ -59,8 +55,8 @@ class MedlemsListe implements ListeInterface{
 	}
 
 	public void editMedlem(int medlemsIndex, String navn,  int aar, int maaned, int dag, String koen, String adresse, String email, String medlemstype,
-           String aktivitetstype, ArrayList<LocalDate> betalingsHistorik){
-		liste.set(medlemsIndex, new Medlem(navn, aar, maaned, dag, koen, adresse, email, medlemstype, aktivitetstype, betalingsHistorik));
+           String aktivitetstype){
+		liste.set(medlemsIndex, new Medlem(navn, aar, maaned, dag, koen, adresse, email, medlemstype, aktivitetstype));
 		updateList();
 
 	}

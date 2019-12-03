@@ -1,5 +1,4 @@
 import java.time.LocalDate;
-import java.util.ArrayList;
 
 public class Medlem {
 
@@ -10,23 +9,18 @@ public class Medlem {
 	    private String email;
 	    private String medlemstype;
 	    private String aktivitetstype;
-	    private ArrayList<LocalDate> betalingsHistorik;
-	    private LocalDate betalingsdato;
 	    private double pris;
-	    
-	    
-	   
 
 	    Medlem(String navn, int aar, int maaned, int dag, String gender, String adresse, String email, String medlemstype,
-	           String aktivitetstype, ArrayList<LocalDate> betalingsHistorik) {
+	           String aktivitetstype) {
 
 	       this(navn, LocalDate.of(aar, maaned, dag), gender, adresse, email, medlemstype,
-                   aktivitetstype, betalingsHistorik);
+                   aktivitetstype);
 
 	    }
 	    
 	    Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
-		           String aktivitetstype, ArrayList<LocalDate> betalingsHistorik) {
+		           String aktivitetstype) {
                 this.navn = navn;
 		        this.alder = foedelsdato;
 		        this.gender = gender;
@@ -38,13 +32,10 @@ public class Medlem {
 
                 //initiasere betalingshistorikken
                 //kopiere listen fra variablen til attributen
-                this.betalingsHistorik = new ArrayList<LocalDate>();
-                for(int i = 0; i < betalingsHistorik.size(); i++){
-                    this.betalingsHistorik.add(betalingsHistorik.get(i));
-                 }
+
 		    }
 	    
-	  public LocalDate addUdloebsDato(){
+	  /*public LocalDate addUdloebsDato(){
             LocalDate nuvaerende;
         if(!betalingsHistorik.isEmpty()){
             nuvaerende = betalingsHistorik.get(betalingsHistorik.size()-1);
@@ -61,7 +52,7 @@ public class Medlem {
             }
 
             return betalingsdato;
-	    }
+	    }*/
 
 	public String getNavn() {
 		return navn;
@@ -91,13 +82,6 @@ public class Medlem {
 		return aktivitetstype;
 	}
 
-	public ArrayList<LocalDate> getBetalingsHistorik() {
-		return betalingsHistorik;
-	}
-
-	public LocalDate getbetalingsdato() {
-		return betalingsdato;
-	}
 
 	public double getPris() {
 		return pris;
