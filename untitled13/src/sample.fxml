@@ -1,0 +1,37 @@
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.shape.Circle?>
+
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.Parent?>
+<?import javafx.scene.Group?>
+
+<?import javafx.scene.control.cell.PropertyValueFactory?>
+<VBox fx:controller="sample.Controller" xmlns:fx="http://javafx.com/fxml" fillWidth="true" prefWidth="Infinity">
+    <TextField id="Search"  BorderPane.alignment="TOP_CENTER"/>
+
+    <TableView fx:id="table"/>
+
+    <HBox alignment="CENTER" VBox.vgrow="ALWAYS" id="nav">
+        <VBox spacing="50" alignment="CENTER"  >
+
+            <HBox spacing="10">
+                <RadioButton/>
+                <Text text="Restance"/>
+            </HBox>
+
+            <HBox spacing="450">
+                <Button text="Bank Info" />
+                <Button text="Tilbage"/>
+            </HBox>
+
+        </VBox>
+    </HBox>
+
+</VBox>

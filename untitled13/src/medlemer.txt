@@ -150,3 +150,4 @@ Kenneth Mitchellsen;2017-11-04;Grøndals Parkvej 8;Kenneth Mitchellsen1@mail.dk;
 Allie Joshsen;2018-09-11;Grønnegade 13;Allie Joshsen6@mail.dk;Kvinde;Konkurrence;Aktiv;
 Jesus;2019-12-03;ifninf 10;fofkoqfq@gokqoq.com;Mand;Konkurrence;Passiv;
 Jesus222;2019-12-03;ifninf 10;fofkoqfq@gokqoq.com;Mand;Konkurrence;Passiv;
+test;2019-12-04;equehque 25;jajjaea@mail.com;Mand;Motionist;Passiv;
