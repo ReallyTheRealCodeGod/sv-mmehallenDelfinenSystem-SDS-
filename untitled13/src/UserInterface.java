@@ -72,12 +72,12 @@ public class UserInterface extends Application {
                     break;
             }
         }catch(Exception e){
-            System.out.print("det fucked");
+            System.out.print("det fucked: " + e);
         }
     }
 
     public void updateStage(Parent root){
-        Scene scene = new Scene(root, 700, 500);
+        Scene scene = new Scene(root, stagesizex, stagesizey);
         stage.setScene(scene); // ændre scene størrelse
         stage.show();
     }
@@ -422,6 +422,7 @@ public class UserInterface extends Application {
 
             gridPane.add(postNummerLabel, 0, 4);
             gridPane.add(postNummerText, 1, 4);
+            postNummerText.setText("-- IKKE IMPLEMENTERET ENDNU --");
 
             gridPane.add(emailLabel, 0, 5);
             gridPane.add(emailText, 1, 5);

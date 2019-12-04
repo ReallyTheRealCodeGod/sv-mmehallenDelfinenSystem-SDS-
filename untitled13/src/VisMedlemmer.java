@@ -12,9 +12,9 @@ import javafx.stage.Stage;
 
 import java.util.ArrayList;
 
-public class visMedlemmer{
+public class VisMedlemmer {
 
-   visMedlemmer(Stage primaryStage) throws Exception{
+   VisMedlemmer(Stage primaryStage) throws Exception{
         VBox root = FXMLLoader.load(getClass().getResource("sample.fxml"));
         primaryStage.setTitle("Delfinen Svømmeklub");
 

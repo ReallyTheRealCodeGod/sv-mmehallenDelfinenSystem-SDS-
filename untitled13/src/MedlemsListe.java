@@ -2,22 +2,23 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.time.LocalDate;
-import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
 class MedlemsListe implements ListeInterface{
 	//danner liste som en attribute i MedlemsListe
 	private ArrayList<Medlem> liste = new ArrayList<Medlem>();
+
 	//etablere filen der bliver redigeret
-	String path = "./untitled13/src/medlemer.txt";
+	private String path = "medlemmer.txt";
 	private File f = new File(path);
 
 	MedlemsListe(){
-		/* Til debug af indlæsning af fil
-		System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
+		// Til debug af indlæsning af fil
+		/* System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
 		System.out.println("File absolute path: " + f.getAbsolutePath());
 		 */
+
 
 		try{
 			// Vælger filen der skal læses fra og variablerne den læses
