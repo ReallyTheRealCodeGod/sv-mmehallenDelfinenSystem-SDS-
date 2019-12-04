@@ -1,6 +1,10 @@
+import javafx.application.Application;
+import javafx.application.Platform;
+import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
@@ -8,26 +12,68 @@ import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
 import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+import javafx.util.StringConverter;
 
+import java.io.IOException;
 import java.io.InputStream;
+import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
+import java.util.Optional;
 
-public class UserInterface {
+public class UserInterface extends Application {
     private Stage stage;
-    //Setting size of window
-    private Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-    private double stagesizex = primScreenBounds.getWidth() / 2;
-    private double stagesizey = primScreenBounds.getHeight() / 1.5;
 
-    UserInterface(Stage stage){
-        this.stage = stage;
+    //opretter medlemsliste
+    MedlemsListe medlemmer;
+
+    //Setting size of window
+    private Rectangle2D primScreenBounds;
+    private double stagesizex;
+    private double stagesizey;
+
+    public void start(Stage primaryStage) throws Exception{
+        medlemmer = new MedlemsListe();
+        this.stage = primaryStage;
+        primScreenBounds = Screen.getPrimary().getVisualBounds();
+        stagesizex = primScreenBounds.getWidth() / 2;
+        stagesizey = primScreenBounds.getHeight() / 1.5;
         stage.setTitle("Svømmeklubben System");
+
+        sceneManager("login");
+    }
+
+    public void sceneManager(String side){
+        try {
+            switch (side) {
+                case "login":
+                case "logud":
+                    loginSide();
+                    break;
+
+                case "formand":
+                    formandStartSide();
+                    break;
+                case "kasser":
+                    kasserStartSide();
+                    break;
+               /* case "visMedlemmer":
+                    visMedlemmer();
+                    break;
+                */
+                case "opretMedlem":
+                    opretMedlemForm();
+                    break;
+            }
+        }catch(Exception e){
+            System.out.print("det fucked");
+        }
     }
 
     public void updateStage(Parent root){
@@ -36,11 +82,182 @@ public class UserInterface {
         stage.show();
     }
 
+    public void loginSide() throws IOException {
+        String passwordFormand = "test";
+        String passwordKasserer = "test2";
+
+
+        // Lav knapper og style dem
+        Button formand = new Button("Formand");
+        Button kasserer = new Button("Kasserer");
+        formand.setMinSize(150, formand.getHeight());
+        kasserer.setMinSize(150, kasserer.getHeight());
+        formand.setFont(Font.font("", FontWeight.THIN, 20));
+        kasserer.setFont(Font.font("", FontWeight.THIN, 20));
+
+        // Lav "wrapper" grid pane som v-bokse pakkes ind i
+        GridPane grid = new GridPane();
+        grid.setStyle("-fx-background-color: ALICEBLUE; ");
+
+        // Lav vbox til buttons (venstre side af programmet) samt style det og tilføj knapper
+        VBox vBoxButtons = new VBox();
+        vBoxButtons.setMaxSize(stagesizex / 2, stagesizey);
+        vBoxButtons.setMinSize(stagesizex / 2, stagesizey);
+        vBoxButtons.setAlignment(Pos.CENTER);
+        vBoxButtons.setSpacing(150);
+        VBox.setMargin(formand, new Insets(20, 20, 20, 20));
+        VBox.setMargin(kasserer, new Insets(20, 20, 20, 20));
+        vBoxButtons.getChildren().addAll(formand, kasserer);
+
+        // Lav vbox til logo (højre side af programmet)
+        VBox vBoxLogo = new VBox();
+        vBoxLogo.setMaxSize(stagesizex / 2, stagesizey);
+
+        // Indlæs billede via URL og brug imageView til at vise billedet. Style billedet.
+        InputStream logo = new URL("https://i.imgur.com/jb8srK2.png").openStream();
+        Image image = new Image(logo);
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(stagesizex / 2);
+        imageView.setFitHeight(stagesizey);
+        imageView.setPreserveRatio(false);
+
+        // Tilføj billede til højre vbox
+        vBoxLogo.getChildren().add(imageView);
+
+        // TIlføj vboxe til wrapper grid
+        grid.add(vBoxButtons, 0, 0);
+        grid.add(vBoxLogo, 1, 0);
+        grid.setGridLinesVisible(false);
+
+
+        /* https://docs.oracle.com/javase/8/javafx/api/javafx/scene/control/Dialog.html#resultProperty--
+        Once a Dialog is instantiated and fully configured, the next step is to show it. More often than not,
+        dialogs are shown in a modal and blocking fashion.
+        'Modal' means that the dialog prevents user interaction with the owning application whilst it is showing,
+        and 'blocking' means that code execution stops at the point in which the dialog is shown.
+        This means that you can show a dialog, await the user response,
+        and then continue running the code that directly follows the show call,
+        giving developers the ability to immediately deal with the user input from the dialog (if relevant).
+
+        JavaFX dialogs are modal by default (you can change this via the initModality(javafx.stage.Modality) API).
+        To specify whether you want blocking or non-blocking dialogs,
+        developers simply choose to call showAndWait() or show() (respectively).
+        By default most developers should choose to use showAndWait(), given the ease of coding in these situations.
+        Shown below is three code snippets, showing three equally valid ways of showing a dialog:
+         */
+
+        // Dialog box til login
+        Dialog<String> dialogLogin = new Dialog<>();
+        dialogLogin.setTitle("Login");
+
+        ButtonType loginButtonType = new ButtonType("Login", ButtonBar.ButtonData.OK_DONE);
+        ButtonType cancelButtonType = new ButtonType("Annuller", ButtonBar.ButtonData.CANCEL_CLOSE);
+        dialogLogin.getDialogPane().getButtonTypes().addAll(loginButtonType, cancelButtonType);
+
+        HBox dialogHBox = new HBox();
+        dialogHBox.setSpacing(10);
+        Label passwordLabel = new Label("Kodeord: ");
+        PasswordField passwordField = new PasswordField();
+        dialogHBox.getChildren().addAll(passwordLabel, passwordField);
+        HBox.setMargin(passwordField, new Insets(10, 10, 0, 0));
+        HBox.setMargin(passwordLabel, new Insets(10, 10, 0, 10));
+
+        Platform.runLater(() -> passwordField.requestFocus());
+        Node loginButton = dialogLogin.getDialogPane().lookupButton(loginButtonType);
+        loginButton.setDisable(true);
+
+        passwordField.textProperty().addListener((observable, oldValue, newValue) -> {
+            loginButton.setDisable(newValue.trim().isEmpty());
+        });
+
+        dialogLogin.getDialogPane().setContent(dialogHBox);
+
+        // Når tryk på logind, valider om kodeord passer til password variabler.
+        // Hvis validering er OK, ændre scene til kasser/formand brugerside.
+        dialogLogin.setResultConverter(dialogButton -> {
+            if (dialogButton == loginButtonType) {
+                String tempPassword = passwordField.getText();
+                passwordField.clear();
+                return tempPassword;
+            } else if (dialogButton == cancelButtonType) {
+                passwordField.clear();
+            }
+            return null;
+        });
+
+        /* Freaky shit going on here
+        ActionEvent for begge knapper som viser dialogboksen
+        Ved tryk på knap vises en login dialog boks
+        Det password der indtastes i passwordField valideres imod en String variabel som indeholder koden
+        for henholdsvis formand og kasserer.
+         */
+        formand.setOnAction(e -> {
+            Optional<String> result = dialogLogin.showAndWait();
+
+
+            result.ifPresent(password -> {
+                if (password.equals(passwordFormand)) {
+                    System.out.println("Formand pass er OK");
+                    sceneManager("formand");
+                } else {
+                    errorDialog("Fejl", "Forkert kodeord. Prøv igen.");
+                    dialogLogin.showAndWait();
+                    System.out.println("Formand pass ikke OK");
+                }
+            });
+        });
+
+        kasserer.setOnAction(e -> {
+            Optional<String> result = dialogLogin.showAndWait();
+
+            result.ifPresent(password -> {
+                if (password.equals(passwordKasserer)) {
+                    System.out.println("Kasserer pass er OK");
+                    sceneManager("kasser");
+                } else {
+                    System.out.println("Kasserer pass ikke OK");
+                }
+            });
+
+        });
+
+        // Instansier scenen, sæt primarystage til at vise den og start stage
+        Scene scene = new Scene(grid, stagesizex, stagesizey);
+        stage.setScene(scene);
+        stage.show();
+    }
+
+    public void errorDialog(String title, String message) {
+        // Dialog til forkert login
+        Dialog<Boolean> dialog = new Dialog<>();
+        dialog.setTitle(title);
+
+        Label label = new Label(message);
+        Button button = new Button("OK");
+        VBox vb = new VBox();
+
+        vb.setAlignment(Pos.CENTER);
+        vb.getChildren().addAll(label, button);
+        dialog.getDialogPane().setContent(vb);
+
+        button.setOnAction(e -> {
+            dialog.close();
+            dialog.setResult(Boolean.TRUE);
+        });
+
+        // ButtonType bt = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        // dialog.getDialogPane().getButtonTypes().add(bt);
+        dialog.showAndWait();
+    }
+
     public void kasserStartSide() {
         GridPane grid = new GridPane();
         grid.setGridLinesVisible(false);
         Button visMedlemKasser = new Button("Vis Medlemmer");
         Button logUdKasser = new Button("Log Ud");
+        //gui kontrol
+        //visMedlemKasser.setOnAction(e -> { sceneManager("visMedlemmer");});
+        logUdKasser.setOnAction(e -> { sceneManager("logud"); });
 
         visMedlemKasser.setMinSize(150, visMedlemKasser.getHeight());
         visMedlemKasser.setFont(Font.font("", FontWeight.THIN, 20));
@@ -73,6 +290,10 @@ public class UserInterface {
         logUd.setMinSize(150, logUd.getHeight());
         logUd.setFont(Font.font("", FontWeight.THIN, 20));
 
+        // gui kontrol
+        opretMedlem.setOnAction(e -> { sceneManager("opretMedlem");});
+        logUd.setOnAction(e -> { sceneManager("logud"); });
+
         grid1.setVgap(125);
         grid1.setHgap(-10);
         grid1.setMinSize(720, 580);
@@ -85,7 +306,7 @@ public class UserInterface {
         updateStage(grid1);
     }
 
-    public void OpretMedlemForm() throws Exception {
+    public void opretMedlemForm() throws Exception {
 
             //Labels og fields
         Text nameLabel = new Text("Navn");
@@ -153,18 +374,24 @@ public class UserInterface {
             DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
 
             //Make button do stuff
-            buttonGem.setOnAction((event ->
-                    System.out.println(nameText.getText() +
-                            datepicker.getValue() +
-                            ((RadioButton) groupGender.getSelectedToggle()).getText()+
-                            (adresseText.getText()+" "+nummerText.getText())+
-                            emailText.getText() +
-                            aktivitetsTypeBox.getValue() +
-                            medlemsTypeBox.getValue()
-                    )));
+            buttonGem.setOnAction((event ->{
+                    medlemmer.addMedlem(nameText.getText(),
+                            datepicker.getValue(),
+                            ((RadioButton) groupGender.getSelectedToggle()).getText(),
+                            (adresseText.getText()+" "+nummerText.getText()),
+                            emailText.getText(),
+                            aktivitetsTypeBox.getValue().toString(),
+                            medlemsTypeBox.getValue().toString()
+                    );
+                sceneManager("formand");
+            }
+            ));
 
             //Make method go to formand side
-            buttonAflys.setOnAction((event -> System.out.println("Go to formand page")));
+            buttonAflys.setOnAction((event -> {
+                System.out.println("Go to formand page");
+                sceneManager("formand");
+            }));
 
             //laver gridpane
             GridPane gridPane = new GridPane();
@@ -226,7 +453,7 @@ public class UserInterface {
             bigGrid.add(gridPane, 0, 0);
             bigGrid.add(imageView, 1, 0);
 
-            bigGrid.getStylesheets().add("sample/CSS.css");
+            //bigGrid.getStylesheets().add("sample/CSS.css");
             updateStage(bigGrid);
         }
     }

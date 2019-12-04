@@ -42,9 +42,6 @@ public class Medlem {
 			this.medlemstype = medlemstype;
 			this.aktivitetstype = aktivitetstype;
 			this.pris = Kontingent.getPris(this.alder, medlemstype);
-			for(BetalingsHistorik b: betalinger){
-			    this.betalinger.add(b);
-            }
 		}
 
 	  /*public LocalDate addUdloebsDato(){

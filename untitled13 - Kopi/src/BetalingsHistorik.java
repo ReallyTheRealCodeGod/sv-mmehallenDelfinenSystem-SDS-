@@ -1,6 +1,7 @@
  import java.time.LocalDate;
+ import java.time.format.DateTimeFormatter;
 
-    public class BetalingsHistorik{
+ public class BetalingsHistorik{
         private double pris;
         private LocalDate betalingsDato;
         private String bankNummer;
@@ -30,3 +31,4 @@
             return "" +pris +", "+ betalingsDato +", "+ bankNummer + "";
         }
     }
+ 

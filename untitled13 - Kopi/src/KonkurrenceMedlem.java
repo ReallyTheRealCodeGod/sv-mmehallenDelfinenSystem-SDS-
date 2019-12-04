@@ -1,3 +1,4 @@
+/*
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Collections;
@@ -29,3 +30,6 @@ public class KonkurrenceMedlem extends Medlem {
 
 
 }
+
+
+ */

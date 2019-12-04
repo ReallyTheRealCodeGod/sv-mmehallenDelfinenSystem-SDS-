@@ -2,6 +2,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Scanner;
 
@@ -9,10 +10,12 @@ class MedlemsListe implements ListeInterface{
 	//danner liste som en attribute i MedlemsListe
 	private ArrayList<Medlem> liste = new ArrayList<Medlem>();
 	//etablere filen der bliver redigeret
-	private File f = new File("C:\\Users\\123al\\Desktop\\Programming-Design\\coding\\Misc\\Tester\\src\\sample\\medlemer");
+	String path = "./src/medlemer.txt";
+	private File f = new File(path);
 
 	MedlemsListe(){
-
+		System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
+		System.out.println("File absolute path: " + f.getAbsolutePath());
 		try{
 			// Vælger filen der skal læses fra og variablerne den læses
 			ArrayList<LocalDate> betalingsHistorik = new ArrayList<LocalDate>();
@@ -38,10 +41,23 @@ class MedlemsListe implements ListeInterface{
 			ArrayList<BetalingsHistorik> betaling = new ArrayList<>();
 			if(sc.hasNext()){
 				sc.useDelimiter("]");
-				Scanner b = new Scanner(sc.next());
+				sc.skip(";");
+				sc.skip("\\[");
+				String s = sc.next();
+				System.out.println(s);
+				Scanner b = new Scanner(s);
 				b.useDelimiter(",");
+
 					while(b.hasNext()){
-						betaling.add(new BetalingsHistorik(b.nextDouble(), b.next(), b.next()));
+						String pris = b.next();
+						double p = Double.parseDouble(pris);
+						System.out.println(p);
+						String date = b.next();
+						LocalDate d = LocalDate.parse(date);
+						System.out.println(d);
+						String bank = b.next();
+						System.out.println(bank);
+						betaling.add(new BetalingsHistorik(p, d, bank));
 					}
 			}
 			//lav medlem og adder til arraylisten
@@ -53,6 +69,7 @@ class MedlemsListe implements ListeInterface{
 	//tilføjer et nyt medlems element til arraylisten og kalder derefter for opdateringen af data filen
 	public void addMedlem(String navn,  LocalDate dato, String koen, String adresse, String email, String medlemstype,
            String aktivitetstype){
+		System.out.println(navn +" "+ dato.toString() + " " + koen + " " + adresse+ " " + email+ " " + medlemstype+ " " + aktivitetstype);
 		liste.add(new Medlem(navn, dato, koen, adresse, email, medlemstype, aktivitetstype));
 		updateList();
 	}
@@ -87,7 +104,7 @@ class MedlemsListe implements ListeInterface{
 		try{
 			//sletter den eksisterende fil og erstatter den med en ny tom fil med samme navn
 			f.delete();
-			f = new File("Medlemsliste.txt");
+			f = new File(path);
 
 			//skriver arraylisten ind i den nye fil
 			PrintStream ps = new PrintStream(f);

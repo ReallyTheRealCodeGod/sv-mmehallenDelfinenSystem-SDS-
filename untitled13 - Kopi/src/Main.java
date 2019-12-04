@@ -8,17 +8,13 @@ import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.stage.Stage;
 
+import java.io.IOException;
 
-public class Main extends Application {
 
+public class Main{
 
-        @Override
-        public void start(Stage primaryStage) throws Exception{
-            UserInterface userInterface = new UserInterface(primaryStage);
+        public static void main(String[] args) throws IOException {
+            Application.launch(UserInterface.class, args);
         }
 
-
-        public static void main(String[] args) {
-            launch(args);
-        }
     }
