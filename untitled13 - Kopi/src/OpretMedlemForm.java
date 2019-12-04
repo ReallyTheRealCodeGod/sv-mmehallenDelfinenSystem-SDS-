@@ -1,4 +1,3 @@
-import javafx.application.Application;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.geometry.Rectangle2D;
@@ -7,12 +6,14 @@ import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.scene.layout.HBox;
+
 import java.io.InputStream;
 import java.net.URL;
+import java.time.format.DateTimeFormatter;
 
 public class OpretMedlemForm {
     Stage stage;
@@ -88,9 +89,22 @@ public class OpretMedlemForm {
         hboxKnap.getChildren().addAll(buttonGem, buttonAflys);
         hboxKnap.setAlignment(Pos.BOTTOM_RIGHT);
 
+        //Date formatter
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+
         //Make button do stuff
-        buttonGem.setOnAction((event -> System.out.println("Hello World")));
-        buttonAflys.setOnAction((event -> System.out.println("Hello World")));
+        buttonGem.setOnAction((event ->
+            System.out.println(nameText.getText() +
+            datepicker.getValue() +
+            ((RadioButton) groupGender.getSelectedToggle()).getText()+
+            (adresseText.getText()+" "+nummerText.getText())+
+            emailText.getText() +
+            aktivitetsTypeBox.getValue() +
+            medlemsTypeBox.getValue()
+            )));
+
+        //Make method go to formand side
+        buttonAflys.setOnAction((event -> System.out.println("Go to formand page")));
 
         //laver gridpane
         GridPane gridPane = new GridPane();
@@ -139,8 +153,7 @@ public class OpretMedlemForm {
         gridPane.setGridLinesVisible(false);
         gridPane.setMaxSize(stagesizex / 2, stagesizey);
 
-        //imporetere billede
-
+        //imporeterer billede
         InputStream logo = new URL("https://i.imgur.com/jb8srK2.png%22").openStream();
         Image image = new Image(logo);
         ImageView imageView = new ImageView(image);
