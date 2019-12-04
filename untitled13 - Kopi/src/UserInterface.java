@@ -19,7 +19,11 @@ import java.net.URL;
 import java.time.format.DateTimeFormatter;
 
 public class UserInterface {
-    Stage stage;
+    private Stage stage;
+    //Setting size of window
+    private Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+    private double stagesizex = primScreenBounds.getWidth() / 2;
+    private double stagesizey = primScreenBounds.getHeight() / 1.5;
 
     UserInterface(Stage stage){
         this.stage = stage;
@@ -82,12 +86,6 @@ public class UserInterface {
     }
 
     public void OpretMedlemForm() throws Exception {
-
-        //Setting size of window
-        Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
-        double stagesizex = primScreenBounds.getWidth() / 2;
-        double stagesizey = primScreenBounds.getHeight() / 1.5;
-
 
             //Labels og fields
         Text nameLabel = new Text("Navn");
