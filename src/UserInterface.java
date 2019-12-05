@@ -1,5 +1,7 @@
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -8,6 +10,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.GridPane;
@@ -18,13 +21,12 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-import javafx.util.StringConverter;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
+import java.util.ArrayList;
 import java.util.Optional;
 
 public class UserInterface extends Application {
@@ -63,10 +65,11 @@ public class UserInterface extends Application {
                 case "kasser":
                     kasserStartSide();
                     break;
-               /* case "visMedlemmer":
+
+               case "visMedlemmer":
                     visMedlemmer();
                     break;
-                */
+
                 case "opretMedlem":
                     opretMedlemForm();
                     break;
@@ -292,6 +295,7 @@ public class UserInterface extends Application {
 
         // gui kontrol
         opretMedlem.setOnAction(e -> { sceneManager("opretMedlem");});
+        visMedlemFormand.setOnAction(e -> { sceneManager("visMedlemmer");});
         logUd.setOnAction(e -> { sceneManager("logud"); });
 
         grid1.setVgap(125);
@@ -457,5 +461,31 @@ public class UserInterface extends Application {
             //bigGrid.getStylesheets().add("sample/CSS.css");
             updateStage(bigGrid);
         }
+
+    public void visMedlemmer() throws Exception{
+        VBox root = FXMLLoader.load(getClass().getResource("sample.fxml"));
+        String[] s = {"Navn", "Alder", "Adresse", "Medlemstype", "Aktivitetstype"};
+        generateTable(s, root);
+        updateStage(root);
+
+    }
+
+    void generateTable(String[] columns, Parent root){
+        MedlemsListe ml = new MedlemsListe();
+        ArrayList<Medlem> al = ml.getListe();
+        TableView table = (TableView)root.lookup("#table");
+
+        ObservableList<Medlem> ol = FXCollections.observableArrayList();
+        for(Medlem m: al){
+            ol.add(m);
+        }
+        table.setItems(ol);
+
+        for(String s: columns) {
+            TableColumn<String, Medlem> col = new TableColumn<String, Medlem>(s);
+            col.setCellValueFactory(new PropertyValueFactory<>(s));
+            table.getColumns().add(col);
+        }
+    }
     }
 

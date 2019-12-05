@@ -71,11 +71,11 @@ public class Medlem {
 	    return betalinger;
     }
 
-	public LocalDate getalder() {
+	public LocalDate getAlder() {
 		return alder;
 	}
 
-	public String getgender() {
+	public String getGender() {
 		return gender;
 	}
 
