@@ -1,5 +1,6 @@
 import javafx.application.Application;
 import javafx.application.Platform;
+import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -376,24 +377,19 @@ public class UserInterface extends Application {
         buttonGem.setDisable(true);
 
         //laver lsitener til fields
-/*
-            nameText.textProperty().addListener((observable, oldValue, newValue) -> {
-                buttonGem.setDisable(newValue.trim().isEmpty());
 
-            });
+        BooleanBinding booleanBind = nameText.textProperty().isEmpty().
+                or(adresseText.textProperty().isEmpty()).
+                or(emailText.textProperty().isEmpty()).
+                or(nummerText.textProperty().isEmpty()).
+                or(aktivitetsTypeBox.valueProperty().isNull()).
+                or(groupGender.selectedToggleProperty().isNull());
 
-        adresseText.textProperty().addListener((observable1, oldValue1, newValue1) -> {
-            buttonGem.setDisable(newValue1.trim().isEmpty());
-        });
-        emailText.textProperty().addListener((observable2, oldValue2, newValue2) -> {
-            buttonGem.setDisable(newValue2.trim().isEmpty());
-        });
-        nummerText.textProperty().addListener((observable3, oldValue3, newValue3) -> {
-            buttonGem.setDisable(newValue3.trim().isEmpty());
-        });
-    }
 
- */
+        buttonGem.disableProperty().bind(booleanBind);
+
+
+
 
         //hbox til knapper
         HBox hboxKnap = new HBox();
