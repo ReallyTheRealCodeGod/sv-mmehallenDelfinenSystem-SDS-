@@ -1,0 +1,11 @@
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<HBox alignment="CENTER" VBox.vgrow="ALWAYS" id="nav">
+        <VBox spacing="50" alignment="CENTER"  >
+            <HBox spacing="450">
+                <Button text="Rediger Info" />
+                <Button text="Tilbage"/>
+            </HBox>
+        </VBox>
+    </HBox>
