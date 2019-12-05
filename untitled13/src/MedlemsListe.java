@@ -1,3 +1,5 @@
+package untitled13.src;
+
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
@@ -10,14 +12,13 @@ class MedlemsListe implements ListeInterface{
 	private ArrayList<Medlem> liste = new ArrayList<Medlem>();
 
 	//etablere filen der bliver redigeret
-	private String path = "medlemmer.txt";
+	private String path = "./untitled13/src/medlemmer.txt";
 	private File f = new File(path);
 
 	MedlemsListe(){
 		// Til debug af indlæsning af fil
-		/* System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
+		 System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
 		System.out.println("File absolute path: " + f.getAbsolutePath());
-		 */
 
 
 		try{
