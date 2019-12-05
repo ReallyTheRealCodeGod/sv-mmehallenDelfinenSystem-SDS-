@@ -376,15 +376,13 @@ public class UserInterface extends Application {
         buttonAflys.setPrefSize(80, 20);
         buttonGem.setDisable(true);
 
-        //laver lsitener til fields
-
+        // Disabler gem button indtil alle fields er udfyldt
         BooleanBinding booleanBind = nameText.textProperty().isEmpty().
                 or(adresseText.textProperty().isEmpty()).
                 or(emailText.textProperty().isEmpty()).
                 or(nummerText.textProperty().isEmpty()).
                 or(aktivitetsTypeBox.valueProperty().isNull()).
                 or(groupGender.selectedToggleProperty().isNull());
-
 
         buttonGem.disableProperty().bind(booleanBind);
 
