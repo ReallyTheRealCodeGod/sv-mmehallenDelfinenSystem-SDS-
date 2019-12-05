@@ -77,6 +77,39 @@ class MedlemsListe implements ListeInterface{
 		liste.add(new Medlem(navn, dato, gender, adresse, email, medlemstype, aktivitetstype));
 		opdaterListe();
 	}
+	public boolean verificerAddMedlemInput(String navn, LocalDate dato, String gender, String adresse, String email, String medlemstype,
+										   String aktivitetstype){
+		ArrayList<String> medlemArray = new ArrayList<>();
+		if (navn.isEmpty()) {
+			medlemArray.add("Fejl i navn - ret venligst");
+		}
+		if (dato.isAfter(dato)) {
+			medlemArray.add("Fejl i dato - ret venligst");
+		}
+		if (gender.isEmpty()) {
+			medlemArray.add("Fejl i køn - ret venligst");
+		}
+		if (adresse.isEmpty() || !adresse.matches(".*\\d.*")) {
+			medlemArray.add("Fejl i adresse - ret venligst");
+		}
+		if (!email.contains("@") || email.isEmpty()) {
+			medlemArray.add("Fejl i email - ret venligst");
+		}
+		if (medlemstype.isEmpty()) {
+			medlemArray.add("Fejl i medlemstypen - ret venligst");
+		}
+		if (aktivitetstype.isEmpty()) {
+			medlemArray.add("Fejl i aktivitetstype - ret venligst");
+		}
+		if (!medlemArray.isEmpty()) {
+			UserInterface UI = new UserInterface();
+			UI.errorDialog("Fejlbesked",medlemArray.toString());;
+			return false;
+		} else {
+			addMedlem( navn,  dato,  gender,  adresse,  email,  medlemstype, aktivitetstype);
+			return true;
+		}
+	}
 	
 	public void sletMedlem(int medlemsIndex){
 		liste.remove(medlemsIndex);

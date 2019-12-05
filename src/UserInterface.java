@@ -24,9 +24,11 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.lang.reflect.Array;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Optional;
 
 public class UserInterface extends Application {
@@ -315,7 +317,7 @@ public class UserInterface extends Application {
 
     public void opretMedlemForm() throws Exception {
 
-            //Labels og fields
+        //Labels og fields
         Text nameLabel = new Text("Navn");
         TextField nameText = new TextField();
 
@@ -333,136 +335,160 @@ public class UserInterface extends Application {
         Text postNummerLabel = new Text("Postnummer");
         TextField postNummerText = new TextField();
 
-            Text emailLabel = new Text("E-Mail");
-            TextField emailText = new TextField();
+        Text emailLabel = new Text("E-Mail");
+        TextField emailText = new TextField();
 
-            //Køn label og en gruppe for denne
-            Text genderLabel = new Text("Køn");
+        //Køn label og en gruppe for denne
+        Text genderLabel = new Text("Køn");
 
-            ToggleGroup groupGender = new ToggleGroup();
-            RadioButton maleRadio = new RadioButton("Mand");
-            maleRadio.setToggleGroup(groupGender);
-            RadioButton femaleRadio = new RadioButton("Kvinde");
-            femaleRadio.setToggleGroup(groupGender);
-            RadioButton otherRadio = new RadioButton("Andet");
-            otherRadio.setToggleGroup(groupGender);
+        ToggleGroup groupGender = new ToggleGroup();
+        RadioButton maleRadio = new RadioButton("Mand");
+        maleRadio.setToggleGroup(groupGender);
+        RadioButton femaleRadio = new RadioButton("Kvinde");
+        femaleRadio.setToggleGroup(groupGender);
+        RadioButton otherRadio = new RadioButton("Andet");
+        otherRadio.setToggleGroup(groupGender);
 
-            //hbox til køn
-            HBox hboxGender = new HBox();
-            hboxGender.setSpacing(10);
-            hboxGender.getChildren().addAll(maleRadio, femaleRadio, otherRadio);
+        //hbox til køn
+        HBox hboxGender = new HBox();
+        hboxGender.setSpacing(10);
+        hboxGender.getChildren().addAll(maleRadio, femaleRadio, otherRadio);
 
-            Text medlemstypeLabel = new Text("Medlemstype");
+        Text medlemstypeLabel = new Text("Medlemstype");
 
-            //Choice box til drop down
-            ChoiceBox medlemsTypeBox = new ChoiceBox();
-            medlemsTypeBox.getItems().addAll("Aktiv", "Passiv");
-            medlemsTypeBox.setPrefWidth(270);
+        //Choice box til drop down
+        ChoiceBox medlemsTypeBox = new ChoiceBox();
+        medlemsTypeBox.getItems().addAll("Aktiv", "Passiv");
+        medlemsTypeBox.setPrefWidth(270);
 
 
-            Text aktivitetsTypeLabel = new Text("Aktivitetstype");
+        Text aktivitetsTypeLabel = new Text("Aktivitetstype");
 
-            //Choice box til drop down
-            ChoiceBox aktivitetsTypeBox = new ChoiceBox();
-            aktivitetsTypeBox.getItems().addAll("Konkurrence", "Motionist");
-            aktivitetsTypeBox.setPrefWidth(270);
-            //knapper
-            Button buttonGem = new Button("Gem");
-            Button buttonAflys = new Button("Aflys");
-            buttonGem.setPrefSize(180, 20);
-            buttonAflys.setPrefSize(80, 20);
-            //hbox til knapper
-            HBox hboxKnap = new HBox();
-            hboxKnap.setSpacing(10);
-            hboxKnap.getChildren().addAll(buttonGem, buttonAflys);
-            hboxKnap.setAlignment(Pos.BOTTOM_RIGHT);
+        //Choice box til drop down
+        ChoiceBox aktivitetsTypeBox = new ChoiceBox();
+        aktivitetsTypeBox.getItems().addAll("Konkurrence", "Motionist");
+        aktivitetsTypeBox.setPrefWidth(270);
+        //knapper
+        Button buttonGem = new Button("Gem");
+        Button buttonAflys = new Button("Aflys");
+        buttonGem.setPrefSize(180, 20);
+        buttonAflys.setPrefSize(80, 20);
+        buttonGem.setDisable(true);
 
-            //Date formatter
-            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
+        //laver lsitener til fields
+/*
+            nameText.textProperty().addListener((observable, oldValue, newValue) -> {
+                buttonGem.setDisable(newValue.trim().isEmpty());
 
-            //Make button do stuff
-            buttonGem.setOnAction((event ->{
-                    medlemmer.addMedlem(nameText.getText(),
-                            datepicker.getValue(),
-                            ((RadioButton) groupGender.getSelectedToggle()).getText(),
-                            (adresseText.getText()+" "+nummerText.getText()),
-                            emailText.getText(),
-                            aktivitetsTypeBox.getValue().toString(),
-                            medlemsTypeBox.getValue().toString()
-                    );
-                sceneManager("formand");
-            }
-            ));
+            });
 
-            //Make method go to formand side
-            buttonAflys.setOnAction((event -> {
-                System.out.println("Go to formand page");
-                sceneManager("formand");
-            }));
+        adresseText.textProperty().addListener((observable1, oldValue1, newValue1) -> {
+            buttonGem.setDisable(newValue1.trim().isEmpty());
+        });
+        emailText.textProperty().addListener((observable2, oldValue2, newValue2) -> {
+            buttonGem.setDisable(newValue2.trim().isEmpty());
+        });
+        nummerText.textProperty().addListener((observable3, oldValue3, newValue3) -> {
+            buttonGem.setDisable(newValue3.trim().isEmpty());
+        });
+    }
 
-            //laver gridpane
-            GridPane gridPane = new GridPane();
-            gridPane.setMinSize(stagesizex / 2, stagesizey);
+ */
 
-            //padding
-            gridPane.setPadding(new Insets(50));
+        //hbox til knapper
+        HBox hboxKnap = new HBox();
+        hboxKnap.setSpacing(10);
+        hboxKnap.getChildren().addAll(buttonGem, buttonAflys);
+        hboxKnap.setAlignment(Pos.BOTTOM_RIGHT);
 
-            //Setting the vertical and horizontal gaps between the columns
-            gridPane.setVgap(25);
-            gridPane.setHgap(40);
+        //Date formatter
+        DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
 
-            //Setting the Grid alignment
-            gridPane.setAlignment(Pos.TOP_LEFT);
+        //Make button do stuff
+        buttonGem.setOnAction((event ->{
+                if (medlemmer.verificerAddMedlemInput(nameText.getText(),
+                        datepicker.getValue(),
+                        ((RadioButton) groupGender.getSelectedToggle()).getText(),
+                        (adresseText.getText()+" "+ nummerText.getText()),
+                        emailText.getText(),
+                        aktivitetsTypeBox.getValue().toString(),
+                        medlemsTypeBox.getValue().toString()
+                )) {
+                    sceneManager("formand");
+                }
+                else System.out.println("");
+        }
+        ));
 
-            //nodes i grid
-            gridPane.add(nameLabel, 0, 0);
-            gridPane.add(nameText, 1, 0);
+        //Make method go to formand side
+        buttonAflys.setOnAction((event -> {
+            System.out.println("Go to formand page");
+            sceneManager("formand");
+        }));
 
-            gridPane.add(ageLabel, 0, 1);
-            gridPane.add(datepicker, 1, 1);
+        //laver gridpane
+        GridPane gridPane = new GridPane();
+        gridPane.setMinSize(stagesizex / 2, stagesizey);
 
-            gridPane.add(adresseLabel, 0, 2);
-            gridPane.add(adresseText, 1, 2);
+        //padding
+        gridPane.setPadding(new Insets(50));
 
-            gridPane.add(nummerLabel, 0, 3);
-            gridPane.add(nummerText, 1, 3);
+        //Setting the vertical and horizontal gaps between the columns
+        gridPane.setVgap(25);
+        gridPane.setHgap(40);
 
-            gridPane.add(postNummerLabel, 0, 4);
-            gridPane.add(postNummerText, 1, 4);
-            postNummerText.setText("-- IKKE IMPLEMENTERET ENDNU --");
+        //Setting the Grid alignment
+        gridPane.setAlignment(Pos.TOP_LEFT);
 
-            gridPane.add(emailLabel, 0, 5);
-            gridPane.add(emailText, 1, 5);
+        //nodes i grid
+        gridPane.add(nameLabel, 0, 0);
+        gridPane.add(nameText, 1, 0);
 
-            gridPane.add(genderLabel, 0, 6);
-            gridPane.add(hboxGender, 1, 6);
+        gridPane.add(ageLabel, 0, 1);
+        gridPane.add(datepicker, 1, 1);
 
-            gridPane.add(medlemstypeLabel, 0, 7);
-            gridPane.add(medlemsTypeBox, 1, 7);
+        gridPane.add(adresseLabel, 0, 2);
+        gridPane.add(adresseText, 1, 2);
 
-            gridPane.add(aktivitetsTypeLabel, 0, 8);
-            gridPane.add(aktivitetsTypeBox, 1, 8);
+        gridPane.add(nummerLabel, 0, 3);
+        gridPane.add(nummerText, 1, 3);
 
-            gridPane.add(hboxKnap, 1, 10);
+        gridPane.add(postNummerLabel, 0, 4);
+        gridPane.add(postNummerText, 1, 4);
+        postNummerText.setText("-- IKKE IMPLEMENTERET ENDNU --");
 
-            gridPane.setGridLinesVisible(false);
-            gridPane.setMaxSize(stagesizex / 2, stagesizey);
+        gridPane.add(emailLabel, 0, 5);
+        gridPane.add(emailText, 1, 5);
 
-            //imporeterer billede
-            InputStream logo = new URL("https://i.imgur.com/jb8srK2.png%22").openStream();
-            Image image = new Image(logo);
-            ImageView imageView = new ImageView(image);
-            imageView.setFitWidth(stagesizex / 2);
-            imageView.setFitHeight(stagesizey);
-            imageView.setPreserveRatio(false);
+        gridPane.add(genderLabel, 0, 6);
+        gridPane.add(hboxGender, 1, 6);
 
-            //laver ekstra gridpane
-            GridPane bigGrid = new GridPane();
-            bigGrid.add(gridPane, 0, 0);
-            bigGrid.add(imageView, 1, 0);
+        gridPane.add(medlemstypeLabel, 0, 7);
+        gridPane.add(medlemsTypeBox, 1, 7);
 
-            //bigGrid.getStylesheets().add("sample/CSS.css");
-            updateStage(bigGrid);
+        gridPane.add(aktivitetsTypeLabel, 0, 8);
+        gridPane.add(aktivitetsTypeBox, 1, 8);
+
+        gridPane.add(hboxKnap, 1, 10);
+
+        gridPane.setGridLinesVisible(false);
+        gridPane.setMaxSize(stagesizex / 2, stagesizey);
+
+        //imporeterer billede
+        InputStream logo = new URL("https://i.imgur.com/jb8srK2.png%22").openStream();
+        Image image = new Image(logo);
+        ImageView imageView = new ImageView(image);
+        imageView.setFitWidth(stagesizex / 2);
+        imageView.setFitHeight(stagesizey);
+        imageView.setPreserveRatio(false);
+
+        //laver ekstra gridpane
+        GridPane bigGrid = new GridPane();
+        bigGrid.add(gridPane, 0, 0);
+        bigGrid.add(imageView, 1, 0);
+
+        //bigGrid.getStylesheets().add("sample/CSS.css");
+        updateStage(bigGrid);
         }
 
     public void visMedlemmer(String bruger) throws Exception{
