@@ -1,5 +1,3 @@
-package untitled13.src;
-
 import java.time.LocalDate;
 import java.time.Period;
 

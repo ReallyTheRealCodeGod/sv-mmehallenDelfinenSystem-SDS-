@@ -1,5 +1,3 @@
-package untitled13.src;
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXMLLoader;
@@ -18,7 +16,6 @@ public class VisMedlemmer {
 
    VisMedlemmer(Stage primaryStage) throws Exception{
         VBox root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Delfinen Svømmeklub");
 
         // Find computerens resolution og sæt størrelsen på stage ud fra disse.
         Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();

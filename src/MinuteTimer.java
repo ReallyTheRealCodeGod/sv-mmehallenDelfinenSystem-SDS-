@@ -1,5 +1,3 @@
-package untitled13.src;
-
 public class MinuteTimer implements Comparable {
 
     int minutes;

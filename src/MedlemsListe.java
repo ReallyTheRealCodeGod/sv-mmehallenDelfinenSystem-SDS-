@@ -1,5 +1,3 @@
-package untitled13.src;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintStream;
@@ -12,14 +10,10 @@ class MedlemsListe implements ListeInterface{
 	private ArrayList<Medlem> liste = new ArrayList<Medlem>();
 
 	//etablere filen der bliver redigeret
-	private String path = "./untitled13/src/medlemmer.txt";
+	private String path = "./src/medlemmer.txt";
 	private File f = new File(path);
 
 	MedlemsListe(){
-		// Til debug af indlæsning af fil
-		 System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
-		System.out.println("File absolute path: " + f.getAbsolutePath());
-
 
 		try{
 			// Vælger filen der skal læses fra og variablerne den læses
@@ -68,7 +62,11 @@ class MedlemsListe implements ListeInterface{
 			//lav medlem og adder til arraylisten
 			liste.add(new Medlem(navn, foedselsdato, koen, adresse, email, medlemsskabstype, aktivitetstype, betaling));
 		}
-		}catch(FileNotFoundException e){System.out.println("Fejl i dannelse af medlemsliste");}
+		}catch(FileNotFoundException e){
+			System.out.println("Fejl i dannelse af medlemsliste");
+			// Til debug af indlæsning af fil
+			System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
+			System.out.println("File absolute path: " + f.getAbsolutePath());}
 	
 	}
 	//tilføjer et nyt medlems element til arraylisten og kalder derefter for opdateringen af data filen
