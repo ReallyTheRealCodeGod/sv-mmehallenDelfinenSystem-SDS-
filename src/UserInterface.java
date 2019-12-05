@@ -66,8 +66,11 @@ public class UserInterface extends Application {
                     kasserStartSide();
                     break;
 
-               case "visMedlemmer":
-                    visMedlemmer();
+               case "visMedlemmerKasser":
+                    visMedlemmer("Kasser");
+                    break;
+                case "visMedlemmerFormand":
+                    visMedlemmer("Formand");
                     break;
 
                 case "opretMedlem":
@@ -259,7 +262,7 @@ public class UserInterface extends Application {
         Button visMedlemKasser = new Button("Vis Medlemmer");
         Button logUdKasser = new Button("Log Ud");
         //gui kontrol
-        //visMedlemKasser.setOnAction(e -> { sceneManager("visMedlemmer");});
+        visMedlemKasser.setOnAction(e -> { sceneManager("visMedlemmerKasser");});
         logUdKasser.setOnAction(e -> { sceneManager("logud"); });
 
         visMedlemKasser.setMinSize(150, visMedlemKasser.getHeight());
@@ -295,7 +298,7 @@ public class UserInterface extends Application {
 
         // gui kontrol
         opretMedlem.setOnAction(e -> { sceneManager("opretMedlem");});
-        visMedlemFormand.setOnAction(e -> { sceneManager("visMedlemmer");});
+        visMedlemFormand.setOnAction(e -> { sceneManager("visMedlemmerFormand");});
         logUd.setOnAction(e -> { sceneManager("logud"); });
 
         grid1.setVgap(125);
@@ -462,10 +465,31 @@ public class UserInterface extends Application {
             updateStage(bigGrid);
         }
 
-    public void visMedlemmer() throws Exception{
-        VBox root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        String[] s = {"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
-        generateTable(s, root);
+    public void visMedlemmer(String bruger) throws Exception{
+        VBox root = new VBox();
+        String[] columns;
+        HBox options;
+
+        TableView tb = new TableView();
+        tb.setId("table");
+        TextField tf = new TextField("Search:");
+        tf.setId("Search");
+
+        if(bruger.equals("Formand")) {
+            options = FXMLLoader.load(getClass().getResource("Formand.fxml"));
+            columns = new String[] {"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
+        }
+        else //if(bruger.equals("kasser"))
+            {
+            options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
+            columns = new String[] {"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
+        }
+
+        root.getChildren().add(tf);
+        root.getChildren().add(tb);
+        root.getChildren().add(options);
+
+        generateTable(columns, root);
         updateStage(root);
 
     }
