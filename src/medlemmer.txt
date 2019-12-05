@@ -152,4 +152,4 @@ Jesus;2019-12-03;ifninf 10;fofkoqfq@gokqoq.com;Mand;Konkurrence;Passiv;
 Jesus222;2019-12-03;ifninf 10;fofkoqfq@gokqoq.com;Mand;Konkurrence;Passiv;
 test;2019-12-04;equehque 25;jajjaea@mail.com;Mand;Motionist;Passiv;
 hula hula;2019-12-06;hej  1234;ok@gmail.com;Mand;Konkurrence;Aktiv;
-test;2019-11-30;ejhejej 19;jrijrm@gmail.com;Mand;Konkurrence;Aktiv;
+Deji Ehinlanwo;1998-04-20;Sigerstedgade 9;ehinlanwo.deji@gmail.com;Mand;Motionist;Aktiv;
