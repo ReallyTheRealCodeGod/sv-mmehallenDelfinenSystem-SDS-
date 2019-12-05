@@ -23,7 +23,7 @@ public class Medlem {
 		        this.email = email;
 		        this.medlemstype = medlemstype;
 		        this.aktivitetstype = aktivitetstype;
-		        this.pris = Kontingent.getPris(this.fodselsdato, medlemstype);
+		        this.pris = Kontingent.udregnPris(this.fodselsdato, medlemstype);
                 //initiasere betalingshistorikken
                 this.betalinger = new ArrayList<>();
                 //kopiere listen fra variablen til attributen
@@ -41,7 +41,7 @@ public class Medlem {
 			this.email = email;
 			this.medlemstype = medlemstype;
 			this.aktivitetstype = aktivitetstype;
-			this.pris = Kontingent.getPris(this.fodselsdato, medlemstype);
+			this.pris = Kontingent.udregnPris(this.fodselsdato, medlemstype);
 		}
 
 	  /*public LocalDate addUdloebsDato(){
@@ -94,7 +94,6 @@ public class Medlem {
 	public String getAktivitetstype() {
 		return aktivitetstype;
 	}
-
 
 	public double getPris() {
 		return pris;

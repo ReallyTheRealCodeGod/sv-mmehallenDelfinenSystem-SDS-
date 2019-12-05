@@ -71,26 +71,26 @@ class MedlemsListe implements ListeInterface{
 	
 	}
 	//tilføjer et nyt medlems element til arraylisten og kalder derefter for opdateringen af data filen
-	public void addMedlem(String navn,  LocalDate dato, String koen, String adresse, String email, String medlemstype,
+	public void addMedlem(String navn, LocalDate dato, String gender, String adresse, String email, String medlemstype,
            String aktivitetstype){
-		System.out.println(navn +" "+ dato.toString() + " " + koen + " " + adresse+ " " + email+ " " + medlemstype+ " " + aktivitetstype);
-		liste.add(new Medlem(navn, dato, koen, adresse, email, medlemstype, aktivitetstype));
-		updateList();
+		System.out.println(navn +" "+ dato.toString() + " " + gender + " " + adresse+ " " + email+ " " + medlemstype+ " " + aktivitetstype);
+		liste.add(new Medlem(navn, dato, gender, adresse, email, medlemstype, aktivitetstype));
+		opdaterListe();
 	}
 	
-	public void deleteMedlem(int medlemsIndex){
+	public void sletMedlem(int medlemsIndex){
 		liste.remove(medlemsIndex);
-		updateList();
+		opdaterListe();
 	}
 
-	public void editMedlem(int medlemsIndex, String navn,  LocalDate dato, String koen, String adresse, String email, String medlemstype,
-           String aktivitetstype){
-		liste.set(medlemsIndex, new Medlem(navn, dato, koen, adresse, email, medlemstype, aktivitetstype));
-		updateList();
+	public void redigerMedlem(int medlemsIndex, String navn, LocalDate dato, String gender, String adresse, String email, String medlemstype,
+							  String aktivitetstype){
+		liste.set(medlemsIndex, new Medlem(navn, dato, gender, adresse, email, medlemstype, aktivitetstype));
+		opdaterListe();
 
 	}
 	
-	public Medlem getMedlem(int medlemsIndex){
+	public Medlem hentMedlem(int medlemsIndex){
 		if(medlemsIndex >= 0 && medlemsIndex < liste.size()){
 		return liste.get(medlemsIndex);
 		}
@@ -104,7 +104,7 @@ class MedlemsListe implements ListeInterface{
 
 
 	//opdater data filen ud fra arraylisten 
-	private void updateList(){
+	private void opdaterListe(){
 		try{
 			//sletter den eksisterende fil og erstatter den med en ny tom fil med samme navn
 			f.delete();
@@ -120,7 +120,7 @@ class MedlemsListe implements ListeInterface{
 		}
 	}
 
-	public ArrayList<Medlem> filtrerListe() {
+	public ArrayList<Medlem> filtrerListe(String filter) {
 		return null;
 	}
 }

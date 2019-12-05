@@ -1,21 +1,18 @@
 import java.time.LocalDate;
 
 public class Betaling {
-        private double pris;
+        private double beloeb;
         private LocalDate betalingsDato;
         private String bankNummer;
 
-        Betaling(double pris, String betalingsDato, String bankNummer){
-            this(pris, LocalDate.parse(betalingsDato), bankNummer);
-        }
-        Betaling(double pris, LocalDate betalingsDato, String bankNummer){
-            this.pris = pris;
+        Betaling(double beloeb, LocalDate betalingsDato, String bankNummer){
+            this.beloeb = beloeb;
             this.betalingsDato = betalingsDato;
             this.bankNummer = bankNummer;
         }
 
-        public double getPris(){
-            return pris;
+        public double getBeloeb(){
+            return beloeb;
         }
 
         public LocalDate getBetalingsDato(){
@@ -27,7 +24,7 @@ public class Betaling {
         }
 
         public String toString(){
-            return "" +pris +", "+ betalingsDato +", "+ bankNummer + "";
+            return "" + beloeb +", "+ betalingsDato +", "+ bankNummer + "";
         }
     }
  

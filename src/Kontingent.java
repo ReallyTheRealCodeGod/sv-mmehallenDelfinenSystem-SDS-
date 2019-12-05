@@ -7,12 +7,10 @@ public class Kontingent {
 	private final static double SENIOR = 1600;
 	private final static double PENSIONIST = SENIOR*0.75;
 	private final static double PASSIV = 500;
-	
-	
 
-	public static double getPris(LocalDate foedselsdato, String medlemstype) {
+	public static double udregnPris(LocalDate fodselsdato, String medlemstype) {
 		LocalDate nu = LocalDate.now();
-		int age = Period.between(foedselsdato, nu).getYears();
+		int age = Period.between(fodselsdato, nu).getYears();
 		
 		if(medlemstype.equals("passiv")) {
 			return PASSIV;
