@@ -1,15 +1,14 @@
 import java.time.LocalDate;
- import java.time.format.DateTimeFormatter;
 
- public class BetalingsHistorik{
+public class Betaling {
         private double pris;
         private LocalDate betalingsDato;
         private String bankNummer;
 
-        BetalingsHistorik(double pris, String betalingsDato, String bankNummer){
+        Betaling(double pris, String betalingsDato, String bankNummer){
             this(pris, LocalDate.parse(betalingsDato), bankNummer);
         }
-        BetalingsHistorik(double pris, LocalDate betalingsDato, String bankNummer){
+        Betaling(double pris, LocalDate betalingsDato, String bankNummer){
             this.pris = pris;
             this.betalingsDato = betalingsDato;
             this.bankNummer = bankNummer;

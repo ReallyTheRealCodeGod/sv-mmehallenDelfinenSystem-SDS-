@@ -37,7 +37,7 @@ class MedlemsListe implements ListeInterface{
 			medlemsskabstype = sc.next();
 			aktivitetstype = sc.next();
 			//scanner betalings historiken
-			ArrayList<BetalingsHistorik> betaling = new ArrayList<>();
+			ArrayList<Betaling> betaling = new ArrayList<>();
 			if(sc.hasNext()){
 				sc.useDelimiter("]");
 				sc.skip(";");
@@ -56,7 +56,7 @@ class MedlemsListe implements ListeInterface{
 						System.out.println(d);
 						String bank = b.next();
 						System.out.println(bank);
-						betaling.add(new BetalingsHistorik(p, d, bank));
+						betaling.add(new Betaling(p, d, bank));
 					}
 			}
 			//lav medlem og adder til arraylisten

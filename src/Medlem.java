@@ -4,30 +4,30 @@ import java.util.ArrayList;
 public class Medlem {
 
 	private String navn;
-	    private LocalDate alder;
+	    private LocalDate fodselsdato;
 	    private String gender;
 	    private String adresse;
 	    private String email;
 	    private String medlemstype;
 	    private String aktivitetstype;
-	    private ArrayList<BetalingsHistorik> betalinger;
+	    private ArrayList<Betaling> betalinger;
 	    private double pris;
 
 	    
-	    Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
-		           String aktivitetstype, ArrayList<BetalingsHistorik> betalinger) {
+	    Medlem(String navn, LocalDate fodselsdato, String gender, String adresse, String email, String medlemstype,
+		           String aktivitetstype, ArrayList<Betaling> betalinger) {
                 this.navn = navn;
-		        this.alder = foedelsdato;
+		        this.fodselsdato = fodselsdato;
 		        this.gender = gender;
 		        this.adresse = adresse;
 		        this.email = email;
 		        this.medlemstype = medlemstype;
 		        this.aktivitetstype = aktivitetstype;
-		        this.pris = Kontingent.getPris(this.alder, medlemstype);
+		        this.pris = Kontingent.getPris(this.fodselsdato, medlemstype);
                 //initiasere betalingshistorikken
                 this.betalinger = new ArrayList<>();
                 //kopiere listen fra variablen til attributen
-                for(BetalingsHistorik b: betalinger){
+                for(Betaling b: betalinger){
                     this.betalinger.add(b);
               }
 		    }
@@ -35,13 +35,13 @@ public class Medlem {
 		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
 		   String aktivitetstype) {
 			this.navn = navn;
-			this.alder = foedelsdato;
+			this.fodselsdato = foedelsdato;
 			this.gender = gender;
 			this.adresse = adresse;
 			this.email = email;
 			this.medlemstype = medlemstype;
 			this.aktivitetstype = aktivitetstype;
-			this.pris = Kontingent.getPris(this.alder, medlemstype);
+			this.pris = Kontingent.getPris(this.fodselsdato, medlemstype);
 		}
 
 	  /*public LocalDate addUdloebsDato(){
@@ -67,15 +67,15 @@ public class Medlem {
 		return navn;
 	}
 
-	public ArrayList<BetalingsHistorik> getBetalingsHistorik(){
+	public ArrayList<Betaling> getBetalingsHistorik(){
 	    return betalinger;
     }
 
-	public LocalDate getAlder() {
-		return alder;
+	public LocalDate getFodselsdato() {
+		return fodselsdato;
 	}
 
-	public String getGender() {
+	public String getgender() {
 		return gender;
 	}
 
@@ -105,7 +105,7 @@ public class Medlem {
 	    @Override
 	    public String toString() {
 	        
-	        return navn + ";" + alder +";"+ adresse +";"+email+";"+gender+";"+medlemstype+";"+aktivitetstype+";";
+	        return navn + ";" + fodselsdato +";"+ adresse +";"+email+";"+gender+";"+medlemstype+";"+aktivitetstype+";";
 	               
 	    }
 	}
