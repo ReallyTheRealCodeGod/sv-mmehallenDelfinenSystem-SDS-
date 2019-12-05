@@ -10,7 +10,7 @@ class MedlemsListe implements ListeInterface{
 	private ArrayList<Medlem> liste = new ArrayList<Medlem>();
 
 	//etablere filen der bliver redigeret
-	private String path = "./src/medlemmer.txt";
+	String path = "./src/medlemmer.txt";
 	private File f = new File(path);
 
 	MedlemsListe(){
@@ -64,6 +64,7 @@ class MedlemsListe implements ListeInterface{
 		}
 		}catch(FileNotFoundException e){
 			System.out.println("Fejl i dannelse af medlemsliste");
+			System.out.println(e);
 			// Til debug af indlæsning af fil
 			System.out.println("Present Project Directory : "+ System.getProperty("user.dir"));
 			System.out.println("File absolute path: " + f.getAbsolutePath());}
