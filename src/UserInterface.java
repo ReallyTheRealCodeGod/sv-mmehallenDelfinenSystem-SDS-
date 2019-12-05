@@ -464,7 +464,7 @@ public class UserInterface extends Application {
 
     public void visMedlemmer() throws Exception{
         VBox root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        String[] s = {"Navn", "Alder", "Adresse", "Medlemstype", "Aktivitetstype"};
+        String[] s = {"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
         generateTable(s, root);
         updateStage(root);
 
@@ -484,6 +484,9 @@ public class UserInterface extends Application {
         for(String s: columns) {
             TableColumn<String, Medlem> col = new TableColumn<String, Medlem>(s);
             col.setCellValueFactory(new PropertyValueFactory<>(s));
+            if(s.equals("Fodselsdato")){
+                col.setText("F"+"\u00F8"+"dselsdato");
+            }
             table.getColumns().add(col);
         }
     }
