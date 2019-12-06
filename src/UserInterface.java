@@ -242,7 +242,10 @@ public class UserInterface extends Application {
         dialog.setTitle(title);
 
         Label label = new Label(message);
+        label.setPadding(new Insets(10, 20, 20, 20));
         Button button = new Button("OK");
+        button.setMinSize(button.getMinWidth(), button.getMinHeight());
+
         VBox vb = new VBox();
 
         vb.setAlignment(Pos.CENTER);
@@ -371,7 +374,7 @@ public class UserInterface extends Application {
 
         //knapper
         Button buttonGem = new Button("Gem");
-        Button buttonAnnuller = new Button("Aflys");
+        Button buttonAnnuller = new Button("Annuller");
         buttonGem.setPrefSize(180, 20);
         buttonAnnuller.setPrefSize(80, 20);
         buttonGem.setDisable(true);
@@ -533,5 +536,5 @@ public class UserInterface extends Application {
             table.getColumns().add(col);
         }
     }
-    }
+}
 
