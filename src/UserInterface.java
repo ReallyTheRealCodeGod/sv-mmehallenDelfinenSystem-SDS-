@@ -501,21 +501,24 @@ public class UserInterface extends Application {
         if(bruger.equals("Formand")) {
             options = FXMLLoader.load(getClass().getResource("Formand.fxml"));
             columns = new String[] {"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
+            Button tilbage = (Button) root.lookup("#tilbageButton");
+            tilbage.setOnAction((event ->{
+                sceneManager("formand");
+            }));
         }
         else //if(bruger.equals("kasser"))
             {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
             columns = new String[] {"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
+                Button tilbage = (Button) root.lookup("#tilbageButton");
+                tilbage.setOnAction((event ->{
+                    sceneManager("kasser");
+                }));
         }
 
         root.getChildren().add(tf);
         root.getChildren().add(tb);
         root.getChildren().add(options);
-
-        Button tilbage = (Button) root.lookup("#tilbageButton");
-        tilbage.setOnAction((event ->{
-            sceneManager("kasser");
-                }));
 
         generateTable(columns, root);
         updateStage(root);
