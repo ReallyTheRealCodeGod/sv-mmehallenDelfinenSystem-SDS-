@@ -416,9 +416,9 @@ public class UserInterface extends Application {
         aktivitetsTypeBox.setPrefWidth(270);
         //knapper
         Button buttonGem = new Button("Gem");
-        Button buttonAflys = new Button("Aflys");
+        Button buttonAnnuller = new Button("Annuller");
         buttonGem.setPrefSize(180, 20);
-        buttonAflys.setPrefSize(80, 20);
+        buttonAnnuller.setPrefSize(80, 20);
         buttonGem.setDisable(true);
 
         // Disabler gem button indtil alle fields er udfyldt
@@ -437,7 +437,7 @@ public class UserInterface extends Application {
         //hbox til knapper
         HBox hboxKnap = new HBox();
         hboxKnap.setSpacing(10);
-        hboxKnap.getChildren().addAll(buttonGem, buttonAflys);
+        hboxKnap.getChildren().addAll(buttonGem, buttonAnnuller);
         hboxKnap.setAlignment(Pos.BOTTOM_RIGHT);
 
         //Date formatter
@@ -460,7 +460,7 @@ public class UserInterface extends Application {
         ));
 
         //Make method go to formand side
-        buttonAflys.setOnAction((event -> {
+        buttonAnnuller.setOnAction((event -> {
             System.out.println("Go to formand page");
             sceneManager("back");
         }));
@@ -536,7 +536,7 @@ public class UserInterface extends Application {
 
         TableView tb = new TableView();
         tb.setId("table");
-        TextField tf = new TextField("Search:");
+        TextField tf = new TextField("S\u00f8g");
         tf.setId("Search");
         //opdater
 
