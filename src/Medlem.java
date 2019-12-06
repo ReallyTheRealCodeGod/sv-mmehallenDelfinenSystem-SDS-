@@ -75,7 +75,7 @@ public class Medlem {
 		return fodselsdato;
 	}
 
-	public String getgender() {
+	public String getGender() {
 		return gender;
 	}
 

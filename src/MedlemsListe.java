@@ -9,17 +9,18 @@ class MedlemsListe implements ListeInterface{
 	//danner liste som en attribute i MedlemsListe
 	private ArrayList<Medlem> liste = new ArrayList<Medlem>();
 
+
 	//etablere filen der bliver redigeret
 	String path = "./src/medlemmer.txt";
 	private File f = new File(path);
 
 	MedlemsListe(){
-
 		try{
 			// Vælger filen der skal læses fra og variablerne den læses
 			ArrayList<LocalDate> betalingsHistorik = new ArrayList<LocalDate>();
 			String navn, gender, adresse, email, medlemsskabstype, aktivitetstype;
 			LocalDate fodselsdato;
+			int id = 0;
 			Scanner line = new Scanner(f);
 			//Skan gennem filen, indtil der ikke er flere linjer
 		while(line.hasNext()){
@@ -57,6 +58,7 @@ class MedlemsListe implements ListeInterface{
 			}
 			//lav medlem og adder til arraylisten
 			liste.add(new Medlem(navn, fodselsdato, gender, adresse, email, medlemsskabstype, aktivitetstype, betaling));
+			id++;
 		}
 		}catch(FileNotFoundException e){
 			System.out.println("Fejl i dannelse af medlemsliste");

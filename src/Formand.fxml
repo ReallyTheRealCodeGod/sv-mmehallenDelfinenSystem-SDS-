@@ -4,7 +4,7 @@
 <HBox alignment="CENTER" VBox.vgrow="ALWAYS" id="nav">
         <VBox spacing="50" alignment="CENTER"  >
             <HBox spacing="450">
-                <Button text="Rediger Info" id="redigerinfo"/>
+                <Button text="Rediger Info" id="redigerInfo"/>
                 <Button text="Tilbage" id="tilbageButton"/>
             </HBox>
         </VBox>

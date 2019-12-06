@@ -26,6 +26,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
+import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.Optional;
@@ -33,6 +34,7 @@ import java.util.Optional;
 public class UserInterface extends Application {
     private Stage stage;
     private Scene previous;
+    ObservableList<Medlem> ol;
 
     //opretter medlemsliste
     MedlemsListe medlemmer;
@@ -44,6 +46,7 @@ public class UserInterface extends Application {
 
     public void start(Stage primaryStage) throws Exception{
         medlemmer = new MedlemsListe();
+        ol = FXCollections.observableArrayList();
         this.stage = primaryStage;
         primScreenBounds = Screen.getPrimary().getVisualBounds();
         stagesizex = primScreenBounds.getWidth() / 2;
@@ -326,19 +329,22 @@ public class UserInterface extends Application {
         updateStage(grid1);
     }
 
-    public void opretMedlemForm() throws Exception {
-
+    public void opretMedlemForm() throws Exception{
+        opretMedlemForm("", null, "", "", "", "", "");
+    }
+    public void opretMedlemForm(String name, LocalDate date, String addresse, String email, String gender, String aktivitetstype, String medlemstype) throws Exception {
+        System.out.println(name + " " + date + " " + addresse+ " " + email+ " " + gender+ " " + medlemstype+ " " + aktivitetstype);
         //Labels og fields
         Text nameLabel = new Text("Navn");
-        TextField nameText = new TextField();
+        TextField nameText = new TextField(name);
 
         Text ageLabel = new Text("Fødselsdato");
 
-        DatePicker datepicker = new DatePicker();
+        DatePicker datepicker = new DatePicker(date);
         datepicker.setPrefSize(270, 20);
 
         Text adresseLabel = new Text("Adresse");
-        TextField adresseText = new TextField();
+        TextField adresseText = new TextField(addresse);
 
         Text nummerLabel = new Text("Husnummer");
         TextField nummerText = new TextField();
@@ -347,10 +353,11 @@ public class UserInterface extends Application {
         TextField postNummerText = new TextField();
 
         Text emailLabel = new Text("E-Mail");
-        TextField emailText = new TextField();
+        TextField emailText = new TextField(email);
 
         //Køn label og en gruppe for denne
         Text genderLabel = new Text("Køn");
+
 
         ToggleGroup groupGender = new ToggleGroup();
         RadioButton maleRadio = new RadioButton("Mand");
@@ -359,6 +366,18 @@ public class UserInterface extends Application {
         femaleRadio.setToggleGroup(groupGender);
         RadioButton otherRadio = new RadioButton("Andet");
         otherRadio.setToggleGroup(groupGender);
+
+        switch(gender){
+            case "Mand":
+                maleRadio.setSelected(true);
+                break;
+            case "Kvinde":
+                femaleRadio.setSelected(true);
+                break;
+            case "Andet":
+                otherRadio.setSelected(true);
+                break;
+        }
 
         //hbox til køn
         HBox hboxGender = new HBox();
@@ -370,6 +389,14 @@ public class UserInterface extends Application {
         //Choice box til drop down
         ChoiceBox medlemsTypeBox = new ChoiceBox();
         medlemsTypeBox.getItems().addAll("Aktiv", "Passiv");
+        switch(medlemstype){
+            case "Aktiv":
+                medlemsTypeBox.getSelectionModel().selectFirst();
+                break;
+            case "Passiv":
+                medlemsTypeBox.getSelectionModel().selectLast();
+                break;
+        }
         medlemsTypeBox.setPrefWidth(270);
 
 
@@ -378,6 +405,14 @@ public class UserInterface extends Application {
         //Choice box til drop down
         ChoiceBox aktivitetsTypeBox = new ChoiceBox();
         aktivitetsTypeBox.getItems().addAll("Konkurrence", "Motionist");
+        switch(aktivitetstype){
+            case "Konkurrence":
+                medlemsTypeBox.getSelectionModel().selectFirst();
+                break;
+            case "Motionist":
+                medlemsTypeBox.getSelectionModel().selectLast();
+                break;
+        }
         aktivitetsTypeBox.setPrefWidth(270);
         //knapper
         Button buttonGem = new Button("Gem");
@@ -508,6 +543,15 @@ public class UserInterface extends Application {
         if(bruger.equals("Formand")) {
             options = FXMLLoader.load(getClass().getResource("Formand.fxml"));
             columns = new String[] {"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
+            Button rediger = (Button) options.lookup("#redigerInfo");
+            rediger.setOnAction((event ->{
+                Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
+                try {
+                opretMedlemForm(m.getNavn(), m.getFodselsdato(), m.getAdresse(), m.getEmail(), m.getGender(), m.getMedlemstype(), m.getAktivitetstype());
+                }catch(Exception e){
+                    System.out.println("ups");
+                }
+            }));
         }
         else {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
@@ -523,23 +567,15 @@ public class UserInterface extends Application {
         root.getChildren().add(tb);
         root.getChildren().add(options);
 
-        generateTable(columns, root);
+        generateTable(columns, root, medlemmer);
         updateStage(root);
-
-        /* Button rediger = (Button) root.lookup("#redigerinfo");
-        rediger.setOnAction(e -> {
-        });
-
-         */
 
     }
 
-    void generateTable(String[] columns, Parent root){
-        MedlemsListe ml = new MedlemsListe();
+    void generateTable(String[] columns, Parent root, MedlemsListe ml){
         ArrayList<Medlem> al = ml.getListe();
         TableView table = (TableView)root.lookup("#table");
 
-        ObservableList<Medlem> ol = FXCollections.observableArrayList();
         for(Medlem m: al){
             ol.add(m);
         }
