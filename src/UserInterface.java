@@ -503,6 +503,7 @@ public class UserInterface extends Application {
         tb.setId("table");
         TextField tf = new TextField("S\u00f8g");
         tf.setId("Search");
+        //opdater
 
         if(bruger.equals("Formand")) {
             options = FXMLLoader.load(getClass().getResource("Formand.fxml"));
