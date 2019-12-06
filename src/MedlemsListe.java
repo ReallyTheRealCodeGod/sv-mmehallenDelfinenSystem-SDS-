@@ -149,7 +149,7 @@ class MedlemsListe implements ListeInterface{
 				ps.println(liste.get(i));
 			}
 		}catch(FileNotFoundException e){
-			System.out.println("Fejl i opdatering");
+			System.out.println("Fejl i opdatering:" + e + "\n");
 		}
 	}
 
