@@ -383,10 +383,7 @@ public class UserInterface extends Application {
                 or(nummerText.textProperty().isEmpty()).
                 or(aktivitetsTypeBox.valueProperty().isNull()).
                 or(groupGender.selectedToggleProperty().isNull());
-
         buttonGem.disableProperty().bind(booleanBind);
-
-
 
 
         //hbox til knapper
