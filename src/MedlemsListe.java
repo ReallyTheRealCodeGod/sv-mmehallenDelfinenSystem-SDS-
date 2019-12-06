@@ -43,19 +43,15 @@ class MedlemsListe implements ListeInterface{
 				sc.skip(";");
 				sc.skip("\\[");
 				String s = sc.next();
-				System.out.println(s);
 				Scanner b = new Scanner(s);
 				b.useDelimiter(",");
 
 					while(b.hasNext()){
 						String pris = b.next();
 						double p = Double.parseDouble(pris);
-						System.out.println(p);
 						String date = b.next();
 						LocalDate d = LocalDate.parse(date);
-						System.out.println(d);
 						String bank = b.next();
-						System.out.println(bank);
 						betaling.add(new Betaling(p, d, bank));
 					}
 			}

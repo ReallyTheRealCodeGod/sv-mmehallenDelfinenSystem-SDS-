@@ -2,7 +2,6 @@
 <?import javafx.scene.control.RadioButton?>
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.Text?>
-
 <HBox alignment="CENTER" VBox.vgrow="ALWAYS" id="nav" fx:controller="UserInterface" xmlns:fx="http://javafx.com/fxml/1">
         <VBox spacing="50" alignment="CENTER"  >
 
@@ -13,7 +12,7 @@
 
             <HBox spacing="450">
                 <Button text="Bank Info" />
-                <Button text="Tilbage" fx:id="tilbageButton" />
+                <Button text="Tilbage" id="tilbageButton" />
             </HBox>
 
         </VBox>

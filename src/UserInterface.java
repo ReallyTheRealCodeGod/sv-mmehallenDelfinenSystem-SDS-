@@ -3,8 +3,6 @@ import javafx.application.Platform;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.event.ActionEvent;
-import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -27,15 +25,14 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.io.InputStream;
-import java.lang.reflect.Array;
 import java.net.URL;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Optional;
 
 public class UserInterface extends Application {
     private Stage stage;
+    private Scene previous;
 
     //opretter medlemsliste
     MedlemsListe medlemmer;
@@ -81,6 +78,8 @@ public class UserInterface extends Application {
                 case "opretMedlem":
                     opretMedlemForm();
                     break;
+                case "back":
+                    showStage(previous);
             }
         }catch(Exception e){
             System.out.print("det fucked: " + e);
@@ -89,8 +88,17 @@ public class UserInterface extends Application {
 
     public void updateStage(Parent root){
         Scene scene = new Scene(root, stagesizex, stagesizey);
+        showStage(scene);
+    }
+    public void showStage(Scene scene){
+
+        if(previous != stage.getScene()) {
+            previous = stage.getScene();
+        }
+
         stage.setScene(scene); // ændre scene størrelse
         stage.show();
+
     }
 
     public void loginSide() throws IOException {
@@ -233,9 +241,7 @@ public class UserInterface extends Application {
         });
 
         // Instansier scenen, sæt primarystage til at vise den og start stage
-        Scene scene = new Scene(grid, stagesizex, stagesizey);
-        stage.setScene(scene);
-        stage.show();
+        updateStage(grid);
     }
 
     public void errorDialog(String title, String message) {
@@ -421,7 +427,7 @@ public class UserInterface extends Application {
         //Make method go to formand side
         buttonAflys.setOnAction((event -> {
             System.out.println("Go to formand page");
-            sceneManager("formand");
+            sceneManager("back");
         }));
 
         //laver gridpane
@@ -501,20 +507,16 @@ public class UserInterface extends Application {
         if(bruger.equals("Formand")) {
             options = FXMLLoader.load(getClass().getResource("Formand.fxml"));
             columns = new String[] {"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
-            Button tilbage = (Button) root.lookup("#tilbageButton");
-            tilbage.setOnAction((event ->{
-                sceneManager("formand");
-            }));
         }
-        else //if(bruger.equals("kasser"))
-            {
+        else {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
             columns = new String[] {"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
-                Button tilbage = (Button) root.lookup("#tilbageButton");
-                tilbage.setOnAction((event ->{
-                    sceneManager("kasser");
-                }));
         }
+
+        Button tilbage = (Button) options.lookup("#tilbageButton");
+        tilbage.setOnAction((event ->{
+            sceneManager("back");
+        }));
 
         root.getChildren().add(tf);
         root.getChildren().add(tb);
