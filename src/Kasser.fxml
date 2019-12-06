@@ -13,7 +13,7 @@
 
             <HBox spacing="450">
                 <Button text="Bank Info" />
-                <Button text="Tilbage" onAction="#tilbage" fx:id="tilbageButton" />
+                <Button text="Tilbage" fx:id="tilbageButton" />
             </HBox>
 
         </VBox>

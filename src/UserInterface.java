@@ -3,6 +3,8 @@ import javafx.application.Platform;
 import javafx.beans.binding.BooleanBinding;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.event.ActionEvent;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -509,6 +511,11 @@ public class UserInterface extends Application {
         root.getChildren().add(tb);
         root.getChildren().add(options);
 
+        Button tilbage = (Button) root.lookup("#tilbageButton");
+        tilbage.setOnAction((event ->{
+            sceneManager("kasser");
+                }));
+
         generateTable(columns, root);
         updateStage(root);
 
@@ -516,15 +523,6 @@ public class UserInterface extends Application {
         rediger.setOnAction(e -> {
 
         });
-
-    }
-
-    @FXML
-    private void tilbage(ActionEvent event) throws NullPointerException {
-        sceneManager();
-
-
-
 
     }
 
