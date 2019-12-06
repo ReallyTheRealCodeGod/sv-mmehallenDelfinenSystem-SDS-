@@ -92,7 +92,7 @@ class MedlemsListe implements ListeInterface{
 		if (adresse.isEmpty() || !adresse.matches(".*\\d.*")) {
 			medlemArray.add("Fejl i adresse - ret venligst");
 		}
-		if (!email.contains("@") || email.isEmpty()) {
+		if (email.isEmpty() || !email.contains("@")) {
 			medlemArray.add("Fejl i email - ret venligst");
 		}
 		if (medlemstype.isEmpty()) {

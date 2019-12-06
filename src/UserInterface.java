@@ -81,7 +81,7 @@ public class UserInterface extends Application {
                     break;
             }
         }catch(Exception e){
-            System.out.print("det fucked: " + e);
+            System.out.print("det fucked: " + e +"\n");
         }
     }
 
@@ -362,18 +362,18 @@ public class UserInterface extends Application {
         medlemsTypeBox.getItems().addAll("Aktiv", "Passiv");
         medlemsTypeBox.setPrefWidth(270);
 
-
         Text aktivitetsTypeLabel = new Text("Aktivitetstype");
 
         //Choice box til drop down
         ChoiceBox aktivitetsTypeBox = new ChoiceBox();
         aktivitetsTypeBox.getItems().addAll("Konkurrence", "Motionist");
         aktivitetsTypeBox.setPrefWidth(270);
+
         //knapper
         Button buttonGem = new Button("Gem");
-        Button buttonAflys = new Button("Aflys");
+        Button buttonAnnuller = new Button("Aflys");
         buttonGem.setPrefSize(180, 20);
-        buttonAflys.setPrefSize(80, 20);
+        buttonAnnuller.setPrefSize(80, 20);
         buttonGem.setDisable(true);
 
         // Disabler gem button indtil alle fields er udfyldt
@@ -381,15 +381,18 @@ public class UserInterface extends Application {
                 or(adresseText.textProperty().isEmpty()).
                 or(emailText.textProperty().isEmpty()).
                 or(nummerText.textProperty().isEmpty()).
+                or(postNummerText.textProperty().isEmpty()).
                 or(aktivitetsTypeBox.valueProperty().isNull()).
-                or(groupGender.selectedToggleProperty().isNull());
+                or(groupGender.selectedToggleProperty().isNull()).
+                or(datepicker.valueProperty().isNull());
+
         buttonGem.disableProperty().bind(booleanBind);
 
 
         //hbox til knapper
         HBox hboxKnap = new HBox();
         hboxKnap.setSpacing(10);
-        hboxKnap.getChildren().addAll(buttonGem, buttonAflys);
+        hboxKnap.getChildren().addAll(buttonGem, buttonAnnuller);
         hboxKnap.setAlignment(Pos.BOTTOM_RIGHT);
 
         //Date formatter
@@ -400,7 +403,7 @@ public class UserInterface extends Application {
                 if (medlemmer.verificerAddMedlemInput(nameText.getText(),
                         datepicker.getValue(),
                         ((RadioButton) groupGender.getSelectedToggle()).getText(),
-                        (adresseText.getText()+" "+ nummerText.getText()),
+                        (adresseText.getText()+" "+ nummerText.getText() + " " + postNummerText.getText()),
                         emailText.getText(),
                         aktivitetsTypeBox.getValue().toString(),
                         medlemsTypeBox.getValue().toString()
@@ -412,7 +415,7 @@ public class UserInterface extends Application {
         ));
 
         //Make method go to formand side
-        buttonAflys.setOnAction((event -> {
+        buttonAnnuller.setOnAction((event -> {
             System.out.println("Go to formand page");
             sceneManager("formand");
         }));
@@ -446,7 +449,6 @@ public class UserInterface extends Application {
 
         gridPane.add(postNummerLabel, 0, 4);
         gridPane.add(postNummerText, 1, 4);
-        postNummerText.setText("-- IKKE IMPLEMENTERET ENDNU --");
 
         gridPane.add(emailLabel, 0, 5);
         gridPane.add(emailText, 1, 5);
