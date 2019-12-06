@@ -330,7 +330,7 @@ public class UserInterface extends Application {
     }
 
     public void opretMedlemForm() throws Exception{
-        opretMedlemForm("", null, "", "", "", "", "");
+        opretMedlemForm(null, null, null, null, null, null, null);
     }
     public void opretMedlemForm(String name, LocalDate date, String addresse, String email, String gender, String aktivitetstype, String medlemstype) throws Exception {
         System.out.println(name + " " + date + " " + addresse+ " " + email+ " " + gender+ " " + medlemstype+ " " + aktivitetstype);
@@ -389,13 +389,8 @@ public class UserInterface extends Application {
         //Choice box til drop down
         ChoiceBox medlemsTypeBox = new ChoiceBox();
         medlemsTypeBox.getItems().addAll("Aktiv", "Passiv");
-        switch(medlemstype){
-            case "Aktiv":
-                medlemsTypeBox.getSelectionModel().selectFirst();
-                break;
-            case "Passiv":
-                medlemsTypeBox.getSelectionModel().selectLast();
-                break;
+        if(!medlemstype.isEmpty()){
+                medlemsTypeBox.setValue(medlemstype);
         }
         medlemsTypeBox.setPrefWidth(270);
 
@@ -405,16 +400,13 @@ public class UserInterface extends Application {
         //Choice box til drop down
         ChoiceBox aktivitetsTypeBox = new ChoiceBox();
         aktivitetsTypeBox.getItems().addAll("Konkurrence", "Motionist");
-        switch(aktivitetstype){
-            case "Konkurrence":
-                medlemsTypeBox.getSelectionModel().selectFirst();
-                break;
-            case "Motionist":
-                medlemsTypeBox.getSelectionModel().selectLast();
-                break;
+        System.out.println(aktivitetstype);
+         if(!aktivitetstype.isEmpty()){
+                aktivitetsTypeBox.setValue(aktivitetstype);
         }
         aktivitetsTypeBox.setPrefWidth(270);
-        //knapper
+
+         //knapper
         Button buttonGem = new Button("Gem");
         Button buttonAnnuller = new Button("Annuller");
         buttonGem.setPrefSize(180, 20);
