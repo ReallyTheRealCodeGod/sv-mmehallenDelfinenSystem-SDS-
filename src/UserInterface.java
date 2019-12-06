@@ -247,6 +247,8 @@ public class UserInterface extends Application {
         Button button = new Button("OK");
         VBox vb = new VBox();
 
+        label.setPadding(new Insets(10, 20, 20, 20));
+
         vb.setAlignment(Pos.CENTER);
         vb.getChildren().addAll(label, button);
         dialog.getDialogPane().setContent(vb);
@@ -405,7 +407,7 @@ public class UserInterface extends Application {
                 if (medlemmer.verificerAddMedlemInput(nameText.getText(),
                         datepicker.getValue(),
                         ((RadioButton) groupGender.getSelectedToggle()).getText(),
-                        (adresseText.getText()+" "+ nummerText.getText()),
+                        (adresseText.getText()+" "+ nummerText.getText() + " " + postNummerText.getText()),
                         emailText.getText(),
                         aktivitetsTypeBox.getValue().toString(),
                         medlemsTypeBox.getValue().toString()
@@ -451,7 +453,6 @@ public class UserInterface extends Application {
 
         gridPane.add(postNummerLabel, 0, 4);
         gridPane.add(postNummerText, 1, 4);
-        postNummerText.setText("-- IKKE IMPLEMENTERET ENDNU --");
 
         gridPane.add(emailLabel, 0, 5);
         gridPane.add(emailText, 1, 5);
@@ -519,10 +520,11 @@ public class UserInterface extends Application {
         generateTable(columns, root);
         updateStage(root);
 
-        Button rediger = (Button) root.lookup("#redigerinfo");
+        /* Button rediger = (Button) root.lookup("#redigerinfo");
         rediger.setOnAction(e -> {
-
         });
+
+         */
 
     }
 

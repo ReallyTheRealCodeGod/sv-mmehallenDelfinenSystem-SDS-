@@ -150,3 +150,6 @@ Kenneth Mitchellford;1975-08-23;Grøndals Parkvej 6;Kenneth Mitchellford8@mail.d
 Allie Joshsen;1961-12-11;Grønnegade 25;Allie Joshsen12@mail.dk;Mand;Motionist;Aktiv;
 Mads;2019-12-12;test 10 TextField@5ed75a10[styleClass=text-input text-field];test@gmail.com;Mand;Konkurrence;Passiv;
 Mads;2019-12-06;testvej 10 2600;test@gmail.com;Mand;Konkurrence;Passiv;
+dddad;2019-11-29;dada 2900 dada;dadad@gmail.com;Kvinde;Konkurrence;Passiv;
+hej;2019-12-11;adhadha 10 TextField@44b168c3[styleClass=text-input text-field];mail@gmail.com;Mand;Konkurrence;Aktiv;
+jdjqdjq;2019-12-11;mail 10 2900;mail@gmail.com;Mand;Konkurrence;Aktiv;
