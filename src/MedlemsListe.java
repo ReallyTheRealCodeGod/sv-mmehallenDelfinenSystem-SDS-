@@ -104,7 +104,6 @@ class MedlemsListe implements ListeInterface{
 			UI.errorDialog("Fejlbesked",medlemArray.toString());;
 			return false;
 		} else {
-			addMedlem( navn,  dato,  gender,  adresse,  email,  medlemstype, aktivitetstype);
 			return true;
 		}
 	}

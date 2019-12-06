@@ -333,8 +333,9 @@ public class UserInterface extends Application {
         opretMedlemForm("", null, "", "", "", "", "");
     }
     public void opretMedlemForm(String name, LocalDate date, String addresse, String email, String gender, String aktivitetstype, String medlemstype) throws Exception {
-        System.out.println(name + " " + date + " " + addresse+ " " + email+ " " + gender+ " " + medlemstype+ " " + aktivitetstype);
         //Labels og fields
+        final boolean redigere = !name.isEmpty();
+
         Text nameLabel = new Text("Navn");
         TextField nameText = new TextField(name);
 
@@ -400,7 +401,6 @@ public class UserInterface extends Application {
         //Choice box til drop down
         ChoiceBox aktivitetsTypeBox = new ChoiceBox();
         aktivitetsTypeBox.getItems().addAll("Konkurrence", "Motionist");
-        System.out.println(aktivitetstype);
          if(!aktivitetstype.isEmpty()){
                 aktivitetsTypeBox.setValue(aktivitetstype);
         }
@@ -437,14 +437,22 @@ public class UserInterface extends Application {
 
         //Make button do stuff
         buttonGem.setOnAction((event ->{
-                if (medlemmer.verificerAddMedlemInput(nameText.getText(),
-                        datepicker.getValue(),
-                        ((RadioButton) groupGender.getSelectedToggle()).getText(),
-                        (adresseText.getText()+" "+ nummerText.getText() + " " + postNummerText.getText()),
-                        emailText.getText(),
-                        aktivitetsTypeBox.getValue().toString(),
-                        medlemsTypeBox.getValue().toString()
-                )) {
+
+                    String navn = nameText.getText();
+                    LocalDate dato = datepicker.getValue();
+                    String koen = ((RadioButton) groupGender.getSelectedToggle()).getText(),
+                    String adresse = (adresseText.getText() + " " + nummerText.getText() + " " + postNummerText.getText()),
+                    String mail = emailText.getText(),
+                    String aktivitet = aktivitetsTypeBox.getValue().toString(),
+                    String medlem = medlemsTypeBox.getValue().toString());
+
+                if (medlemmer.verificerAddMedlemInput(navn, dato, koen, adresse, mail, aktivitet, medlem)) {
+                    if(!redigere) {
+                        medlemmer.addMedlem(navn, dato, koen, adresse, mail, aktivitet, medlem);
+                    }else{
+                        medlemmer.redigerMedlem(,navn, dato, koen, adresse, mail, aktivitet, medlem);
+                    }
+
                     sceneManager("formand");
                 }
                 else System.out.println("");
