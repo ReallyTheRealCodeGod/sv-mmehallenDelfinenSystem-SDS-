@@ -512,6 +512,11 @@ public class UserInterface extends Application {
         generateTable(columns, root);
         updateStage(root);
 
+        Button rediger = (Button) root.lookup("#redigerinfo");
+        rediger.setOnAction(e -> {
+
+        });
+
     }
 
     @FXML
