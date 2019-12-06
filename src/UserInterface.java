@@ -81,7 +81,7 @@ public class UserInterface extends Application {
                     break;
             }
         }catch(Exception e){
-            System.out.print("det fucked: " + e +"\n");
+            System.out.print("det fucked: " + e);
         }
     }
 
@@ -242,10 +242,7 @@ public class UserInterface extends Application {
         dialog.setTitle(title);
 
         Label label = new Label(message);
-        label.setPadding(new Insets(10, 20, 20, 20));
         Button button = new Button("OK");
-        button.setMinSize(button.getMinWidth(), button.getMinHeight());
-
         VBox vb = new VBox();
 
         vb.setAlignment(Pos.CENTER);
@@ -365,18 +362,18 @@ public class UserInterface extends Application {
         medlemsTypeBox.getItems().addAll("Aktiv", "Passiv");
         medlemsTypeBox.setPrefWidth(270);
 
+
         Text aktivitetsTypeLabel = new Text("Aktivitetstype");
 
         //Choice box til drop down
         ChoiceBox aktivitetsTypeBox = new ChoiceBox();
         aktivitetsTypeBox.getItems().addAll("Konkurrence", "Motionist");
         aktivitetsTypeBox.setPrefWidth(270);
-
         //knapper
         Button buttonGem = new Button("Gem");
-        Button buttonAnnuller = new Button("Annuller");
+        Button buttonAflys = new Button("Aflys");
         buttonGem.setPrefSize(180, 20);
-        buttonAnnuller.setPrefSize(80, 20);
+        buttonAflys.setPrefSize(80, 20);
         buttonGem.setDisable(true);
 
         // Disabler gem button indtil alle fields er udfyldt
@@ -384,18 +381,18 @@ public class UserInterface extends Application {
                 or(adresseText.textProperty().isEmpty()).
                 or(emailText.textProperty().isEmpty()).
                 or(nummerText.textProperty().isEmpty()).
-                or(postNummerText.textProperty().isEmpty()).
                 or(aktivitetsTypeBox.valueProperty().isNull()).
-                or(groupGender.selectedToggleProperty().isNull()).
-                or(datepicker.valueProperty().isNull());
+                or(groupGender.selectedToggleProperty().isNull());
 
         buttonGem.disableProperty().bind(booleanBind);
+
+
 
 
         //hbox til knapper
         HBox hboxKnap = new HBox();
         hboxKnap.setSpacing(10);
-        hboxKnap.getChildren().addAll(buttonGem, buttonAnnuller);
+        hboxKnap.getChildren().addAll(buttonGem, buttonAflys);
         hboxKnap.setAlignment(Pos.BOTTOM_RIGHT);
 
         //Date formatter
@@ -406,7 +403,7 @@ public class UserInterface extends Application {
                 if (medlemmer.verificerAddMedlemInput(nameText.getText(),
                         datepicker.getValue(),
                         ((RadioButton) groupGender.getSelectedToggle()).getText(),
-                        (adresseText.getText()+" "+ nummerText.getText() + " " + postNummerText.getText()),
+                        (adresseText.getText()+" "+ nummerText.getText()),
                         emailText.getText(),
                         aktivitetsTypeBox.getValue().toString(),
                         medlemsTypeBox.getValue().toString()
@@ -418,7 +415,7 @@ public class UserInterface extends Application {
         ));
 
         //Make method go to formand side
-        buttonAnnuller.setOnAction((event -> {
+        buttonAflys.setOnAction((event -> {
             System.out.println("Go to formand page");
             sceneManager("formand");
         }));
@@ -452,6 +449,7 @@ public class UserInterface extends Application {
 
         gridPane.add(postNummerLabel, 0, 4);
         gridPane.add(postNummerText, 1, 4);
+        postNummerText.setText("-- IKKE IMPLEMENTERET ENDNU --");
 
         gridPane.add(emailLabel, 0, 5);
         gridPane.add(emailText, 1, 5);
@@ -516,6 +514,15 @@ public class UserInterface extends Application {
 
     }
 
+    @FXML
+    private void tilbage(ActionEvent event) throws NullPointerException {
+        sceneManager();
+
+
+
+
+    }
+
     void generateTable(String[] columns, Parent root){
         MedlemsListe ml = new MedlemsListe();
         ArrayList<Medlem> al = ml.getListe();
@@ -536,5 +543,5 @@ public class UserInterface extends Application {
             table.getColumns().add(col);
         }
     }
-}
+    }
 
