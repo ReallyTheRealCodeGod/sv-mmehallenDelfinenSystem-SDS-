@@ -330,7 +330,7 @@ public class UserInterface extends Application {
     }
 
     public void opretMedlemForm() throws Exception{
-        opretMedlemForm(null, null, null, null, null, null, null);
+        opretMedlemForm("", null, "", "", "", "", "");
     }
     public void opretMedlemForm(String name, LocalDate date, String addresse, String email, String gender, String aktivitetstype, String medlemstype) throws Exception {
         System.out.println(name + " " + date + " " + addresse+ " " + email+ " " + gender+ " " + medlemstype+ " " + aktivitetstype);
