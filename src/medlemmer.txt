@@ -1,4 +1,4 @@
-James Charlesford;1965-06-10;Abel Catherines Gade;190;3563;James Charlesford6@mail.dk;Kvinde;Motionist;Aktiv;
+James Charlesfordon;1965-06-10;Abel Catherines Gade;190;3563;James Charlesford6@mail.dk;Kvinde;Motionist;Aktiv;
 George Franksen;1980-01-13;Abel Cathrines Gade;105;7703;George Franksen1@mail.dk;Mand;Motionist;Aktiv;
 Joseph Thomassen;1985-06-24;Absalonsgade;32;4042;Joseph Thomassen6@mail.dk;Mand;Konkurrence;Aktiv;
 Henry Robertford;1987-04-08;Absalonsgade;115;7539;Henry Robertford4@mail.dk;Mand;Motionist;Aktiv;

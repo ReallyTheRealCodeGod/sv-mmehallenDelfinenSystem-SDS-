@@ -28,8 +28,7 @@ import java.io.InputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.ArrayList;
-import java.util.Optional;
+import java.util.*;
 
 public class UserInterface extends Application {
     private Stage stage;
@@ -573,6 +572,7 @@ public class UserInterface extends Application {
                 medlemmer.sletMedlem(medlemmer.getListe().indexOf(ol.get(tb.getSelectionModel().getSelectedIndex())));
                 sceneManager("visMedlemmerFormand");
             });
+
         }
         else{
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
@@ -588,12 +588,18 @@ public class UserInterface extends Application {
         root.getChildren().add(tb);
         root.getChildren().add(options);
 
-        tf.setOnAction((event -> {
-            System.out.println(tf.getText());
-            generateTable(columns, root, medlemmer.filtrerListe(tf.getText()));
-        }));
+   //     tf.setOnAction((event -> {
+   //         System.out.println(tf.getText());
+   //         generateTable(columns, root, medlemmer.filtrerListe(tf.getText()));
+   //     }));
+
+        tf.setOnAction(event ->{
+            updateTable(columns, root,medlemmer.getListe(),tf.getText(), tf);
+
+        });
 
         generateTable(columns, root, medlemmer.getListe());
+
         updateStage(root);
     }
 
@@ -605,6 +611,8 @@ public class UserInterface extends Application {
         ol.setAll(al);
         table.setItems(ol);
 
+
+
         for(String s: columns) {
             TableColumn<String, Medlem> col = new TableColumn<String, Medlem>(s);
             col.setCellValueFactory(new PropertyValueFactory<>(s));
@@ -614,5 +622,36 @@ public class UserInterface extends Application {
             table.getColumns().add(col);
         }
     }
+
+    void updateTable(String[] columns, Parent root, ArrayList<Medlem> al, String search, TextField tf ) {
+
+
+
+               List<Medlem> list = new ArrayList<>(al);
+        list.removeIf(s -> !s.getNavn().contains(search));
+
+
+
+        System.out.println(list.size());
+        TableView table = (TableView)root.lookup("#table");
+        table.getColumns().clear();
+
+        ol.setAll(list);
+        table.setItems(ol);
+
+
+
+        for(String s: columns) {
+            TableColumn<String, Medlem> col = new TableColumn<String, Medlem>(s);
+            col.setCellValueFactory(new PropertyValueFactory<>(s));
+            if(s.equals("Fodselsdato")){
+                col.setText("F"+"\u00F8"+"dselsdato");
+            }
+            table.getColumns().add(col);
+        }
+
+
+    }
+
     }
 
