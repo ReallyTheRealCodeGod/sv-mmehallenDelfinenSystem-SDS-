@@ -18,7 +18,7 @@ class MedlemsListe implements ListeInterface{
 		try{
 			// Vælger filen der skal læses fra og variablerne den læses
 			ArrayList<LocalDate> betalingsHistorik = new ArrayList<LocalDate>();
-			String navn, gender, adresse, email, medlemsskabstype, aktivitetstype;
+			String navn, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype;
 			LocalDate fodselsdato;
 			int id = 0;
 			Scanner line = new Scanner(f);
@@ -33,6 +33,8 @@ class MedlemsListe implements ListeInterface{
 			navn = sc.next();
 			fodselsdato = LocalDate.parse(sc.next());
 			adresse = sc.next();
+            husNr = sc.next();
+			postNr = sc.next();
 			email = sc.next();
 			gender = sc.next();
 			medlemsskabstype = sc.next();
@@ -57,7 +59,7 @@ class MedlemsListe implements ListeInterface{
 					}
 			}
 			//lav medlem og adder til arraylisten
-			liste.add(new Medlem(navn, fodselsdato, gender, adresse, email, medlemsskabstype, aktivitetstype, betaling));
+			liste.add(new Medlem(navn, fodselsdato, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype, betaling));
 			id++;
 		}
 		}catch(FileNotFoundException e){
@@ -69,13 +71,12 @@ class MedlemsListe implements ListeInterface{
 	
 	}
 	//tilføjer et nyt medlems element til arraylisten og kalder derefter for opdateringen af data filen
-	public void addMedlem(String navn, LocalDate dato, String gender, String adresse, String email, String medlemstype,
+	public void addMedlem(String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
            String aktivitetstype){
-		System.out.println(navn +" "+ dato.toString() + " " + gender + " " + adresse+ " " + email+ " " + medlemstype+ " " + aktivitetstype);
-		liste.add(new Medlem(navn, dato, gender, adresse, email, medlemstype, aktivitetstype));
+		liste.add(new Medlem(navn, dato, gender, adresse, husNr, postNr, email, medlemstype, aktivitetstype));
 		opdaterListe();
 	}
-	public boolean verificerAddMedlemInput(String navn, LocalDate dato, String gender, String adresse, String email, String medlemstype,
+	public boolean verificerAddMedlemInput(String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
 										   String aktivitetstype){
 		ArrayList<String> medlemArray = new ArrayList<>();
 		if (navn.isEmpty()) {
@@ -87,9 +88,10 @@ class MedlemsListe implements ListeInterface{
 		if (gender.isEmpty()) {
 			medlemArray.add("Fejl i køn - ret venligst");
 		}
-		if (adresse.isEmpty() || !adresse.matches(".*\\d.*")) {
+		if (adresse.isEmpty()) {
 			medlemArray.add("Fejl i adresse - ret venligst");
 		}
+
 		if (email.isEmpty() || !email.contains("@")) {
 			medlemArray.add("Fejl i email. @ mangler");
 		}
@@ -113,9 +115,9 @@ class MedlemsListe implements ListeInterface{
 		opdaterListe();
 	}
 
-	public void redigerMedlem(int medlemsIndex, String navn, LocalDate dato, String gender, String adresse, String email, String medlemstype,
+	public void redigerMedlem(int medlemsIndex, String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
 							  String aktivitetstype){
-		liste.set(medlemsIndex, new Medlem(navn, dato, gender, adresse, email, medlemstype, aktivitetstype));
+		liste.set(medlemsIndex, new Medlem(navn, dato, gender, adresse, husNr, postNr, email, medlemstype, aktivitetstype));
 		opdaterListe();
 
 	}
@@ -151,6 +153,11 @@ class MedlemsListe implements ListeInterface{
 	}
 
 	public ArrayList<Medlem> filtrerListe(String filter) {
-		return null;
+		ArrayList<Medlem> filterListe = new ArrayList<>();
+		for(Medlem m: liste){
+			if(m.getNavn().contains(filter));
+			filterListe.add(m);
+		}
+		return filterListe;
 	}
 }

@@ -34,10 +34,10 @@ import java.util.Optional;
 public class UserInterface extends Application {
     private Stage stage;
     private Scene previous;
-    ObservableList<Medlem> ol;
 
     //opretter medlemsliste
     MedlemsListe medlemmer;
+    ObservableList<Medlem> ol;
 
     //Setting size of window
     private Rectangle2D primScreenBounds;
@@ -90,15 +90,15 @@ public class UserInterface extends Application {
     }
 
     public void updateStage(Parent root){
-        Scene scene = new Scene(root, stagesizex, stagesizey);
-        showStage(scene);
-    }
-    public void showStage(Scene scene){
 
         if(previous != stage.getScene()) {
             previous = stage.getScene();
         }
 
+        Scene scene = new Scene(root, stagesizex, stagesizey);
+        showStage(scene);
+    }
+    public void showStage(Scene scene){
         stage.setScene(scene); // ændre scene størrelse
         stage.show();
 
@@ -330,22 +330,20 @@ public class UserInterface extends Application {
     }
 
     public void opretMedlemForm() throws Exception{
-        opretMedlemForm("", null, "", "", "", "", "");
+        opretMedlemForm(null);
     }
-    public void opretMedlemForm(String name, LocalDate date, String addresse, String email, String gender, String aktivitetstype, String medlemstype) throws Exception {
+    public void opretMedlemForm(Medlem medlem) throws Exception {
         //Labels og fields
-        final boolean redigere = !name.isEmpty();
 
         Text nameLabel = new Text("Navn");
-        TextField nameText = new TextField(name);
+        TextField nameText = new TextField();
 
         Text ageLabel = new Text("Fødselsdato");
-
-        DatePicker datepicker = new DatePicker(date);
+        DatePicker datepicker = new DatePicker();
         datepicker.setPrefSize(270, 20);
 
         Text adresseLabel = new Text("Adresse");
-        TextField adresseText = new TextField(addresse);
+        TextField adresseText = new TextField();
 
         Text nummerLabel = new Text("Husnummer");
         TextField nummerText = new TextField();
@@ -354,7 +352,7 @@ public class UserInterface extends Application {
         TextField postNummerText = new TextField();
 
         Text emailLabel = new Text("E-Mail");
-        TextField emailText = new TextField(email);
+        TextField emailText = new TextField();
 
         //Køn label og en gruppe for denne
         Text genderLabel = new Text("Køn");
@@ -368,18 +366,6 @@ public class UserInterface extends Application {
         RadioButton otherRadio = new RadioButton("Andet");
         otherRadio.setToggleGroup(groupGender);
 
-        switch(gender){
-            case "Mand":
-                maleRadio.setSelected(true);
-                break;
-            case "Kvinde":
-                femaleRadio.setSelected(true);
-                break;
-            case "Andet":
-                otherRadio.setSelected(true);
-                break;
-        }
-
         //hbox til køn
         HBox hboxGender = new HBox();
         hboxGender.setSpacing(10);
@@ -390,9 +376,6 @@ public class UserInterface extends Application {
         //Choice box til drop down
         ChoiceBox medlemsTypeBox = new ChoiceBox();
         medlemsTypeBox.getItems().addAll("Aktiv", "Passiv");
-        if(!medlemstype.isEmpty()){
-                medlemsTypeBox.setValue(medlemstype);
-        }
         medlemsTypeBox.setPrefWidth(270);
 
 
@@ -401,10 +384,39 @@ public class UserInterface extends Application {
         //Choice box til drop down
         ChoiceBox aktivitetsTypeBox = new ChoiceBox();
         aktivitetsTypeBox.getItems().addAll("Konkurrence", "Motionist");
-         if(!aktivitetstype.isEmpty()){
-                aktivitetsTypeBox.setValue(aktivitetstype);
-        }
+
         aktivitetsTypeBox.setPrefWidth(270);
+
+        final boolean redigere;
+        final int index;
+
+        if(medlem != null) {
+            redigere = true;
+            index = medlemmer.getListe().indexOf(medlem);
+
+            nameText.setText(medlem.getNavn());
+            datepicker.setValue(medlem.getFodselsdato());
+            adresseText.setText(medlem.getAdresse());
+            nummerText.setText(medlem.getHusNr());
+            postNummerText.setText(medlem.getPostNr());
+            emailText.setText(medlem.getEmail());
+
+            switch(medlem.getGender()){
+                case "Mand":
+                    maleRadio.setSelected(true);
+                    break;
+                case "Kvinde":
+                    femaleRadio.setSelected(true);
+                    break;
+                case "Andet":
+                    otherRadio.setSelected(true);
+                    break;}
+            medlemsTypeBox.setValue(medlem.getAktivitetstype());
+            aktivitetsTypeBox.setValue(medlem.getMedlemstype());
+        }else{
+            redigere = false;
+            index = 0;
+        }
 
          //knapper
         Button buttonGem = new Button("Gem");
@@ -440,17 +452,19 @@ public class UserInterface extends Application {
 
                     String navn = nameText.getText();
                     LocalDate dato = datepicker.getValue();
-                    String koen = ((RadioButton) groupGender.getSelectedToggle()).getText(),
-                    String adresse = (adresseText.getText() + " " + nummerText.getText() + " " + postNummerText.getText()),
-                    String mail = emailText.getText(),
-                    String aktivitet = aktivitetsTypeBox.getValue().toString(),
-                    String medlem = medlemsTypeBox.getValue().toString());
+                    String koen = ((RadioButton) groupGender.getSelectedToggle()).getText();
+                    String adresse = (adresseText.getText());
+                    String husNr = nummerText.getText();
+                    String postNr = postNummerText.getText();
+                    String mail = emailText.getText();
+                    String aktivitet = aktivitetsTypeBox.getValue().toString();
+                    String medlemtype = medlemsTypeBox.getValue().toString();
 
-                if (medlemmer.verificerAddMedlemInput(navn, dato, koen, adresse, mail, aktivitet, medlem)) {
+                if (medlemmer.verificerAddMedlemInput(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype)) {
                     if(!redigere) {
-                        medlemmer.addMedlem(navn, dato, koen, adresse, mail, aktivitet, medlem);
+                        medlemmer.addMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
                     }else{
-                        medlemmer.redigerMedlem(,navn, dato, koen, adresse, mail, aktivitet, medlem);
+                        medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
                     }
 
                     sceneManager("formand");
@@ -543,17 +557,24 @@ public class UserInterface extends Application {
         if(bruger.equals("Formand")) {
             options = FXMLLoader.load(getClass().getResource("Formand.fxml"));
             columns = new String[] {"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
+
             Button rediger = (Button) options.lookup("#redigerInfo");
+            Button slet = (Button) options.lookup("#slet");
+
             rediger.setOnAction((event ->{
                 Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
                 try {
-                opretMedlemForm(m.getNavn(), m.getFodselsdato(), m.getAdresse(), m.getEmail(), m.getGender(), m.getMedlemstype(), m.getAktivitetstype());
+                opretMedlemForm(m);
                 }catch(Exception e){
                     System.out.println("ups");
                 }
             }));
+            slet.setOnAction(event ->{
+                medlemmer.sletMedlem(medlemmer.getListe().indexOf(ol.get(tb.getSelectionModel().getSelectedIndex())));
+                sceneManager("visMedlemmerFormand");
+            });
         }
-        else {
+        else{
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
             columns = new String[] {"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
         }
@@ -567,18 +588,21 @@ public class UserInterface extends Application {
         root.getChildren().add(tb);
         root.getChildren().add(options);
 
-        generateTable(columns, root, medlemmer);
-        updateStage(root);
+        tf.setOnAction((event -> {
+            System.out.println(tf.getText());
+            generateTable(columns, root, medlemmer.filtrerListe(tf.getText()));
+        }));
 
+        generateTable(columns, root, medlemmer.getListe());
+        updateStage(root);
     }
 
-    void generateTable(String[] columns, Parent root, MedlemsListe ml){
-        ArrayList<Medlem> al = ml.getListe();
+    void generateTable(String[] columns, Parent root, ArrayList<Medlem> al){
+        System.out.println(al);
         TableView table = (TableView)root.lookup("#table");
+        table.getColumns().clear();
 
-        for(Medlem m: al){
-            ol.add(m);
-        }
+        ol.setAll(al);
         table.setItems(ol);
 
         for(String s: columns) {

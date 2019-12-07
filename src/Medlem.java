@@ -7,6 +7,8 @@ public class Medlem {
 	    private LocalDate fodselsdato;
 	    private String gender;
 	    private String adresse;
+		private String husNr;
+	    private String postNr;
 	    private String email;
 	    private String medlemstype;
 	    private String aktivitetstype;
@@ -14,12 +16,14 @@ public class Medlem {
 	    private double pris;
 
 	    
-	    Medlem(String navn, LocalDate fodselsdato, String gender, String adresse, String email, String medlemstype,
+	    Medlem(String navn, LocalDate fodselsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
 		           String aktivitetstype, ArrayList<Betaling> betalinger) {
                 this.navn = navn;
 		        this.fodselsdato = fodselsdato;
 		        this.gender = gender;
 		        this.adresse = adresse;
+		        this.husNr = husNr;
+		        this.postNr = postNr;
 		        this.email = email;
 		        this.medlemstype = medlemstype;
 		        this.aktivitetstype = aktivitetstype;
@@ -32,12 +36,14 @@ public class Medlem {
               }
 		    }
 
-		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String email, String medlemstype,
+		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
 		   String aktivitetstype) {
 			this.navn = navn;
 			this.fodselsdato = foedelsdato;
 			this.gender = gender;
 			this.adresse = adresse;
+			this.husNr = husNr;
+			this.postNr = postNr;
 			this.email = email;
 			this.medlemstype = medlemstype;
 			this.aktivitetstype = aktivitetstype;
@@ -66,35 +72,29 @@ public class Medlem {
 	public String getNavn() {
 		return navn;
 	}
-
 	public ArrayList<Betaling> getBetalingsHistorik(){
 	    return betalinger;
     }
-
 	public LocalDate getFodselsdato() {
 		return fodselsdato;
 	}
-
 	public String getGender() {
 		return gender;
 	}
-
 	public String getAdresse() {
 		return adresse;
 	}
-
+	public String getHusNr() { return husNr; }
+	public String getPostNr() { return postNr; }
 	public String getEmail() {
 		return email;
 	}
-
 	public String getMedlemstype() {
 		return medlemstype;
 	}
-
 	public String getAktivitetstype() {
 		return aktivitetstype;
 	}
-
 	public double getPris() {
 		return pris;
 	}
@@ -104,7 +104,7 @@ public class Medlem {
 	    @Override
 	    public String toString() {
 	        
-	        return navn + ";" + fodselsdato +";"+ adresse +";"+email+";"+gender+";"+medlemstype+";"+aktivitetstype+";";
+	        return navn + ";" + fodselsdato +";"+ adresse + ";" + husNr + ";" + postNr + ";" +email+";"+gender+";"+medlemstype+";"+aktivitetstype+";";
 	               
 	    }
 	}
