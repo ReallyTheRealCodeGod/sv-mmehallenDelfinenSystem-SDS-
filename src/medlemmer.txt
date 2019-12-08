@@ -1,145 +1,150 @@
-James Charlesford;1965-06-10;Abel Catherines Gade;190;3563;James Charlesford6@mail.dk;Kvinde;Motionist;Aktiv;
-George Franksen;1980-01-13;Abel Cathrines Gade;105;7703;George Franksen1@mail.dk;Mand;Motionist;Aktiv;
-Joseph Thomassen;1985-06-24;Absalonsgade;32;4042;Joseph Thomassen6@mail.dk;Mand;Konkurrence;Aktiv;
-Henry Robertford;1987-04-08;Absalonsgade;115;7539;Henry Robertford4@mail.dk;Mand;Motionist;Aktiv;
-Edward Harryford;2005-03-10;Admiralsgade;144;1817;Edward Harryford3@mail.dk;Mand;Motionist;Aktiv;
-Walter Arthurford;1984-02-14;Aggersvoldvej;131;1804;Walter Arthurford2@mail.dk;Kvinde;Konkurrence;Aktiv;
-Fred Albertsen;1999-01-28;Ahlmannsgade;112;8754;Fred Albertsen1@mail.dk;Mand;Motionist;Aktiv;
-Samuel Davidsen;2003-07-25;Alleen;5;9485;Samuel Davidsen7@mail.dk;Mand;Motionist;Aktiv;
-Charlie Clarencesen;1972-04-25;Anders Henriksensgade;185;1078;Charlie Clarencesen4@mail.dk;Kvinde;Motionist;Aktiv;
-Richard Andrewford;1972-01-10;Anker Heegaards Gade;176;7891;Richard Andrewford1@mail.dk;Kvinde;Motionist;Aktiv;
-Aaron Lewisford;1994-05-08;Asger Rygs Gade;24;5598;Oscar Lewisford5@mail.dk;Mand;Konkurrence;Aktiv;
-Peter Benjaminsen;1965-04-12;Asminderødgade;162;9682;Peter Benjaminsen4@mail.dk;Kvinde;Motionist;Aktiv;
-Frederick Willieford;2006-11-05;Asnæsgade (nordlige);174;8597;Frederick Willieford11@mail.dk;Kvinde;Motionist;Aktiv;
-Alfred Samford;1992-12-23;Asnæsgade (sydlige);93;6300;Alfred Samford12@mail.dk;Mand;Motionist;Aktiv;
-Roy Herbertsen;2003-04-19;Asylgade;118;6361;Roy Herbertsen4@mail.dk;Kvinde;Motionist;Aktiv;
-Jacob Tomsen;2007-06-28;August Bournonvilles Passage;59;1069;Jacob Tomsen6@mail.dk;Kvinde;Motionist;Aktiv;
-Elmer Carlsen;1957-02-23;Axel Heides Gade;25;1233;Elmer Carlsen2@mail.dk;Kvinde;Motionist;Aktiv;
-Lee Howardsen;1999-04-08;Axel Heides Gade;180;5779;Lee Howardsen4@mail.dk;Kvinde;Konkurrence;Aktiv;
-Martin Michaelsen;1962-01-18;Axeltorv;55;9132;Martin Michaelsen1@mail.dk;Mand;Motionist;Aktiv;
-Bert Hermanford;1979-12-01;Badstuestræde;6;1335;Bert Hermanford12@mail.dk;Mand;Motionist;Aktiv;
-Jim Francissen;1996-06-23;Banegårdspladsen;1;5417;Jim Francissen6@mail.dk;Mand;Motionist;Aktiv;
-Harvey Earlsen;1955-02-24;Beethovensvej;182;5197;Harvey Earlsen2@mail.dk;Mand;Motionist;Aktiv;
-Eugene Ralphford;1954-03-12;Bevtoftgade;104;2165;Eugene Ralphford3@mail.dk;Kvinde;Motionist;Aktiv;
-Ed Claudeford;2000-02-21;Birkedommervej;49;1369;Ed Claudeford2@mail.dk;Mand;Motionist;Aktiv;
-Edwin Benford;1990-01-01;Birkegade;4;9630;Edwin Benford1@mail.dk;Mand;Motionist;Aktiv;
-Charley Paulford;2008-04-17;Birmavej;67;3727;Charley Paulford4@mail.dk;Mand;Motionist;Aktiv;
-Edgar Isaacford;1998-04-26;Bispebjerg Parkallé Nordlig;66;2200;Edgar Isaacford4@mail.dk;Kvinde;Motionist;Aktiv;
-Otto Luthersen;1985-11-09;Bispebjerg Parkallé Nordlig;179;5541;Otto Luthersen11@mail.dk;Mand;Motionist;Aktiv;
-Lawrence Iraford;1972-04-13;Bispebjerg Parkallé Sydlig;67;9598;Lawrence Iraford4@mail.dk;Mand;Motionist;Aktiv;
-Patrick Guyford;1981-09-21;Christianshavns Kanal;111;9897;Patrick Guyford9@mail.dk;Kvinde;Motionist;Aktiv;
-Oliver Theodoresen;1960-07-20;Bispebjerg Parkallé Sydlig;124;7892;Oliver Theodoresen7@mail.dk;Kvinde;Motionist;Aktiv;
-Hugh Clydesen;1965-06-12;Bispebjerg Parkallé Sydlig;105;2610;Hugh Clydesen6@mail.dk;Kvinde;Motionist;Aktiv;
-Alexander Augustsen;2004-06-10;Bispebjerg Torv;72;6654;Alexander Augustsen6@mail.dk;Mand;Motionist;Aktiv;
-Floyd Homerford;1965-08-10;Bjørneklovej;121;5974;Floyd Homerford8@mail.dk;Kvinde;Motionist;Aktiv;
-Jack Leonardford;1976-06-17;Blankavej;36;8626;Jack Leonardford6@mail.dk;Mand;Motionist;Aktiv;
-Horace Marionford;1966-04-03;Blommestien;169;5295;Horace Marionford4@mail.dk;Mand;Motionist;Aktiv;
-Philip Allensen;1958-05-23;Bodilsgade;139;8990;Philip Allensen5@mail.dk;Kvinde;Motionist;Aktiv;
-Archie Stephenford;2007-04-04;Boldhusgade;102;1830;Archie Stephenford4@mail.dk;Kvinde;Motionist;Aktiv;
-Chester Willissen;1992-09-05;Bomsluttervej;122;8067;Chester Willissen9@mail.dk;Mand;Motionist;Aktiv;
-Raymond Rufusford;1985-10-06;Borgbjergvej;11;1837;Raymond Rufusford10@mail.dk;Kvinde;Motionist;Aktiv;
-Warren Jessiesen;2004-10-10;Borgergade;57;7491;Warren Jessiesen10@mail.dk;Mand;Motionist;Aktiv;
-Milton Alexsen;1966-08-24;Borgmester Christiansens Gade;50;4325;Milton Alexsen8@mail.dk;Mand;Motionist;Aktiv;
-Leo Juliusford;1956-06-16;Bornholmsgade;198;5364;Leo Juliusford6@mail.dk;Mand;Motionist;Aktiv;
-Ray Sidneysen;1984-03-01;Bredahlsvej;100;8117;Ray Sidneysen3@mail.dk;Kvinde;Motionist;Aktiv;
-Bernard Dansen;1956-02-22;Bredahlsvej;82;8735;Bernard Dansen2@mail.dk;Mand;Konkurrence;Aktiv;
-Jerry Calvinford;1999-11-14;Bredegrund;164;2531;Jerry Calvinford11@mail.dk;Kvinde;Konkurrence;Aktiv;
-Perry Davesen;2008-10-15;Bredegrund;10;2653;Perry Davesen10@mail.dk;Kvinde;Konkurrence;Aktiv;
-Anthony Eddiesen;1951-09-19;Bredgade;169;3477;Anthony Eddiesen9@mail.dk;Kvinde;Motionist;Aktiv;
-Amos Dennissen;1978-01-14;Bredgade;13;9476;Amos Dennissen1@mail.dk;Mand;Motionist;Aktiv;
-Clifford Leroysen;1969-03-07;Bregnegangen;74;8950;Clifford Leroysen3@mail.dk;Mand;Motionist;Aktiv;
-Wesley Alonzoford;1954-05-18;Bremerholm;66;3223;Wesley Alonzoford5@mail.dk;Kvinde;Motionist;Aktiv;
-Garfield Franklinsen;1971-11-18;Bremerholm;80;6850;Garfield Franklinsen11@mail.dk;Kvinde;Motionist;Aktiv;
-Emil Leonsen;2005-07-25;Brolæggerstræde;35;8937;Emil Leonsen7@mail.dk;Kvinde;Motionist;Aktiv;
-Nathan Haroldsen;1984-10-04;Brolæggerstræde;74;9306;Nathan Haroldsen10@mail.dk;Kvinde;Motionist;Aktiv;
-Matthew Levisen;1954-09-28;Brorsonsgade;134;6381;Matthew Levisen9@mail.dk;Mand;Motionist;Aktiv;
-Moses Everettsen;1959-07-13;Brysselgade;196;3480;Moses Everettsen7@mail.dk;Kvinde;Motionist;Aktiv;
-Lester Winfieldsen;1983-11-13;Brønshøjvej;0;8343;Lester Winfieldsen11@mail.dk;Kvinde;Motionist;Aktiv;
-Adam Lloydford;1974-11-27;Buster Larsens Vej;129;4335;Adam Lloydford11@mail.dk;Kvinde;Motionist;Aktiv;
-Mack Fredrickford;1964-05-20;Bustrupgade;122;3001;Mack Fredrickford5@mail.dk;Mand;Motionist;Aktiv;
-Jay Jessford;1988-10-23;Christian IX's Gade;112;9123;Jay Jessford10@mail.dk;Mand;Motionist;Aktiv;
-Melvin Noahford;1964-04-15;Christianshavns Kanal;142;1110;Melvin Noahford4@mail.dk;Kvinde;Motionist;Aktiv;
-Aaron Alvinford;1988-08-08;Christianshavns Voldgade;16;2202;Aaron Alvinford8@mail.dk;Kvinde;Motionist;Aktiv;
-Norman Gilbertford;1951-01-22;Christiansmindevej;33;1600;Norman Gilbertford1@mail.dk;Kvinde;Motionist;Aktiv;
-Elijah Victorsen;1978-10-01;Colbjørnsensgade;3;8333;Elijah Victorsen10@mail.dk;Mand;Motionist;Aktiv;
-Gus Nelsonsen;1957-02-24;Colbjørnsensgade;21;3137;Gus Nelsonsen2@mail.dk;Mand;Motionist;Aktiv;
-Jasper Silasford;1983-03-19;Colbjørnsensgade;184;5356;Jasper Silasford3@mail.dk;Kvinde;Motionist;Aktiv;
-Christopher Jakeford;1995-04-18;Collinsgade;14;1713;Christopher Jakeford4@mail.dk;Kvinde;Motionist;Aktiv;
-Mike Percyford;2000-06-19;Cort Adelers Gade;128;5562;Mike Percyford6@mail.dk;Kvinde;Motionist;Aktiv;
-Adolph Mauriceford;1985-02-22;Cæciliavej;168;6550;Adolph Mauriceford2@mail.dk;Mand;Motionist;Aktiv;
-Cornelius Felixsen;1977-06-28;Dalføret;148;9458;Cornelius Felixsen6@mail.dk;Mand;Motionist;Aktiv;
-Reuben Wallacesen;1978-10-01;Dalføret;58;7908;Reuben Wallacesen10@mail.dk;Mand;Motionist;Aktiv;
-Claud Roscoesen;1976-12-22;Dannebrogsgade;196;4362;Claud Roscoesen12@mail.dk;Mand;Motionist;Aktiv;
-Sylvester Earnestsen;1951-03-15;Dannebrogsgade;111;5112;Sylvester Earnestsen3@mail.dk;Mand;Motionist;Aktiv;
-Hiram Otissen;1989-05-23;Degnestavnen;24;3294;Hiram Otissen5@mail.dk;Mand;Motionist;Aktiv;
-Simon Willardsen;1980-03-12;Dronning Elisabeths Allé;175;5979;Simon Willardsen3@mail.dk;Mand;Motionist;Aktiv;
-Irvin Markford;1990-06-21;Dronningensgade;113;7417;Irvin Markford6@mail.dk;Kvinde;Motionist;Aktiv;
-Jose Wilburford;1995-09-26;Dronningensgade;137;1373;Jose Wilburford9@mail.dk;Mand;Motionist;Aktiv;
-Abraham Virgilsen;1978-05-08;Druehaven;122;4634;Abraham Virgilsen5@mail.dk;Kvinde;Motionist;Aktiv;
-Clinton Elbertsen;1992-11-09;Dybendalsvej;171;4915;Clinton Elbertsen11@mail.dk;Kvinde;Motionist;Aktiv;
-Leslie Marshallsen;1985-05-22;Dybensgade;45;7569;Leslie Marshallsen5@mail.dk;Kvinde;Konkurrence;Aktiv;
-Owen Wileyford;1999-09-20;Dybensgade;2;3257;Owen Wileyford9@mail.dk;Kvinde;Motionist;Aktiv;
-Anton Morrissen;1993-07-07;Dybensgade;103;3544;Anton Morrissen7@mail.dk;Kvinde;Motionist;Aktiv;
-Manuel Phillipford;1998-02-28;Edel Sauntes Allé;160;9274;Manuel Phillipford2@mail.dk;Kvinde;Motionist;Aktiv;
-Augustus Emmettsen;1965-05-08;Edith Rodes Vej;122;6303;Augustus Emmettsen5@mail.dk;Mand;Motionist;Aktiv;
-Eli Nicholassen;1969-06-01;Egegade;45;5832;Eli Nicholassen6@mail.dk;Mand;Motionist;Aktiv;
-Wilson Alvaford;1979-07-22;Ejderstedgade;30;8751;Wilson Alvaford7@mail.dk;Mand;Motionist;Aktiv;
-Harley Newtonsen;1994-04-23;Ekvipagemestervej;131;3168;Harley Newtonsen4@mail.dk;Mand;Konkurrence;Aktiv;
-Timothy Marvinford;1963-09-12;Elmegade;53;3362;Timothy Marvinford9@mail.dk;Mand;Motionist;Aktiv;
-Ross Curtissen;1959-03-14;Emil Holms Kanal;80;6224;Ross Curtissen3@mail.dk;Mand;Motionist;Aktiv;
-Edmund Jeffford;2005-04-04;Engdals Allé;181;2378;Edmund Jeffford4@mail.dk;Kvinde;Motionist;Aktiv;
-Elias Harrisonsen;1958-06-07;Engdals Allé;41;7284;Elias Harrisonsen6@mail.dk;Kvinde;Motionist;Aktiv;
-Stanley Columbusford;1988-02-16;Erik Ejegods Gade;136;9790;Stanley Columbusford2@mail.dk;Kvinde;Motionist;Aktiv;
-Lon Oraford;1965-12-26;Esbern Snares Gade;65;9015;Lon Oraford12@mail.dk;Mand;Motionist;Aktiv;
-Ollie Russellford;1985-08-09;Eschrichtsvej;15;1409;Ollie Russellford8@mail.dk;Kvinde;Motionist;Aktiv;
-Pearl Solomonford;1993-10-21;Eskildsgade;130;6197;Pearl Solomonford10@mail.dk;Kvinde;Motionist;Aktiv;
-Arch Asasen;2003-01-20;Eskildsgade;192;4507;Arch Asasen1@mail.dk;Kvinde;Motionist;Aktiv;
-Clayton Enochsen;1999-10-07;Estlandsgade;6;1210;Clayton Enochsen10@mail.dk;Mand;Motionist;Aktiv;
-Irving Mathewford;1974-12-22;Etonvej;119;9490;Irving Mathewford12@mail.dk;Kvinde;Motionist;Aktiv;
-Nathaniel Scottsen;1993-09-12;Fafnersgade;22;2717;Nathaniel Scottsen9@mail.dk;Kvinde;Motionist;Aktiv;
-Hubert Lemuelsen;1958-08-08;Faksegade;3;1512;Hubert Lemuelsen8@mail.dk;Kvinde;Motionist;Aktiv;
-Andy Ellisford;1977-07-17;Farumgade;130;8796;Andy Ellisford7@mail.dk;Mand;Motionist;Aktiv;
-Emanuel Joshuaford;2007-06-01;Farvergade;196;5595;Emanuel Joshuaford6@mail.dk;Mand;Motionist;Aktiv;
-Millard Vernonsen;1970-11-03;Flensborggade;185;9648;Millard Vernonsen11@mail.dk;Mand;Motionist;Passiv;
-Wade Cyrussen;1968-07-02;Folehaven;73;9372;Wade Cyrussen7@mail.dk;Kvinde;Motionist;Aktiv;
-Miles Rudolphsen;1999-06-05;Folehaven;7;1280;Miles Rudolphsen6@mail.dk;Kvinde;Motionist;Aktiv;
-Sherman Austinsen;1997-10-26;Fortunstræde;199;9492;Sherman Austinsen10@mail.dk;Mand;Motionist;Aktiv;
-Bill Chasford;1976-04-08;Fredericiagade;47;5949;Bill Chasford4@mail.dk;Kvinde;Motionist;Aktiv;
-Lonnie Monroesen;1980-01-27;Fredericiagade;144;6515;Lonnie Monroesen1@mail.dk;Mand;Motionist;Aktiv;
-Byron Eddsen;2009-03-15;Fredericiagade;95;6529;Byron Eddsen3@mail.dk;Kvinde;Motionist;Aktiv;
-Emery Grantford;1963-03-16;Fredericiagade;3;5300;Emery Grantford3@mail.dk;Mand;Motionist;Aktiv;
-Jerome Maxford;1959-06-16;Frederik VII's Gade;0;2616;Jerome Maxford6@mail.dk;Kvinde;Motionist;Aktiv;
-Mose Stevesen;2002-12-08;Frederiksborggade;154;5502;Mose Stevesen12@mail.dk;Kvinde;Motionist;Aktiv;
-Gordon Abeford;2009-10-23;Frederiksborggade;59;3601;Gordon Abeford10@mail.dk;Kvinde;Motionist;Aktiv;
-Pete Chrissen;2005-11-12;Frederiksborggade;172;7274;Pete Chrissen11@mail.dk;Kvinde;Motionist;Aktiv;
-Clark Gustaveford;2008-03-03;Frederiksgårds Allé;133;9264;Clark Gustaveford3@mail.dk;Mand;Motionist;Aktiv;
-Orville Lorenzosen;1974-01-11;Frederiksgårds Allé;152;1444;Orville Lorenzosen1@mail.dk;Mand;Motionist;Aktiv;
-Bruce Marcussen;1951-09-01;Frederiksgårds Allé;90;8117;Bruce Marcussen9@mail.dk;Mand;Motionist;Aktiv;
-Preston Bobsen;1966-04-16;Frederiksholms Kanal;36;8384;Preston Bobsen4@mail.dk;Kvinde;Motionist;Aktiv;
-Dock Donaldsen;1981-02-01;Frederiksstadsgade;107;1808;Dock Donaldsen2@mail.dk;Kvinde;Motionist;Aktiv;
-Jackson Cecilsen;1996-08-19;Frederikssundsvej;79;7170;Jackson Cecilsen8@mail.dk;Mand;Motionist;Aktiv;
-Barney Delbertsen;1953-03-12;Fruebjergvej;184;1207;Barney Delbertsen3@mail.dk;Mand;Motionist;Aktiv;
-Edmond Andersonsen;2009-10-17;Fruebjergvej;158;7452;Edmond Andersonsen10@mail.dk;Mand;Motionist;Aktiv;
-Christian Glennsen;2005-09-26;Fyensgade;36;5100;Christian Glennsen9@mail.dk;Mand;Motionist;Aktiv;
-Jefferson Lukeford;1980-09-01;Galionsvej;187;2013;Jefferson Lukeford9@mail.dk;Mand;Motionist;Aktiv;
-Neal Burtford;2001-07-24;Gammel Kongevej;19;2349;Neal Burtford7@mail.dk;Kvinde;Motionist;Aktiv;
-Ike Myronford;1980-08-13;Gammel Køge Landevej;85;9202;Ike Myronford8@mail.dk;Kvinde;Konkurrence;Aktiv;
-Tony Conradsen;1950-06-03;Gammel Mønt;162;6037;Tony Conradsen6@mail.dk;Kvinde;Motionist;Aktiv;
-Joel Mattford;1999-08-25;Gammeltoftsgade;153;3402;Joel Mattford8@mail.dk;Kvinde;Motionist;Aktiv;
-Riley Vincentsen;2008-04-07;Gammeltorv;168;4314;Riley Vincentsen4@mail.dk;Mand;Motionist;Aktiv;
-Emory Isaiahsen;1986-03-09;Gartnergade;21;1922;Emory Isaiahsen3@mail.dk;Mand;Motionist;Aktiv;
-Nick Ezraford;1992-08-10;Gasværksvej;135;5552;Nick Ezraford8@mail.dk;Mand;Motionist;Aktiv;
-Green Juansen;1977-12-22;Gaunøvej;101;3116;Green Juansen12@mail.dk;Mand;Motionist;Aktiv;
-Clifton Luciussen;1977-04-22;Gerdasgade;146;4978;Clifton Luciussen4@mail.dk;Mand;Motionist;Aktiv;
-Porter Arnoldsen;1993-10-16;Gernersgade;28;4845;Porter Arnoldsen10@mail.dk;Mand;Konkurrence;Aktiv;
-Bud Jeremiahsen;1952-11-03;Gernersgade;99;3102;Bud Jeremiahsen11@mail.dk;Mand;Motionist;Aktiv;
-Taylor Forrestsen;1975-07-20;Gernersgade;167;3348;Taylor Forrestsen7@mail.dk;Mand;Motionist;Aktiv;
-Roland Spencersen;1969-03-21;Gernersgade;124;7781;Roland Spencersen3@mail.dk;Kvinde;Motionist;Aktiv;
-Burton Donsen;1973-07-04;Gislingevej;104;5960;Burton Donsen7@mail.dk;Mand;Konkurrence;Aktiv;
-Emmet Gustavford;1975-01-03;Glucksvej;139;7816;Emmet Gustavford1@mail.dk;Mand;Motionist;Aktiv;
-Louie Morgansen;1990-12-24;Godthåbsvej;147;4315;Louie Morgansen12@mail.dk;Kvinde;Konkurrence;Aktiv;
-Ned Vansen;1954-09-19;Gothersgade;78;5394;Ned Vansen9@mail.dk;Mand;Motionist;Aktiv;
-Elisha Ferdinandford;2004-07-12;Greisvej;73;7156;Elisha Ferdinandford7@mail.dk;Mand;Konkurrence;Aktiv;
-General Julianford;2004-04-01;Grøndals Parkvej;130;1963;General Julianford4@mail.dk;Mand;Motionist;Aktiv;
-Kenneth Mitchellford;1998-06-28;Grøndals Parkvej;163;5478;Kenneth Mitchellford6@mail.dk;Kvinde;Motionist;Aktiv;
-Allie Joshsen;1965-02-08;Grønnegade;38;6185;Allie Joshsen2@mail.dk;Kvinde;Konkurrence;Aktiv;
+John Williamford;2001-02-12;Humlegade;154;1239;John Williamford2@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-09-23,+8983 335852085282]
+James Charlesford;2002-07-12;Abel Catherines Gade;194;2505;James Charlesford7@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-08-13,+2492 459186026612, 1600.0,2018-08-21,+4478 870003074742, 1600.0,2019-04-26,+6222 808107019724]
+George Franksen;2007-09-27;Abel Cathrines Gade;27;7148;George Franksen9@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-01-22,+8921 648805037691, 1600.0,2019-11-01,+0761 613753014195]
+Joseph Thomasford;1952-12-24;Absalonsgade;181;3272;Joseph Thomasford12@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-09-14,+3629 613829034184]
+Henry Robertsen;1991-02-21;Absalonsgade;182;5493;Henry Robertsen2@mail.dk;Kvinde;Motionist;Aktiv;[]
+Edward Harrysen;1979-02-27;Admiralsgade;122;3737;Edward Harrysen2@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-04-11,+7777 579144057120, 1600.0,2019-06-18,+9347 336659000712, 1600.0,2019-11-16,+7965 906123050573]
+Walter Arthursen;1995-06-11;Aggersvoldvej;116;1449;Walter Arthursen6@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-07-12,+4232 792281036609, 1600.0,2019-10-05,+7509 361304095852]
+Fred Albertsen;1966-05-08;Ahlmannsgade;105;3337;Fred Albertsen5@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-09-09,+0428 196796010848]
+Samuel Davidford;2002-05-02;Alleen;37;4423;Samuel Davidford5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-06-24,+6091 224035015597, 1600.0,2019-03-06,+9614 560004009145]
+Louis Joeford;1952-05-27;Allersgade;36;5873;Louis Joeford5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-12-09,+3768 756061015587, 1600.0,2018-10-16,+9182 392308027177]
+Charlie Clarencesen;1953-12-22;Anders Henriksensgade;144;4667;Charlie Clarencesen12@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-02-26,+3927 409909050020, 1600.0,2019-09-14,+3153 591387053138]
+Richard Andrewford;2005-01-26;Anker Heegaards Gade;80;4357;Richard Andrewford1@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-02-17,+8500 188747001889, 1600.0,2018-07-17,+9330 243762049261, 1600.0,2018-12-28,+3181 538867063846]
+Daniel Ernestford;1967-05-04;Antonigade;132;6701;Daniel Ernestford5@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-07-06,+3408 048797032813, 1600.0,2018-05-12,+6286 691818096223, 1600.0,2018-05-16,+4492 794607069841, 1600.0,2018-10-05,+6013 907145013132, 1600.0,2019-07-05,+6442 099246078008]
+Will Jessesen;1965-03-01;Arkonagade;11;1058;Will Jessesen3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-12-25,+6032 767081005949]
+Oscar Lewissen;1960-01-11;Asger Rygs Gade;167;7204;Oscar Lewissen1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-03-05,+4277 645558026362, 1600.0,2019-11-10,+2905 399060039936]
+Peter Benjaminsen;1968-01-08;Asminderødgade;22;7930;Peter Benjaminsen1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-02-05,+2823 637652024134, 1600.0,2019-08-27,+6522 375846021594]
+Frederick Williesen;1960-10-21;Asnæsgade (nordlige);12;7652;Frederick Williesen10@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-02-11,+5716 586985067647]
+Alfred Samsen;1950-09-10;Asnæsgade (sydlige);176;7301;Alfred Samsen9@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-09-28,+3355 761806029715]
+Roy Herbertford;1981-03-07;Asylgade;49;1434;Roy Herbertford3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-07-24,+0961 501349039713, 1600.0,2019-01-10,+7688 334676024754]
+Jacob Tomford;1967-08-02;August Bournonvilles Passage;150;5045;Jacob Tomford8@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-12-14,+1376 615247097328, 1600.0,2019-01-04,+8954 718815098009, 1600.0,2019-05-25,+2016 993329092335]
+Elmer Carlsen;1955-11-09;Axel Heides Gade;75;2949;Elmer Carlsen11@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-09-28,+2584 257685016962, 1600.0,2019-06-26,+1481 246766025401]
+Lee Howardsen;1975-10-17;Axel Heides Gade;156;1752;Lee Howardsen10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-01-06,+7120 510657042411, 1600.0,2019-01-26,+3144 642173011071, 1600.0,2019-04-21,+4516 595608023549, 1600.0,2019-07-18,+3469 710662077195]
+Martin Michaelford;1951-03-26;Axeltorv;134;7707;Martin Michaelford3@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2018-01-20,+7685 654708012067, 1600.0,2019-02-26,+1115 052740040155]
+Bert Hermansen;2003-01-08;Badstuestræde;139;2178;Bert Hermansen1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-06-20,+2620 832657004143]
+Jim Francissen;1976-03-17;Banegårdspladsen;107;1760;Jim Francissen3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-11-08,+4308 432534080060, 1600.0,2019-09-16,+9369 218411057590]
+Harvey Earlford;1969-01-15;Beethovensvej;93;1964;Harvey Earlford1@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2019-01-27,+4655 490524052058, 1600.0,2019-12-28,+7461 198255039011]
+Eugene Ralphsen;1965-12-28;Bevtoftgade;157;1301;Eugene Ralphsen12@mail.dk;Kvinde;Konkurrence;Passiv;[1600.0,2018-03-18,+5019 579300075301, 1600.0,2018-09-08,+2372 987291018059, 1600.0,2019-07-11,+2476 706694083271, 1600.0,2019-08-13,+9191 467864072317]
+Ed Claudesen;1967-08-24;Birkedommervej;180;3616;Ed Claudesen8@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-06-06,+6837 464137000333, 1600.0,2019-11-02,+2077 956002042517]
+Edwin Benford;1966-08-17;Birkegade;143;7916;Edwin Benford8@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2019-11-21,+0018 091535002274]
+Charley Paulford;1969-06-24;Birmavej;98;5058;Charley Paulford6@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-09-18,+5671 183339021202, 1600.0,2019-05-12,+8745 247751018828]
+Edgar Isaacsen;1980-03-16;Bispebjerg Parkallé Nordlig;149;6670;Edgar Isaacsen3@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-01-27,+9622 440797017529, 1600.0,2019-08-11,+2880 611513054941, 1600.0,2019-11-16,+7237 414336016213]
+Otto Lutherford;1965-03-13;Bispebjerg Parkallé Nordlig;99;3811;Otto Lutherford3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-09-14,+3509 607242049164]
+Lawrence Iraford;2009-01-24;Bispebjerg Parkallé Sydlig;6;5062;Lawrence Iraford1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-05-08,+5162 993080028520, 1600.0,2019-12-21,+0399 521493093097]
+Patrick Guysen;1998-07-23;Christianshavns Kanal;54;2692;Patrick Guysen7@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-09-08,+0110 621413043368]
+Oliver Theodoresen;1989-07-09;Bispebjerg Parkallé Sydlig;18;9551;Oliver Theodoresen7@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-07-05,+9843 073749024522]
+Hugh Clydesen;1979-03-06;Bispebjerg Parkallé Sydlig;11;5242;Hugh Clydesen3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-11-19,+5745 113436090295]
+Alexander Augustsen;1951-03-23;Bispebjerg Torv;132;9500;Alexander Augustsen3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-10-16,+5437 026346060327]
+Floyd Homerford;2000-05-16;Bjørneklovej;86;4066;Floyd Homerford5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-02-25,+2934 289522020892, 1600.0,2019-08-24,+7643 933694031077]
+Jack Leonardford;1950-05-09;Blankavej;51;2554;Jack Leonardford5@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-05-08,+6628 616216091068, 1600.0,2019-10-14,+2936 277208037857]
+Horace Marionsen;2002-05-17;Blommestien;194;9299;Horace Marionsen5@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-10-26,+3001 035914070986, 1600.0,2019-04-19,+0393 921321042940, 1600.0,2019-10-28,+8497 923197007829, 1600.0,2019-11-21,+2251 563906038460]
+Philip Allensen;1967-11-19;Bodilsgade;154;6973;Philip Allensen11@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-08-24,+9989 931989057243]
+Archie Stephensen;1987-02-25;Boldhusgade;198;8352;Archie Stephensen2@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-03-15,+4429 323529030204, 1600.0,2019-02-28,+1031 290894087663]
+Chester Willissen;1961-09-20;Bomsluttervej;91;2324;Chester Willissen9@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-09-15,+4679 330010025316]
+Raymond Rufussen;1951-05-09;Borgbjergvej;56;2035;Raymond Rufussen5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-06-02,+8641 208966089635]
+Warren Jessiesen;2004-08-11;Borgergade;110;7283;Warren Jessiesen8@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-02-11,+9654 581966014333, 1600.0,2018-02-13,+9773 731368020249]
+Milton Alexford;2004-12-03;Borgmester Christiansens Gade;28;3698;Milton Alexford12@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2019-12-06,+8674 561093024997]
+Leo Juliusford;1997-05-21;Bornholmsgade;146;6461;Leo Juliusford5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-08-06,+6868 651656092503]
+Ray Sidneysen;1972-01-18;Bredahlsvej;97;5810;Ray Sidneysen1@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-10-16,+6097 971903024770, 1600.0,2019-02-08,+1924 504774096790, 1600.0,2019-12-27,+0760 352119078791]
+Bernard Dansen;2002-08-09;Bredahlsvej;18;7976;Bernard Dansen8@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-11-21,+8301 717686015166]
+Jerry Calvinsen;2003-03-18;Bredegrund;32;4435;Jerry Calvinsen3@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-07-23,+1465 755955013239, 1600.0,2019-09-22,+6686 590229063347]
+Perry Daveford;1956-08-24;Bredegrund;25;2542;Perry Daveford8@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-01-28,+7477 948230045415]
+Anthony Eddiesen;1976-04-03;Bredgade;156;8881;Anthony Eddiesen4@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-06-02,+9806 024169045748, 1600.0,2018-02-01,+9854 145663028368, 1600.0,2019-07-13,+3941 683601021124]
+Amos Dennisford;1962-04-16;Bredgade;107;1187;Amos Dennisford4@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-04-01,+9539 785330071516, 1600.0,2019-10-18,+0242 507576057691]
+Clifford Leroyford;2004-09-20;Bregnegangen;139;8510;Clifford Leroyford9@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-05-10,+4928 948541091373, 1600.0,2018-09-06,+9420 577354074338, 1600.0,2018-12-05,+1719 458589072895]
+Wesley Alonzosen;1976-11-13;Bremerholm;62;1316;Wesley Alonzosen11@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-02-22,+1810 723364056820]
+Garfield Franklinsen;2001-05-08;Bremerholm;151;7667;Garfield Franklinsen5@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2018-07-08,+8340 882868077369, 1600.0,2019-03-06,+4212 928044068118]
+Emil Leonford;1968-04-12;Brolæggerstræde;148;3030;Emil Leonford4@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-04-24,+8336 445776080215, 1600.0,2019-07-03,+1831 506572007076]
+Nathan Haroldsen;2007-09-18;Brolæggerstræde;28;3487;Nathan Haroldsen9@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-12-08,+3082 181079075539]
+Matthew Leviford;2008-02-09;Brorsonsgade;184;4157;Matthew Leviford2@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-06-21,+9562 640498002279, 1600.0,2017-08-04,+5863 283829027628, 1600.0,2019-02-24,+5465 028452003121]
+Moses Everettford;2001-12-02;Brysselgade;127;5108;Moses Everettford12@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-10-20,+7600 110730027327, 1600.0,2018-07-12,+2454 725211010999, 1600.0,2019-01-06,+6190 734302056895, 1600.0,2019-01-20,+9592 299733024374, 1600.0,2019-04-21,+3722 264916020637]
+Lester Winfieldsen;1979-03-21;Brønshøjvej;114;1835;Lester Winfieldsen3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-09-26,+3274 337087078984, 1600.0,2019-08-06,+1254 709194032949]
+Adam Lloydford;1951-09-02;Buster Larsens Vej;199;8469;Adam Lloydford9@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-02-19,+8572 228029023291]
+Mack Fredrickford;1965-06-25;Bustrupgade;61;6378;Mack Fredrickford6@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-06-10,+0148 994731011615]
+Jay Jesssen;1992-07-25;Christian IX's Gade;197;2678;Jay Jesssen7@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-12-28,+4909 390313031579]
+Melvin Noahford;1980-05-11;Christianshavns Kanal;136;4573;Melvin Noahford5@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-08-23,+5469 796643083341]
+Aaron Alvinsen;1953-02-26;Christianshavns Voldgade;52;9837;Aaron Alvinsen2@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-09-19,+9977 355958050340, 1600.0,2019-03-18,+8407 415394088150, 1600.0,2019-12-08,+4829 315342082737]
+Norman Gilbertford;2002-06-22;Christiansmindevej;132;5881;Norman Gilbertford6@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-10-22,+2615 296780057984]
+Elijah Victorsen;1971-05-26;Colbjørnsensgade;26;5119;Elijah Victorsen5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-10-26,+4913 092032058637, 1600.0,2019-12-13,+7975 244407032564]
+Gus Nelsonsen;1989-08-11;Colbjørnsensgade;182;8966;Gus Nelsonsen8@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2017-08-01,+5420 821300023482, 1600.0,2018-12-26,+9265 642192067243]
+Jasper Silasford;1951-04-16;Colbjørnsensgade;142;4796;Jasper Silasford4@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2019-01-16,+4620 996837073602, 1600.0,2019-02-20,+6787 716974042132]
+Christopher Jakesen;1976-07-11;Collinsgade;114;6847;Christopher Jakesen7@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-05-05,+4305 526063018212, 1600.0,2018-07-01,+5014 314068083906, 1600.0,2019-08-15,+8254 811491053550]
+Mike Percysen;1982-04-22;Cort Adelers Gade;197;1324;Mike Percysen4@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-10-23,+5574 346558061752]
+Adolph Mauricesen;1979-02-07;Cæciliavej;39;8144;Adolph Mauricesen2@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-09-09,+6222 481478004446]
+Cornelius Felixsen;1962-05-07;Dalføret;145;2725;Cornelius Felixsen5@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2018-05-20,+2678 609373061365]
+Reuben Wallaceford;1995-11-23;Dalføret;46;7114;Reuben Wallaceford11@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-09-12,+1332 591191018758]
+Claud Roscoeford;2006-05-12;Dannebrogsgade;71;6145;Claud Roscoeford5@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-06-23,+6041 374642057157]
+Sylvester Earnestsen;1960-04-02;Dannebrogsgade;32;9974;Sylvester Earnestsen4@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-03-15,+9513 635219071161, 1600.0,2019-10-04,+1375 457790081684, 1600.0,2019-10-21,+1319 995478022217]
+Hiram Otisford;1972-10-16;Degnestavnen;156;3501;Hiram Otisford10@mail.dk;Kvinde;Konkurrence;Passiv;[1600.0,2017-12-13,+0596 489835052592, 1600.0,2019-12-05,+7939 182654025690]
+Simon Willardsen;1966-05-07;Dronning Elisabeths Allé;157;3884;Simon Willardsen5@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-01-11,+1643 852180012994, 1600.0,2019-03-09,+8125 914225045956]
+Irvin Marksen;1971-06-22;Dronningensgade;112;3394;Irvin Marksen6@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-09-27,+4939 243723091232]
+Jose Wilburford;2003-05-24;Dronningensgade;140;5646;Jose Wilburford5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-02-15,+0344 379278007446, 1600.0,2019-08-15,+8029 197096016539]
+Abraham Virgilsen;1984-12-14;Druehaven;37;9248;Abraham Virgilsen12@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-06-09,+9101 664758084462]
+Clinton Elbertsen;1988-11-23;Dybendalsvej;72;2577;Clinton Elbertsen11@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-10-07,+1526 176591069781, 1600.0,2018-03-27,+0853 391087057256]
+Leslie Marshallford;1958-10-26;Dybensgade;144;7652;Leslie Marshallford10@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-05-18,+1710 690229070519]
+Owen Wileysen;1998-11-17;Dybensgade;23;9076;Owen Wileysen11@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-05-18,+1319 273185086437, 1600.0,2019-11-23,+1325 393898070979]
+Anton Morrisford;1966-06-15;Dybensgade;112;7257;Anton Morrisford6@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-04-24,+0596 937005004732]
+Manuel Phillipsen;1998-11-20;Edel Sauntes Allé;23;6147;Manuel Phillipsen11@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-11-19,+8085 240314072406]
+Augustus Emmettsen;2004-08-16;Edith Rodes Vej;29;7744;Augustus Emmettsen8@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-11-19,+1436 785286010767, 1600.0,2019-07-23,+2319 156340074835, 1600.0,2019-09-28,+0659 767823092181]
+Eli Nicholassen;1984-05-22;Egegade;75;2253;Eli Nicholassen5@mail.dk;Mand;Konkurrence;Aktiv;[1600.0,2017-06-25,+1499 434216091001, 1600.0,2019-01-11,+5554 913777039896, 1600.0,2019-05-02,+6509 722429096593, 1600.0,2019-06-26,+1390 944034089229, 1600.0,2019-09-16,+1673 834782007881]
+Wilson Alvaford;1983-11-18;Ejderstedgade;17;4840;Wilson Alvaford11@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-06-28,+9088 371492064372, 1600.0,2018-12-27,+7404 851197054819]
+Harley Newtonford;1988-04-20;Ekvipagemestervej;103;5447;Harley Newtonford4@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-09-23,+7388 021641044257]
+Timothy Marvinford;1985-05-26;Elmegade;162;9074;Timothy Marvinford5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-07-21,+5558 068146006245, 1600.0,2017-10-19,+3816 449299097336, 1600.0,2019-04-14,+6725 371388048498, 1600.0,2019-06-25,+1145 513603006703, 1600.0,2019-11-12,+4118 214754070639]
+Ross Curtissen;1995-03-12;Emil Holms Kanal;61;6460;Ross Curtissen3@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-04-06,+3809 501158095270, 1600.0,2019-06-03,+7447 961445095702, 1600.0,2019-10-25,+7070 644549031803]
+Edmund Jeffford;1962-09-01;Engdals Allé;67;7749;Edmund Jeffford9@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-08-08,+5130 974123003821]
+Elias Harrisonford;2003-11-04;Engdals Allé;63;4677;Elias Harrisonford11@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-05-28,+6756 925679078885, 1600.0,2018-09-17,+8864 361955013218]
+Stanley Columbusford;1961-10-14;Erik Ejegods Gade;74;3779;Stanley Columbusford10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-05-04,+5243 654071066475]
+Lon Orasen;1950-01-26;Esbern Snares Gade;27;5836;Lon Orasen1@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-10-13,+6541 087029052776, 1600.0,2019-10-20,+3290 782014052112]
+Ollie Russellsen;2001-08-16;Eschrichtsvej;80;1112;Ollie Russellsen8@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-10-12,+8922 440760038704, 1600.0,2018-11-11,+2598 037765035170]
+Pearl Solomonsen;1975-07-08;Eskildsgade;126;4926;Pearl Solomonsen7@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-01-25,+1574 108147023691, 1600.0,2018-04-19,+7335 586728029267, 1600.0,2019-12-22,+9981 829990062188, 1600.0,2019-12-26,+5257 078561088653]
+Arch Asasen;1965-06-11;Eskildsgade;81;9361;Arch Asasen6@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-09-14,+4101 270390058933]
+Clayton Enochford;1991-03-03;Estlandsgade;130;9994;Clayton Enochford3@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2017-12-03,+8507 708823014517]
+Irving Mathewford;1963-12-17;Etonvej;84;8999;Irving Mathewford12@mail.dk;Mand;Motionist;Passiv;[1600.0,2019-04-19,+2843 309097043089, 1600.0,2019-06-20,+3954 362773004942]
+Nathaniel Scottford;1972-10-10;Fafnersgade;184;5388;Nathaniel Scottford10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-04-03,+8012 382370023407, 1600.0,2019-08-27,+5787 044298027513]
+Hubert Lemuelsen;1952-01-12;Faksegade;11;4617;Hubert Lemuelsen1@mail.dk;Mand;Konkurrence;Aktiv;[1600.0,2018-11-09,+9288 377300040134]
+Andy Ellissen;2000-08-04;Farumgade;179;8008;Andy Ellissen8@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-08-14,+0442 208420088371]
+Emanuel Joshuasen;1974-08-26;Farvergade;35;7737;Emanuel Joshuasen8@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-10-21,+0123 578119034508, 1600.0,2018-08-21,+0020 790506092080, 1600.0,2019-05-02,+6266 268363080211]
+Millard Vernonford;2004-02-16;Flensborggade;169;5350;Millard Vernonford2@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-04-01,+3507 402651083561, 1600.0,2019-11-15,+6838 551431098180]
+Wade Cyrussen;1957-03-11;Folehaven;175;6591;Wade Cyrussen3@mail.dk;Kvinde;Motionist;Passiv;[1600.0,2017-11-23,+1346 666706017699, 1600.0,2019-04-21,+2775 079743034959, 1600.0,2019-06-23,+9577 846205075339]
+Miles Rudolphsen;1993-08-01;Folehaven;2;8225;Miles Rudolphsen8@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-06-23,+8352 533323020781, 1600.0,2017-11-05,+0423 731830092820, 1600.0,2019-07-17,+5898 400407001767, 1600.0,2019-12-01,+1830 911550050319, 1600.0,2019-12-11,+3373 788239086004]
+Sherman Austinford;1985-09-21;Fortunstræde;51;9931;Sherman Austinford9@mail.dk;Mand;Motionist;Passiv;[1600.0,2017-12-08,+1444 554088021482, 1600.0,2019-09-24,+1545 797370055480]
+Bill Chassen;1970-01-20;Fredericiagade;131;1330;Bill Chassen1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-10-10,+3892 490495057699, 1600.0,2019-03-06,+4584 631888042711, 1600.0,2019-09-02,+3773 697818091793, 1600.0,2019-10-20,+3634 312792023226]
+Lonnie Monroesen;1979-10-06;Fredericiagade;71;6964;Lonnie Monroesen10@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-03-15,+9220 988007040958, 1600.0,2019-06-15,+7973 567450083460]
+Byron Eddsen;2008-05-19;Fredericiagade;35;8894;Byron Eddsen5@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-10-10,+5648 725740099555]
+Emery Grantsen;1950-08-17;Fredericiagade;109;3354;Emery Grantsen8@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-02-10,+3381 718777006330, 1600.0,2017-03-12,+5026 213232074197, 1600.0,2017-12-26,+1602 159677087372, 1600.0,2019-08-27,+3977 577466024460]
+Jerome Maxsen;1967-02-13;Frederik VII's Gade;155;9730;Jerome Maxsen2@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-07-22,+7603 309303047822, 1600.0,2019-08-26,+1304 656654033685]
+Mose Steveford;1959-06-28;Frederiksborggade;85;4110;Mose Steveford6@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-04-27,+2846 837025058887, 1600.0,2018-06-17,+8698 978701033922, 1600.0,2018-07-16,+2102 297759015206, 1600.0,2018-10-12,+4424 311512088649, 1600.0,2019-04-04,+1032 710054082760]
+Gordon Abeford;1976-10-26;Frederiksborggade;19;6072;Gordon Abeford10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-05-18,+5975 890195085848]
+Pete Chrissen;1969-01-17;Frederiksborggade;87;4657;Pete Chrissen1@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-07-28,+3437 772867090542, 1600.0,2019-11-16,+2210 512951019282]
+Clark Gustaveford;1979-07-12;Frederiksgårds Allé;52;1366;Clark Gustaveford7@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-09-10,+3662 292848031059, 1600.0,2019-03-05,+0558 864291004509]
+Orville Lorenzosen;1954-09-18;Frederiksgårds Allé;196;9250;Orville Lorenzosen9@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-04-20,+9346 039979068314]
+Bruce Marcussen;1977-10-15;Frederiksgårds Allé;98;8169;Bruce Marcussen10@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2018-10-13,+6218 365976034136]
+Preston Bobford;1992-07-20;Frederiksholms Kanal;187;5700;Preston Bobford7@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-01-20,+8082 185643098809]
+Dock Donaldsen;1990-06-11;Frederiksstadsgade;51;9832;Dock Donaldsen6@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-12-16,+5877 771734047968, 1600.0,2018-08-01,+4944 163557044749, 1600.0,2019-04-25,+6200 063684038181]
+Jackson Cecilsen;1988-01-23;Frederikssundsvej;87;9870;Jackson Cecilsen1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-01-27,+7424 743166054350]
+Barney Delbertsen;1966-11-27;Fruebjergvej;34;3560;Barney Delbertsen11@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-06-26,+8312 879869063079, 1600.0,2017-10-07,+0872 614005051061, 1600.0,2018-10-18,+9723 776401093821]
+Edmond Andersonsen;1995-01-13;Fruebjergvej;76;7524;Edmond Andersonsen1@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-02-16,+9065 224672061576, 1600.0,2018-04-25,+6342 324134075399]
+Christian Glennsen;1996-12-09;Fyensgade;88;7546;Christian Glennsen12@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-11-03,+9779 770013050104]
+Jefferson Lukesen;1991-11-25;Galionsvej;168;5951;Jefferson Lukesen11@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-06-09,+4891 215546025327]
+Neal Burtsen;1973-09-22;Gammel Kongevej;134;1170;Neal Burtsen9@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-09-15,+5260 015345084569, 1600.0,2019-05-18,+4062 100623095675, 1600.0,2019-12-10,+5228 834147006821]
+Ike Myronsen;1956-10-21;Gammel Køge Landevej;8;7136;Ike Myronsen10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-08-09,+1413 868857044622]
+Tony Conradsen;1973-01-17;Gammel Mønt;48;8128;Tony Conradsen1@mail.dk;Mand;Konkurrence;Aktiv;[1600.0,2019-04-19,+4263 493900051399, 1600.0,2019-09-19,+0407 708646018544, 1600.0,2019-12-01,+3740 013966018267]
+Joel Mattford;1976-03-20;Gammeltoftsgade;144;3442;Joel Mattford3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-07-05,+9001 339099097642, 1600.0,2018-03-20,+8136 962934078260, 1600.0,2019-05-10,+6753 563257068778]
+Riley Vincentsen;2007-05-08;Gammeltorv;43;9851;Riley Vincentsen5@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-11-16,+5145 032572076754, 1600.0,2018-05-22,+4727 276939081616]
+Emory Isaiahford;1994-10-04;Gartnergade;102;1182;Emory Isaiahford10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-08-16,+9080 059640013552, 1600.0,2019-11-23,+3603 638387013542]
+Nick Ezrasen;2008-01-07;Gasværksvej;10;3251;Nick Ezrasen1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-09-20,+1135 388522017940]
+Green Juanford;2007-01-10;Gaunøvej;174;1617;Green Juanford1@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2018-06-10,+2904 518972088649]
+Clifton Luciussen;1976-03-18;Gerdasgade;99;4405;Clifton Luciussen3@mail.dk;Mand;Motionist;Aktiv;[1600.0,2019-06-11,+1921 615000048651, 1600.0,2019-12-14,+3112 845830009036]
+Porter Arnoldsen;1970-07-01;Gernersgade;98;9436;Porter Arnoldsen7@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-09-26,+9794 889996037912]
+Bud Jeremiahford;1982-04-06;Gernersgade;163;3364;Bud Jeremiahford4@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-02-04,+6963 592977068262]
+Taylor Forrestsen;1969-03-13;Gernersgade;44;4131;Taylor Forrestsen3@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-02-15,+6030 856992021082]
+Roland Spencerford;1968-09-22;Gernersgade;149;7851;Roland Spencerford9@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-01-20,+9902 326581055561, 1600.0,2019-06-13,+7506 456779058470]
+Burton Donsen;1956-10-05;Gislingevej;58;5848;Burton Donsen10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-04-19,+6595 786077019569]
+Emmet Gustavford;1991-10-17;Glucksvej;66;6484;Emmet Gustavford10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-10-11,+7139 219457022405]
+Louie Morganford;1952-12-14;Godthåbsvej;113;3418;Louie Morganford12@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-05-01,+0551 973514026538]
+Ned Vansen;1960-06-06;Gothersgade;65;3664;Ned Vansen6@mail.dk;Kvinde;Konkurrence;Aktiv;[1600.0,2019-11-13,+1108 100905003329]
+Ambrose Chaunceyford;1977-07-08;Greisvej;192;2333;Ambrose Chaunceyford7@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2017-02-19,+1565 000829098213, 1600.0,2019-04-11,+6679 097251010257, 1600.0,2019-06-03,+4236 954875070297, 1600.0,2019-08-27,+1383 862827085004]
+Elisha Ferdinandsen;1979-01-17;Greisvej;73;4289;Elisha Ferdinandsen1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-02-19,+7570 179384000913]
+General Julianford;1955-01-10;Grøndals Parkvej;85;2462;General Julianford1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-02-08,+9570 747511028843, 1600.0,2019-06-21,+5366 729631084448]
+Kenneth Mitchellsen;1955-01-04;Grøndals Parkvej;151;7017;Kenneth Mitchellsen1@mail.dk;Mand;Motionist;Aktiv;[1600.0,2017-02-05,+4543 177678007644]
+Allie Joshford;1992-10-06;Grønnegade;97;6916;Allie Joshford10@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2018-02-19,+0597 499410068900, 1600.0,2019-03-15,+7025 295432014870, 1600.0,2019-04-02,+1506 857839092470]

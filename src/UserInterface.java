@@ -464,7 +464,7 @@ public class UserInterface extends Application {
                     if(!redigere) {
                         medlemmer.addMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
                     }else{
-                        medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
+                        medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());
                     }
 
                     sceneManager("formand");

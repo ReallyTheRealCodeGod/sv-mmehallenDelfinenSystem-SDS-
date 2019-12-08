@@ -24,7 +24,7 @@ public class Betaling {
         }
 
         public String toString(){
-            return "" + beloeb +", "+ betalingsDato +", "+ bankNummer + "";
+            return "" + beloeb +","+ betalingsDato +","+ bankNummer + "";
         }
     }
  
