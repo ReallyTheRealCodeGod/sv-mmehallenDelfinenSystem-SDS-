@@ -6,8 +6,8 @@
         <VBox spacing="50" alignment="CENTER"  >
 
             <HBox spacing="10">
-                <RadioButton/>
-                <Text text="Restance"/>
+                <RadioButton id="restanceMedlem"/>
+                <Text text="Restance" />
             </HBox>
 
             <HBox spacing="450">

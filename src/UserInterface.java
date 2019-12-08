@@ -574,9 +574,18 @@ public class UserInterface extends Application {
             });
 
         }
+
+        //Lav en udvidelse af eventet, så den finder en liste med restancemedlemmer
         else{
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
             columns = new String[] {"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
+            RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
+            restance.setOnAction(event ->{
+
+                System.out.println("it works freak bitches");
+
+            });
+
         }
 
         Button tilbage = (Button) options.lookup("#tilbageButton");
@@ -588,16 +597,17 @@ public class UserInterface extends Application {
         root.getChildren().add(tb);
         root.getChildren().add(options);
 
-   //     tf.setOnAction((event -> {
-   //         System.out.println(tf.getText());
-   //         generateTable(columns, root, medlemmer.filtrerListe(tf.getText()));
-   //     }));
+    /*   tf.setOnAction((event -> {
+            System.out.println(tf.getText());
+           generateTable(columns, root, medlemmer.filtrerListe(tf.getText()));
+       }));
+
+    */
 
         tf.setOnAction(event ->{
             updateTable(columns, root,medlemmer.getListe(),tf.getText(), tf);
 
         });
-
         generateTable(columns, root, medlemmer.getListe());
 
         updateStage(root);
