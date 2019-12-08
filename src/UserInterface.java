@@ -29,6 +29,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
+import java.util.concurrent.atomic.AtomicInteger;
 
 public class UserInterface extends Application {
     private Stage stage;
@@ -580,11 +581,20 @@ public class UserInterface extends Application {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
             columns = new String[] {"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
             RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
-            restance.setOnAction(event ->{
+            AtomicInteger clicked = new AtomicInteger();
+            restance.setOnMouseClicked(event ->{
+                clicked.getAndIncrement();
+                if(clicked.get() == 1) {
+                    System.out.println("it works freak bitches");
+                    updateTable(columns, root, medlemmer.getListe(), "true", tf);
+                }else if(clicked.get() == 2) {
+                    generateTable(columns, root, medlemmer.getListe());
+                    clicked.set(0);
+                }
 
-                System.out.println("it works freak bitches");
 
             });
+
 
         }
 
@@ -635,14 +645,15 @@ public class UserInterface extends Application {
 
     void updateTable(String[] columns, Parent root, ArrayList<Medlem> al, String search, TextField tf ) {
 
+        List<Medlem> list = new ArrayList<>(al);
+
+        if(search.equals("true") || search.equals("false")){
+            list.removeIf(s -> !s.getRestancemedlem().contains(search));
+        }else {
+            list.removeIf(s -> !s.getNavn().contains(search));
+        }
 
 
-               List<Medlem> list = new ArrayList<>(al);
-        list.removeIf(s -> !s.getNavn().contains(search));
-
-
-
-        System.out.println(list.size());
         TableView table = (TableView)root.lookup("#table");
         table.getColumns().clear();
 
