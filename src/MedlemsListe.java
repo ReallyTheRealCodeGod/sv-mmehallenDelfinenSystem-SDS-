@@ -155,8 +155,10 @@ class MedlemsListe implements ListeInterface{
 	public ArrayList<Medlem> filtrerListe(String filter) {
 		ArrayList<Medlem> filterListe = new ArrayList<>();
 		for(Medlem m: liste){
-			if(m.getNavn().contains(filter));
-			filterListe.add(m);
+			if(m.getNavn().toLowerCase().contains(filter.toLowerCase())) {
+				System.out.println(m.getNavn());
+				filterListe.add(m);
+			}
 		}
 		return filterListe;
 	}

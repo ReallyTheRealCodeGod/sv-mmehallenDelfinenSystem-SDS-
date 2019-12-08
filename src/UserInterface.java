@@ -609,7 +609,7 @@ public class UserInterface extends Application {
             TableColumn<String, Medlem> col = new TableColumn<String, Medlem>(s);
             col.setCellValueFactory(new PropertyValueFactory<>(s));
             if(s.equals("Fodselsdato")){
-                col.setText("F"+"\u00F8"+"dselsdato");
+                col.setText("F\u00F8dselsdato");
             }
             table.getColumns().add(col);
         }

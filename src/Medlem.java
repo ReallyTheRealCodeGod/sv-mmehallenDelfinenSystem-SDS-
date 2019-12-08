@@ -103,8 +103,6 @@ public class Medlem {
 	// Override af toString. Bare lavet noget som et eksempel p� hvordan vi kunne g�re det.
 	    @Override
 	    public String toString() {
-	        
 	        return navn + ";" + fodselsdato +";"+ adresse + ";" + husNr + ";" + postNr + ";" +email+";"+gender+";"+medlemstype+";"+aktivitetstype+";";
-	               
 	    }
 	}
