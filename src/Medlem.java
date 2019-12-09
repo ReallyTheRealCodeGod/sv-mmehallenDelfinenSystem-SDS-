@@ -41,7 +41,7 @@ public class Medlem {
                 this.betalinger = new ArrayList<>();
                 //kopiere listen fra variablen til attributen
                 for(Betaling b: betalinger){
-                    tilføjBetaling(b.getBeloeb(), b.getBetalingsDato(), b.bankNummer());
+                    tilføjBetaling(b.getBeloeb(), b.getBetalingsDato(), b.getBankNummer());
               }
 		    }
 
@@ -58,8 +58,6 @@ public class Medlem {
 			  udloebsdato = betalinger.get(0).getBetalingsDato();
 			  this.udloebsdato = udloebsdato.plusYears(betalinger.size()).toString();
 		  }
-		  System.out.println(navn);
-		  System.out.println(betalinger.size());
 		  setRestanceMedlem();
 		}
 

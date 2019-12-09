@@ -19,7 +19,7 @@ public class Betaling {
             return betalingsDato;
         }
 
-        public String bankNummer(){
+        public String getBankNummer(){
             return bankNummer;
         }
 

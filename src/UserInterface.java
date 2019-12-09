@@ -605,7 +605,13 @@ public class UserInterface extends Application {
                 else{generateTable(columns,root,medlemmer.getListe());}
             }));
             bankInfo.setOnAction(event ->{
-                popUpBank(ol.get(tb.getSelectionModel().getSelectedIndex()));
+                try {
+                    Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
+
+                    updateStage(popUpBank(m));
+                }catch(Exception e){
+                    System.out.println("det virker! \nnot!");
+                }
                     });
 
         }
@@ -629,12 +635,31 @@ public class UserInterface extends Application {
         generateTable(columns, root, medlemmer.getListe());
         updateStage(root);
     }
-    public void popUpBank(Medlem m){
+    public VBox popUpBank(Medlem m) throws Exception{
+        ObservableList<Betaling> obs = FXCollections.observableArrayList();
 
+        VBox top = FXMLLoader.load(getClass().getResource("BankInfo.fxml"));
+        TableView table = (TableView) top.lookup("#bankTable");
+
+        String[] cols = {"Beloeb", "BetalingsDato", "BankNummer"};
+
+        obs.setAll(m.getBetalingsHistorik());
+        table.setItems(obs);
+
+        for(String s: cols){
+            TableColumn<String, Betaling> col = new TableColumn<String, Betaling>(s);
+            col.setCellValueFactory(new PropertyValueFactory<>(s));
+            if(s.equals("beloeb")) {
+                col.setText("Bel\u00F8b");
+            }
+            table.getColumns().add(col);
+        }
+        top.getChildren().add(table);
+        return top;
     }
 
-    void generateTable(String[] columns, Parent root, ArrayList<Medlem> al){
-        System.out.println(al);
+
+   public void generateTable(String[] columns, Parent root, ArrayList<Medlem> al){
         TableView table = (TableView)root.lookup("#table");
         table.getColumns().clear();
 
