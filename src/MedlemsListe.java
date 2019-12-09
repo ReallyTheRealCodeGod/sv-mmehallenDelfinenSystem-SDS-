@@ -80,7 +80,7 @@ class MedlemsListe implements ListeInterface{
 		if (navn.isEmpty()) {
 			medlemArray.add("Fejl i navn - ret venligst");
 		}
-		if (dato.isAfter(dato)) {
+		if (dato.isAfter(LocalDate.now())) {
 			medlemArray.add("Fejl i dato - ret venligst");
 		}
 		if (gender.isEmpty()) {

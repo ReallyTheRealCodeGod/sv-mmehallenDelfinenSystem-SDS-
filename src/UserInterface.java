@@ -328,6 +328,25 @@ public class UserInterface extends Application {
         grid1.setStyle("-fx-background-color: ALICEBLUE;");
         updateStage(grid1);
     }
+    public void dialogBox (String message){
+        //dialogbox til opretmedlem
+        Dialog<String> dialogOpret = new Dialog<>();
+        dialogOpret.setTitle(" ");
+        ButtonType OKButtonType = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        dialogOpret.getDialogPane().getButtonTypes().add(OKButtonType);
+
+        HBox dialogOpretHBox = new HBox();
+        dialogOpretHBox.setSpacing(10);
+        Label successLabel = new Label(message);
+
+        dialogOpretHBox.getChildren().addAll(successLabel);
+        HBox.setMargin(successLabel, new Insets(10, 25, 10 , 25));
+
+        dialogOpret.getDialogPane().setContent(dialogOpretHBox);
+
+        dialogOpret.showAndWait();
+    }
+
 
     public void opretMedlemForm() throws Exception{
         opretMedlemForm(null);
@@ -431,11 +450,9 @@ public class UserInterface extends Application {
                 or(emailText.textProperty().isEmpty()).
                 or(nummerText.textProperty().isEmpty()).
                 or(aktivitetsTypeBox.valueProperty().isNull()).
-                or(groupGender.selectedToggleProperty().isNull());
-
+                or(groupGender.selectedToggleProperty().isNull()).
+                or(datepicker.valueProperty().isNull());
         buttonGem.disableProperty().bind(booleanBind);
-
-
 
 
         //hbox til knapper
@@ -463,8 +480,10 @@ public class UserInterface extends Application {
                 if (medlemmer.verificerAddMedlemInput(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype)) {
                     if(!redigere) {
                         medlemmer.addMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
+                        dialogBox("Medlem oprettet succesfuldt!");
                     }else{
                         medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());
+                        dialogBox("Medlem redigeret succesfuldt!");
                     }
 
                     sceneManager("formand");
@@ -571,7 +590,8 @@ public class UserInterface extends Application {
             }));
             slet.setOnAction(event ->{
                 medlemmer.sletMedlem(medlemmer.getListe().indexOf(ol.get(tb.getSelectionModel().getSelectedIndex())));
-                sceneManager("visMedlemmerFormand");
+                dialogBox("Medlem slettet succesfuldt!");
+                sceneManager("back");
             });
         }
         //Lav en udvidelse af eventet, så den finder en liste med restancemedlemmer
