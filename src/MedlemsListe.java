@@ -101,7 +101,7 @@ class MedlemsListe implements ListeInterface{
 		}
 		if (!medlemArray.isEmpty()) {
 			UserInterface UI = new UserInterface();
-			UI.errorDialog("Fejlbesked",medlemArray.toString());;
+			UI.dialogBox("Fejlbesked",medlemArray.toString());;
 			return false;
 		} else {
 			return true;
