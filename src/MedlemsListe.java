@@ -41,7 +41,6 @@ class MedlemsListe implements ListeInterface{
 			aktivitetstype = sc.next();
 			//scanner betalings historiken
 			ArrayList<Betaling> betaling = new ArrayList<>();
-			System.out.println(betaling);
 			sc.useDelimiter("]");
 			sc.skip(Pattern.quote(";["));
 
