@@ -577,7 +577,7 @@ public class UserInterface extends Application {
         //Lav en udvidelse af eventet, så den finder en liste med restancemedlemmer
         else {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
-            columns = new String[]{"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
+            columns = new String[]{"Navn", "Pris", "Adresse", "Email", "Aktivitetstype", "Udloebsdato"};
             RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
             restance.setOnAction((event -> {  generateTable(columns, root, medlemmer.restance()); }));
                 }
@@ -616,6 +616,10 @@ public class UserInterface extends Application {
             if(s.equals("Fodselsdato")){
                 col.setText("F\u00F8dselsdato");
             }
+            if(s.equals("Udloebsdato")){
+                col.setText("Udl\u00F8bsdato");
+            }
+
             table.getColumns().add(col);
         }
     }

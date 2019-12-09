@@ -12,6 +12,7 @@ public class Medlem {
 	    private String email;
 	    private String medlemstype;
 	    private String aktivitetstype;
+	    private String udloebsdato;
 	    private boolean restanceMedlem;
 	    private ArrayList<Betaling> betalinger;
 	    private double pris;
@@ -32,7 +33,6 @@ public class Medlem {
 		        this.email = email;
 		        this.medlemstype = medlemstype;
 		        this.aktivitetstype = aktivitetstype;
-		        restanceMedlem = true;
 		        this.pris = Kontingent.udregnPris(this.fodselsdato, medlemstype);
                 //initiasere betalingshistorikken
 				if(betalinger.isEmpty()){
@@ -41,24 +41,37 @@ public class Medlem {
                 this.betalinger = new ArrayList<>();
                 //kopiere listen fra variablen til attributen
                 for(Betaling b: betalinger){
-                    this.betalinger.add(b);
+                    tilføjBetaling(b.getBeloeb(), b.getBetalingsDato(), b.bankNummer());
               }
 		    }
 
 		public void tilføjBetaling(double pris, LocalDate dato, String bankNr){
 			betalinger.add(new Betaling(pris, dato, bankNr));
+			setUdloebsdato();
         }
 
-	  /*public String UdloebsDato() {
-          LocalDate nuvaerende;
-          if (betalinger.isEmpty()) {
-              return "N/A";
-          } else {
-              for (Betaling b : betalinger) {
+	  public void setUdloebsdato() {
+			LocalDate udloebsdato;
+		  if (betalinger.isEmpty()) {
+			  this.udloebsdato = "N/A";
+		  } else {
+			  udloebsdato = betalinger.get(0).getBetalingsDato();
+			  this.udloebsdato = udloebsdato.plusYears(betalinger.size()).toString();
+		  }
+		  System.out.println(navn);
+		  System.out.println(betalinger.size());
+		  setRestanceMedlem();
+		}
 
-              }
-          }
-      }*/
+	public void setRestanceMedlem(){
+		if(LocalDate.now().isAfter(LocalDate.parse(udloebsdato))){
+			restanceMedlem = true;
+		}else{restanceMedlem = false;}
+	}
+
+	public String getUdloebsdato() {
+		return udloebsdato;
+	}
 
 	public String getNavn() {
 		return navn;
