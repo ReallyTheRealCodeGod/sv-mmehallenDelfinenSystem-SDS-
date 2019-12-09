@@ -612,8 +612,8 @@ public class UserInterface extends Application {
             bankInfo.setOnAction(event ->{
                 try {
                     Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
+                    popUpBank(m);
 
-                    updateStage(popUpBank(m));
                 }catch(Exception e){
                     System.out.println("det virker! \nnot!");
                 }
@@ -621,11 +621,9 @@ public class UserInterface extends Application {
 
         }
 
-
-
         Button tilbage = (Button) options.lookup("#tilbageButton");
         tilbage.setOnAction((event ->{
-            sceneManager("back");
+            sceneManager("formand");
         }));
 
         root.getChildren().add(tf);
@@ -640,7 +638,9 @@ public class UserInterface extends Application {
         generateTable(columns, root, medlemmer.getListe());
         updateStage(root);
     }
-    public VBox popUpBank(Medlem m) throws Exception{
+    public void popUpBank(Medlem m) throws Exception{
+        Dialog<Boolean> dialog = new Dialog<>();
+        dialog.setTitle("Bank Info");
         ObservableList<Betaling> obs = FXCollections.observableArrayList();
 
         VBox top = FXMLLoader.load(getClass().getResource("BankInfo.fxml"));
@@ -654,12 +654,14 @@ public class UserInterface extends Application {
         for(String s: cols){
             TableColumn<String, Betaling> col = new TableColumn<String, Betaling>(s);
             col.setCellValueFactory(new PropertyValueFactory<>(s));
-            if(s.equals("beloeb")) {
+            if(s.equals("Beloeb")) {
                 col.setText("Bel\u00F8b");
             }
             table.getColumns().add(col);
         }
-        return top;
+
+        dialog.getDialogPane().setContent(top);
+        dialog.showAndWait();
     }
 
 
