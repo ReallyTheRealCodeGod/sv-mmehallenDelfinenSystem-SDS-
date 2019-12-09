@@ -599,16 +599,16 @@ public class UserInterface extends Application {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
             columns = new String[]{"Navn", "Pris", "Adresse", "Email", "Aktivitetstype", "Udloebsdato"};
             RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
+            Button bankInfo = (Button) options.lookup("#bankInfo");
             restance.setOnAction((event -> {
                 if(restance.isSelected()){generateTable(columns, root, medlemmer.restance());}
                 else{generateTable(columns,root,medlemmer.getListe());}
             }));
-            /*slet.setOnAction(event ->{
-                medlemmer.sletMedlem(medlemmer.getListe().indexOf(ol.get(tb.getSelectionModel().getSelectedIndex())));
-                dialogBox("Medlem slettet succesfuldt!");
-                sceneManager("back");
-            });*/
-                }
+            bankInfo.setOnAction(event ->{
+                popUpBank(ol.get(tb.getSelectionModel().getSelectedIndex()));
+                    });
+
+        }
 
 
 
@@ -628,6 +628,9 @@ public class UserInterface extends Application {
 
         generateTable(columns, root, medlemmer.getListe());
         updateStage(root);
+    }
+    public void popUpBank(Medlem m){
+
     }
 
     void generateTable(String[] columns, Parent root, ArrayList<Medlem> al){

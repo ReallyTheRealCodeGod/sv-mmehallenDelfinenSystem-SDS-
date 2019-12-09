@@ -11,7 +11,8 @@
             </HBox>
 
             <HBox spacing="450">
-                <Button text="Bank Info" />
+                <Button text="Bank Info" id="bankInfo" />
+                <Button text="Send Regning" id="sendRegning"/>
                 <Button text="Tilbage" id="tilbageButton" />
             </HBox>
 
