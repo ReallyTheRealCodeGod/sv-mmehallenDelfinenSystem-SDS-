@@ -12,6 +12,7 @@ public class Medlem {
 	    private String email;
 	    private String medlemstype;
 	    private String aktivitetstype;
+	    private String restancemedlem;
 	    private ArrayList<Betaling> betalinger;
 	    private double pris;
 
@@ -21,7 +22,7 @@ public class Medlem {
 	}
 
 	    Medlem(String navn, LocalDate fodselsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
-		           String aktivitetstype, ArrayList<Betaling> betalinger) {
+		           String aktivitetstype, String restancemedlem, ArrayList<Betaling> betalinger) {
                 this.navn = navn;
 		        this.fodselsdato = fodselsdato;
 		        this.gender = gender;
@@ -31,6 +32,7 @@ public class Medlem {
 		        this.email = email;
 		        this.medlemstype = medlemstype;
 		        this.aktivitetstype = aktivitetstype;
+		        this.restancemedlem = restancemedlem;
 		        this.pris = Kontingent.udregnPris(this.fodselsdato, medlemstype);
                 //initiasere betalingshistorikken
                 this.betalinger = new ArrayList<>();
@@ -88,6 +90,9 @@ public class Medlem {
 	}
 	public String getAktivitetstype() {
 		return aktivitetstype;
+	}
+	public String getRestancemedlem() {
+		return restancemedlem;
 	}
 	public double getPris() {
 		return pris;

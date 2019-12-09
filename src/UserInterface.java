@@ -20,6 +20,7 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
+
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -417,9 +418,9 @@ public class UserInterface extends Application {
 
          //knapper
         Button buttonGem = new Button("Gem");
-        Button buttonAnnuller = new Button("Annullér");
-        buttonGem.setPrefSize(150, 20);
-        buttonAnnuller.setPrefSize(110, 20);
+        Button buttonAnnuller = new Button("Annuller");
+        buttonGem.setPrefSize(180, 20);
+        buttonAnnuller.setPrefSize(80, 20);
         buttonGem.setDisable(true);
 
         // Disabler gem button indtil alle fields er udfyldt
@@ -599,9 +600,29 @@ public class UserInterface extends Application {
                 sceneManager("visMedlemmerFormand");
             });
         }
-        else{
+
+        //Lav en udvidelse af eventet, så den finder en liste med restancemedlemmer
+        else {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
-            columns = new String[] {"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
+            columns = new String[]{"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
+            RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
+            AtomicInteger clicked = new AtomicInteger();
+            restance.setOnMouseClicked(event -> {
+                clicked.getAndIncrement();
+                if (clicked.get() == 1) {
+                    System.out.println("it works freak bitches");
+                    updateTable(columns, root, medlemmer.getListe(), "true", tf);
+                    itsclicked = true;
+                } else if (clicked.get() == 2) {
+                    generateTable(columns, root, medlemmer.getListe());
+                    clicked.set(0);
+                    itsclicked = false;
+                }
+
+
+            });
+
+
         }
 
         Button tilbage = (Button) options.lookup("#tilbageButton");
