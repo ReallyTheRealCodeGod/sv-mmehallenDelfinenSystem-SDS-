@@ -12,7 +12,7 @@ public class Medlem {
 	    private String email;
 	    private String medlemstype;
 	    private String aktivitetstype;
-	    private String restancemedlem;
+	    private boolean restanceMedlem;
 	    private ArrayList<Betaling> betalinger;
 	    private double pris;
 
@@ -22,7 +22,7 @@ public class Medlem {
 	}
 
 	    Medlem(String navn, LocalDate fodselsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
-		           String aktivitetstype, String restancemedlem, ArrayList<Betaling> betalinger) {
+		           String aktivitetstype, ArrayList<Betaling> betalinger) {
                 this.navn = navn;
 		        this.fodselsdato = fodselsdato;
 		        this.gender = gender;
@@ -32,9 +32,12 @@ public class Medlem {
 		        this.email = email;
 		        this.medlemstype = medlemstype;
 		        this.aktivitetstype = aktivitetstype;
-		        this.restancemedlem = restancemedlem;
+		        restanceMedlem = true;
 		        this.pris = Kontingent.udregnPris(this.fodselsdato, medlemstype);
                 //initiasere betalingshistorikken
+				if(betalinger.isEmpty()){
+					restanceMedlem = true;
+				}
                 this.betalinger = new ArrayList<>();
                 //kopiere listen fra variablen til attributen
                 for(Betaling b: betalinger){
@@ -46,24 +49,16 @@ public class Medlem {
 			betalinger.add(new Betaling(pris, dato, bankNr));
         }
 
-	  /*public LocalDate addUdloebsDato(){
-            LocalDate nuvaerende;
-        if(!betalingsHistorik.isEmpty()){
-            nuvaerende = betalingsHistorik.get(betalingsHistorik.size()-1);
-         }else{
-            nuvaerende = LocalDate.now();
-            }
+	  /*public String UdloebsDato() {
+          LocalDate nuvaerende;
+          if (betalinger.isEmpty()) {
+              return "N/A";
+          } else {
+              for (Betaling b : betalinger) {
 
-	    	if(nuvaerende.isEqual(LocalDate.now())){
-                betalingsdato = LocalDate.now().plusYears(1);
-            }else if(nuvaerende.isAfter(LocalDate.now())){
-                betalingsdato = nuvaerende.plusYears(1);
-            }else if(nuvaerende.isBefore(LocalDate.now())){
-                betalingsdato = LocalDate.now().plusYears(1);
-            }
-
-            return betalingsdato;
-	    }*/
+              }
+          }
+      }*/
 
 	public String getNavn() {
 		return navn;
@@ -91,9 +86,10 @@ public class Medlem {
 	public String getAktivitetstype() {
 		return aktivitetstype;
 	}
-	public String getRestancemedlem() {
-		return restancemedlem;
+	public boolean getRestanceMedlem() {
+		return restanceMedlem;
 	}
+
 	public double getPris() {
 		return pris;
 	}

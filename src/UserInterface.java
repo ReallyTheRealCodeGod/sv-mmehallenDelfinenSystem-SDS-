@@ -14,7 +14,9 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.*;
+import javafx.scene.layout.GridPane;
+import javafx.scene.layout.HBox;
+import javafx.scene.layout.VBox;
 import javafx.scene.text.Font;
 import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
@@ -172,7 +174,7 @@ public class UserInterface extends Application {
 
         ButtonType loginButtonType = new ButtonType("Login", ButtonBar.ButtonData.OK_DONE);
         ButtonType cancelButtonType = new ButtonType("Annuller", ButtonBar.ButtonData.CANCEL_CLOSE);
-        dialogLogin.getDialogPane().getButtonTypes().addAll(cancelButtonType,loginButtonType);
+        dialogLogin.getDialogPane().getButtonTypes().addAll(loginButtonType, cancelButtonType);
 
         HBox dialogHBox = new HBox();
         dialogHBox.setSpacing(10);
@@ -433,40 +435,14 @@ public class UserInterface extends Application {
 
         buttonGem.disableProperty().bind(booleanBind);
 
+
+
+
         //hbox til knapper
         HBox hboxKnap = new HBox();
         hboxKnap.setSpacing(10);
         hboxKnap.getChildren().addAll(buttonGem, buttonAnnuller);
         hboxKnap.setAlignment(Pos.BOTTOM_RIGHT);
-
-        //dialogbox til opretmedlem
-        Dialog<String> dialogOpret = new Dialog<>();
-        dialogOpret.setTitle(" ");
-        ButtonType OKButtonType = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
-        dialogOpret.getDialogPane().getButtonTypes().add(OKButtonType);
-
-        HBox dialogOpretHBox = new HBox();
-        dialogOpretHBox.setSpacing(10);
-        Label successLabel = new Label("Medlem oprettet succesfuldt!");
-
-        dialogOpretHBox.getChildren().addAll(successLabel);
-        HBox.setMargin(successLabel, new Insets(10, 25, 10 , 25));
-
-        dialogOpret.getDialogPane().setContent(dialogOpretHBox);
-
-        //dialogbox til opretmedlem / rediger medlem
-        Dialog<String> dialogRediger = new Dialog<>();
-        dialogRediger.setTitle(" ");
-        dialogRediger.getDialogPane().getButtonTypes().add(OKButtonType);
-
-        VBox dialogRedigerVbox = new VBox();
-        dialogRedigerVbox.setSpacing(10);
-        Label redigerLabel = new Label("Medlem redigeret succesfuldt!");
-        dialogRedigerVbox.getChildren().add(redigerLabel);
-        VBox.setMargin(redigerLabel, new Insets(10, 25, 10 , 25));
-
-        dialogRediger.getDialogPane().setContent(dialogRedigerVbox);
-
 
         //Date formatter
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
@@ -487,10 +463,8 @@ public class UserInterface extends Application {
                 if (medlemmer.verificerAddMedlemInput(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype)) {
                     if(!redigere) {
                         medlemmer.addMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
-                        dialogOpret.showAndWait();
                     }else{
                         medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());
-                        dialogRediger.showAndWait();
                     }
 
                     sceneManager("formand");
@@ -600,30 +574,15 @@ public class UserInterface extends Application {
                 sceneManager("visMedlemmerFormand");
             });
         }
-
         //Lav en udvidelse af eventet, så den finder en liste med restancemedlemmer
         else {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
             columns = new String[]{"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
             RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
-            AtomicInteger clicked = new AtomicInteger();
-            restance.setOnMouseClicked(event -> {
-                clicked.getAndIncrement();
-                if (clicked.get() == 1) {
-                    System.out.println("it works freak bitches");
-                    updateTable(columns, root, medlemmer.getListe(), "true", tf);
-                    itsclicked = true;
-                } else if (clicked.get() == 2) {
-                    generateTable(columns, root, medlemmer.getListe());
-                    clicked.set(0);
-                    itsclicked = false;
+            restance.setOnAction((event -> {  generateTable(columns, root, medlemmer.restance()); }));
                 }
 
 
-            });
-
-
-        }
 
         Button tilbage = (Button) options.lookup("#tilbageButton");
         tilbage.setOnAction((event ->{

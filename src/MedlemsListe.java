@@ -39,7 +39,6 @@ class MedlemsListe implements ListeInterface{
 			gender = sc.next();
 			medlemsskabstype = sc.next();
 			aktivitetstype = sc.next();
-			restancemedlem = sc.next();
 			//scanner betalings historiken
 			ArrayList<Betaling> betaling = new ArrayList<>();
 			sc.useDelimiter("]");
@@ -59,8 +58,7 @@ class MedlemsListe implements ListeInterface{
 					}
 			}
 			//lav medlem og adder til arraylisten
-			liste.add(new Medlem(navn, fodselsdato, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype, restancemedlem, betaling));
-			id++;
+			liste.add(new Medlem(navn, fodselsdato, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype, betaling));
 		}
 		}catch(FileNotFoundException e){
 			System.out.println("Fejl i dannelse af medlemsliste");
@@ -152,11 +150,21 @@ class MedlemsListe implements ListeInterface{
 		}
 	}
 
-	public ArrayList<Medlem> filtrerListe(String filter) {
+	public ArrayList<Medlem> filtrerListe(String filter){
 		ArrayList<Medlem> filterListe = new ArrayList<>();
 		for(Medlem m: liste){
 			if(m.getNavn().toLowerCase().contains(filter.toLowerCase())) {
 				System.out.println(m.getNavn());
+				filterListe.add(m);
+			}
+		}
+			return filterListe;
+	}
+
+	public ArrayList<Medlem> restance(){
+		ArrayList<Medlem> filterListe = new ArrayList<>();
+		for(Medlem m: liste){
+			if(m.getRestanceMedlem()) {
 				filterListe.add(m);
 			}
 		}
