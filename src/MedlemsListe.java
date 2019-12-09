@@ -4,6 +4,7 @@ import java.io.PrintStream;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.Scanner;
+import java.util.regex.Pattern;
 
 class MedlemsListe implements ListeInterface{
 	//danner liste som en attribute i MedlemsListe
@@ -20,7 +21,6 @@ class MedlemsListe implements ListeInterface{
 			ArrayList<LocalDate> betalingsHistorik = new ArrayList<LocalDate>();
 			String navn, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype, restancemedlem;
 			LocalDate fodselsdato;
-			int id = 0;
 			Scanner line = new Scanner(f);
 			//Skan gennem filen, indtil der ikke er flere linjer
 		while(line.hasNext()){
@@ -42,12 +42,12 @@ class MedlemsListe implements ListeInterface{
 			restancemedlem = sc.next();
 			//scanner betalings historiken
 			ArrayList<Betaling> betaling = new ArrayList<>();
+			System.out.println(betaling);
+			sc.useDelimiter("]");
+			sc.skip(Pattern.quote(";["));
+
 			if(sc.hasNext()){
-				sc.useDelimiter("]");
-				sc.skip(";");
-				sc.skip("\\[");
-				String s = sc.next();
-				Scanner b = new Scanner(s);
+				Scanner b = new Scanner(sc.next());
 				b.useDelimiter(",");
 
 					while(b.hasNext()){
@@ -117,8 +117,8 @@ class MedlemsListe implements ListeInterface{
 	}
 
 	public void redigerMedlem(int medlemsIndex, String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
-							  String aktivitetstype){
-		liste.set(medlemsIndex, new Medlem(navn, dato, gender, adresse, husNr, postNr, email, medlemstype, aktivitetstype));
+							  String aktivitetstype, ArrayList<Betaling> betalingsHistorik){
+		liste.set(medlemsIndex, new Medlem(navn, dato, gender, adresse, husNr, postNr, email, medlemstype, aktivitetstype, betalingsHistorik));
 		opdaterListe();
 
 	}
@@ -156,8 +156,10 @@ class MedlemsListe implements ListeInterface{
 	public ArrayList<Medlem> filtrerListe(String filter) {
 		ArrayList<Medlem> filterListe = new ArrayList<>();
 		for(Medlem m: liste){
-			if(m.getNavn().contains(filter));
-			filterListe.add(m);
+			if(m.getNavn().toLowerCase().contains(filter.toLowerCase())) {
+				System.out.println(m.getNavn());
+				filterListe.add(m);
+			}
 		}
 		return filterListe;
 	}

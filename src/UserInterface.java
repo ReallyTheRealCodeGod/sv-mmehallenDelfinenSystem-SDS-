@@ -28,13 +28,12 @@ import java.io.InputStream;
 import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.*;
-import java.util.concurrent.atomic.AtomicInteger;
+import java.util.ArrayList;
+import java.util.Optional;
 
 public class UserInterface extends Application {
     private Stage stage;
     private Scene previous;
-    private boolean itsclicked = false;
 
     //opretter medlemsliste
     MedlemsListe medlemmer;
@@ -45,7 +44,7 @@ public class UserInterface extends Application {
     private double stagesizex;
     private double stagesizey;
 
-    public void start(Stage primaryStage) throws Exception {
+    public void start(Stage primaryStage) throws Exception{
         medlemmer = new MedlemsListe();
         ol = FXCollections.observableArrayList();
         this.stage = primaryStage;
@@ -57,7 +56,7 @@ public class UserInterface extends Application {
         sceneManager("login");
     }
 
-    public void sceneManager(String side) {
+    public void sceneManager(String side){
         try {
             switch (side) {
                 case "login":
@@ -72,7 +71,7 @@ public class UserInterface extends Application {
                     kasserStartSide();
                     break;
 
-                case "visMedlemmerKasser":
+               case "visMedlemmerKasser":
                     visMedlemmer("Kasser");
                     break;
                 case "visMedlemmerFormand":
@@ -85,22 +84,21 @@ public class UserInterface extends Application {
                 case "back":
                     showStage(previous);
             }
-        } catch (Exception e) {
+        }catch(Exception e){
             System.out.print("det fucked: " + e);
         }
     }
 
-    public void updateStage(Parent root) {
+    public void updateStage(Parent root){
 
-        if (previous != stage.getScene()) {
+        if(previous != stage.getScene()) {
             previous = stage.getScene();
         }
 
         Scene scene = new Scene(root, stagesizex, stagesizey);
         showStage(scene);
     }
-
-    public void showStage(Scene scene) {
+    public void showStage(Scene scene){
         stage.setScene(scene); // ændre scene størrelse
         stage.show();
 
@@ -280,12 +278,8 @@ public class UserInterface extends Application {
         Button visMedlemKasser = new Button("Vis Medlemmer");
         Button logUdKasser = new Button("Log Ud");
         //gui kontrol
-        visMedlemKasser.setOnAction(e -> {
-            sceneManager("visMedlemmerKasser");
-        });
-        logUdKasser.setOnAction(e -> {
-            sceneManager("logud");
-        });
+        visMedlemKasser.setOnAction(e -> { sceneManager("visMedlemmerKasser");});
+        logUdKasser.setOnAction(e -> { sceneManager("logud"); });
 
         visMedlemKasser.setMinSize(150, visMedlemKasser.getHeight());
         visMedlemKasser.setFont(Font.font("", FontWeight.THIN, 20));
@@ -319,15 +313,9 @@ public class UserInterface extends Application {
         logUd.setFont(Font.font("", FontWeight.THIN, 20));
 
         // gui kontrol
-        opretMedlem.setOnAction(e -> {
-            sceneManager("opretMedlem");
-        });
-        visMedlemFormand.setOnAction(e -> {
-            sceneManager("visMedlemmerFormand");
-        });
-        logUd.setOnAction(e -> {
-            sceneManager("logud");
-        });
+        opretMedlem.setOnAction(e -> { sceneManager("opretMedlem");});
+        visMedlemFormand.setOnAction(e -> { sceneManager("visMedlemmerFormand");});
+        logUd.setOnAction(e -> { sceneManager("logud"); });
 
         grid1.setVgap(125);
         grid1.setHgap(-10);
@@ -341,10 +329,9 @@ public class UserInterface extends Application {
         updateStage(grid1);
     }
 
-    public void opretMedlemForm() throws Exception {
+    public void opretMedlemForm() throws Exception{
         opretMedlemForm(null);
     }
-
     public void opretMedlemForm(Medlem medlem) throws Exception {
         //Labels og fields
 
@@ -403,7 +390,7 @@ public class UserInterface extends Application {
         final boolean redigere;
         final int index;
 
-        if (medlem != null) {
+        if(medlem != null) {
             redigere = true;
             index = medlemmer.getListe().indexOf(medlem);
 
@@ -414,7 +401,7 @@ public class UserInterface extends Application {
             postNummerText.setText(medlem.getPostNr());
             emailText.setText(medlem.getEmail());
 
-            switch (medlem.getGender()) {
+            switch(medlem.getGender()){
                 case "Mand":
                     maleRadio.setSelected(true);
                     break;
@@ -423,16 +410,15 @@ public class UserInterface extends Application {
                     break;
                 case "Andet":
                     otherRadio.setSelected(true);
-                    break;
-            }
+                    break;}
             medlemsTypeBox.setValue(medlem.getAktivitetstype());
             aktivitetsTypeBox.setValue(medlem.getMedlemstype());
-        } else {
+        }else{
             redigere = false;
             index = 0;
         }
 
-        //knapper
+         //knapper
         Button buttonGem = new Button("Gem");
         Button buttonAnnuller = new Button("Annuller");
         buttonGem.setPrefSize(180, 20);
@@ -450,6 +436,8 @@ public class UserInterface extends Application {
         buttonGem.disableProperty().bind(booleanBind);
 
 
+
+
         //hbox til knapper
         HBox hboxKnap = new HBox();
         hboxKnap.setSpacing(10);
@@ -460,27 +448,28 @@ public class UserInterface extends Application {
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern("dd MMM yyyy");
 
         //Make button do stuff
-        buttonGem.setOnAction((event -> {
+        buttonGem.setOnAction((event ->{
 
-            String navn = nameText.getText();
-            LocalDate dato = datepicker.getValue();
-            String koen = ((RadioButton) groupGender.getSelectedToggle()).getText();
-            String adresse = (adresseText.getText());
-            String husNr = nummerText.getText();
-            String postNr = postNummerText.getText();
-            String mail = emailText.getText();
-            String aktivitet = aktivitetsTypeBox.getValue().toString();
-            String medlemtype = medlemsTypeBox.getValue().toString();
+                    String navn = nameText.getText();
+                    LocalDate dato = datepicker.getValue();
+                    String koen = ((RadioButton) groupGender.getSelectedToggle()).getText();
+                    String adresse = (adresseText.getText());
+                    String husNr = nummerText.getText();
+                    String postNr = postNummerText.getText();
+                    String mail = emailText.getText();
+                    String aktivitet = aktivitetsTypeBox.getValue().toString();
+                    String medlemtype = medlemsTypeBox.getValue().toString();
 
-            if (medlemmer.verificerAddMedlemInput(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype)) {
-                if (!redigere) {
-                    medlemmer.addMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
-                } else {
-                    medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
+                if (medlemmer.verificerAddMedlemInput(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype)) {
+                    if(!redigere) {
+                        medlemmer.addMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
+                    }else{
+                        medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());
+                    }
+
+                    sceneManager("formand");
                 }
-
-                sceneManager("formand");
-            } else System.out.println("");
+                else System.out.println("");
         }
         ));
 
@@ -495,11 +484,11 @@ public class UserInterface extends Application {
         gridPane.setMinSize(stagesizex / 2, stagesizey);
 
         //padding
-        gridPane.setPadding(new Insets(50));
+        gridPane.setPadding(new Insets(40));
 
         //Setting the vertical and horizontal gaps between the columns
-        gridPane.setVgap(25);
-        gridPane.setHgap(40);
+        gridPane.setVgap(20);
+        gridPane.setHgap(10);
 
         //Setting the Grid alignment
         gridPane.setAlignment(Pos.TOP_LEFT);
@@ -552,9 +541,9 @@ public class UserInterface extends Application {
 
         //bigGrid.getStylesheets().add("sample/CSS.css");
         updateStage(bigGrid);
-    }
+        }
 
-    public void visMedlemmer(String bruger) throws Exception {
+    public void visMedlemmer(String bruger) throws Exception{
         VBox root = new VBox();
         String[] columns;
         HBox options;
@@ -565,26 +554,25 @@ public class UserInterface extends Application {
         tf.setId("Search");
         //opdater
 
-        if (bruger.equals("Formand")) {
+        if(bruger.equals("Formand")) {
             options = FXMLLoader.load(getClass().getResource("Formand.fxml"));
-            columns = new String[]{"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
+            columns = new String[] {"Navn", "Fodselsdato", "Adresse", "Medlemstype", "Aktivitetstype"};
 
             Button rediger = (Button) options.lookup("#redigerInfo");
             Button slet = (Button) options.lookup("#slet");
 
-            rediger.setOnAction((event -> {
+            rediger.setOnAction((event ->{
                 Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
                 try {
-                    opretMedlemForm(m);
-                } catch (Exception e) {
+                opretMedlemForm(m);
+                }catch(Exception e){
                     System.out.println("ups");
                 }
             }));
-            slet.setOnAction(event -> {
+            slet.setOnAction(event ->{
                 medlemmer.sletMedlem(medlemmer.getListe().indexOf(ol.get(tb.getSelectionModel().getSelectedIndex())));
                 sceneManager("visMedlemmerFormand");
             });
-
         }
 
         //Lav en udvidelse af eventet, så den finder en liste med restancemedlemmer
@@ -612,7 +600,7 @@ public class UserInterface extends Application {
         }
 
         Button tilbage = (Button) options.lookup("#tilbageButton");
-        tilbage.setOnAction((event -> {
+        tilbage.setOnAction((event ->{
             sceneManager("back");
         }));
 
@@ -620,71 +608,31 @@ public class UserInterface extends Application {
         root.getChildren().add(tb);
         root.getChildren().add(options);
 
-    /*   tf.setOnAction((event -> {
+        tf.setOnAction((event -> {
             System.out.println(tf.getText());
-           generateTable(columns, root, medlemmer.filtrerListe(tf.getText()));
-       }));
+            generateTable(columns, root, medlemmer.filtrerListe(tf.getText()));
+        }));
 
-    */
-
-        tf.setOnAction(event -> {
-            updateTable(columns, root, medlemmer.getListe(), tf.getText(), tf);
-
-        });
         generateTable(columns, root, medlemmer.getListe());
-
         updateStage(root);
     }
 
-    void generateTable(String[] columns, Parent root, ArrayList<Medlem> al) {
+    void generateTable(String[] columns, Parent root, ArrayList<Medlem> al){
         System.out.println(al);
-        TableView table = (TableView) root.lookup("#table");
+        TableView table = (TableView)root.lookup("#table");
         table.getColumns().clear();
 
         ol.setAll(al);
         table.setItems(ol);
 
-
-        for (String s : columns) {
+        for(String s: columns) {
             TableColumn<String, Medlem> col = new TableColumn<String, Medlem>(s);
             col.setCellValueFactory(new PropertyValueFactory<>(s));
-            if (s.equals("Fodselsdato")) {
-                col.setText("F" + "\u00F8" + "dselsdato");
+            if(s.equals("Fodselsdato")){
+                col.setText("F\u00F8dselsdato");
             }
             table.getColumns().add(col);
         }
     }
-
-    void updateTable(String[] columns, Parent root, ArrayList<Medlem> al, String search, TextField tf) {
-
-        List<Medlem> list = new ArrayList<>(al);
-
-
-        if (search.equals("true")) {
-            list.removeIf(s -> !s.getRestancemedlem().contains("true"));
-        } else {
-            list.removeIf(s -> !s.getNavn().contains(search));
-        }
-
-
-        TableView table = (TableView) root.lookup("#table");
-        table.getColumns().clear();
-
-        ol.setAll(list);
-        table.setItems(ol);
-
-
-        for (String s : columns) {
-            TableColumn<String, Medlem> col = new TableColumn<String, Medlem>(s);
-            col.setCellValueFactory(new PropertyValueFactory<>(s));
-            if (s.equals("Fodselsdato")) {
-                col.setText("F" + "\u00F8" + "dselsdato");
-            }
-            table.getColumns().add(col);
-        }
-
-
     }
-
-}
 

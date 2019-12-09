@@ -16,7 +16,11 @@ public class Medlem {
 	    private ArrayList<Betaling> betalinger;
 	    private double pris;
 
-	    
+		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
+		   String aktivitetstype) {
+			this(navn, foedelsdato, gender, adresse, husNr, postNr, email, medlemstype, aktivitetstype, new ArrayList<>());
+	}
+
 	    Medlem(String navn, LocalDate fodselsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
 		           String aktivitetstype, String restancemedlem, ArrayList<Betaling> betalinger) {
                 this.navn = navn;
@@ -38,19 +42,9 @@ public class Medlem {
               }
 		    }
 
-		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
-		   String aktivitetstype) {
-			this.navn = navn;
-			this.fodselsdato = foedelsdato;
-			this.gender = gender;
-			this.adresse = adresse;
-			this.husNr = husNr;
-			this.postNr = postNr;
-			this.email = email;
-			this.medlemstype = medlemstype;
-			this.aktivitetstype = aktivitetstype;
-			this.pris = Kontingent.udregnPris(this.fodselsdato, medlemstype);
-		}
+		public void tilføjBetaling(double pris, LocalDate dato, String bankNr){
+			betalinger.add(new Betaling(pris, dato, bankNr));
+        }
 
 	  /*public LocalDate addUdloebsDato(){
             LocalDate nuvaerende;
@@ -108,8 +102,6 @@ public class Medlem {
 	// Override af toString. Bare lavet noget som et eksempel p� hvordan vi kunne g�re det.
 	    @Override
 	    public String toString() {
-	        
-	        return navn + ";" + fodselsdato +";"+ adresse + ";" + husNr + ";" + postNr + ";" +email+";"+gender+";"+medlemstype+";"+aktivitetstype+";";
-	               
+	        return navn + ";" + fodselsdato +";"+ adresse + ";" + husNr + ";" + postNr + ";" +email+";"+gender+";"+medlemstype+";"+aktivitetstype+";"+betalinger;
 	    }
 	}
