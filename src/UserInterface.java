@@ -599,7 +599,15 @@ public class UserInterface extends Application {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
             columns = new String[]{"Navn", "Pris", "Adresse", "Email", "Aktivitetstype", "Udloebsdato"};
             RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
-            restance.setOnAction((event -> {  generateTable(columns, root, medlemmer.restance()); }));
+            restance.setOnAction((event -> {
+                if(restance.isSelected()){generateTable(columns, root, medlemmer.restance());}
+                else{generateTable(columns,root,medlemmer.getListe());}
+            }));
+            /*slet.setOnAction(event ->{
+                medlemmer.sletMedlem(medlemmer.getListe().indexOf(ol.get(tb.getSelectionModel().getSelectedIndex())));
+                dialogBox("Medlem slettet succesfuldt!");
+                sceneManager("back");
+            });*/
                 }
 
 
