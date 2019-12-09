@@ -22,7 +22,6 @@ import javafx.scene.text.FontWeight;
 import javafx.scene.text.Text;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
-
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
@@ -420,9 +419,9 @@ public class UserInterface extends Application {
 
          //knapper
         Button buttonGem = new Button("Gem");
-        Button buttonAnnuller = new Button("Annuller");
-        buttonGem.setPrefSize(180, 20);
-        buttonAnnuller.setPrefSize(80, 20);
+        Button buttonAnnuller = new Button("Annullér");
+        buttonGem.setPrefSize(150, 20);
+        buttonAnnuller.setPrefSize(110, 20);
         buttonGem.setDisable(true);
 
         // Disabler gem button indtil alle fields er udfyldt
@@ -484,11 +483,11 @@ public class UserInterface extends Application {
         gridPane.setMinSize(stagesizex / 2, stagesizey);
 
         //padding
-        gridPane.setPadding(new Insets(50));
+        gridPane.setPadding(new Insets(40));
 
         //Setting the vertical and horizontal gaps between the columns
-        gridPane.setVgap(25);
-        gridPane.setHgap(40);
+        gridPane.setVgap(20);
+        gridPane.setHgap(10);
 
         //Setting the Grid alignment
         gridPane.setAlignment(Pos.TOP_LEFT);
