@@ -4,7 +4,7 @@ import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class SendEmail {
-    String  d_email = "delfinensvommeklub@gmail.com",
+    String  d_email = "delfinensbad@gmail.com",
             d_password = "entotrefire",
             d_host = "smtp.gmail.com",
             d_port  = "465",
