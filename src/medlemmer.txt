@@ -148,3 +148,4 @@ General Juliansen;1951-12-20;Grøndals Parkvej;135;7469;General Juliansen12@mail
 Kenneth Mitchellford;1981-06-25;Grøndals Parkvej;131;2188;Kenneth Mitchellford6@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-11-24,+1013 287725065314, 1600.0,2019-01-04,+8691 551641032935, 1600.0,2019-02-17,+2877 691442038292]
 Allie Joshsen;1998-08-23;Grønnegade;178;3092;Allie Joshsen8@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-04-19,+1275 948120097137, 1600.0,2019-01-02,+7286 285791062024, 1600.0,2019-10-20,+7515 845891077121]
 Dansen hansen;2019-12-26;rådhuspladsen;2;1100;dansehans@gmail.com;Mand;Konkurrence;Passiv;[]
+Mads Christensen;1998-08-23;Amager;178;3092;michael@fuglo.com;Mand;Motionist;Aktiv;[1600.0,2018-04-19,+1275 948120097137, 1600.0,2019-01-02,+7286 285791062024, 1600.0,2019-10-20,+7515 845891077121]

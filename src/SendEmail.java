@@ -1,21 +1,22 @@
-/*
-package untitled13.src;
-
 import javax.mail.*;
 import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 import java.util.Properties;
 
 public class SendEmail {
-    String  d_email = "delfinensvommeklub@gmail.com",
+    String  d_email = "delfinensbad@gmail.com",
             d_password = "entotrefire",
             d_host = "smtp.gmail.com",
             d_port  = "465",
-            m_to = "michael@fuglo.com",
+            m_to,
             m_subject = "hey store fyr",
             m_text = "tjek mit website pronhub.cum";
 
-    public SendEmail() {
+    public SendEmail(String email) {
+        this.m_to = email;
+
+
+
         Properties props = new Properties();
         props.put("mail.smtp.user", d_email);
         props.put("mail.smtp.host", d_host);
@@ -46,10 +47,6 @@ public class SendEmail {
     }
 
     //How to implement method in main
-    public static void main(String[] args)
-    {
-        SendEmail blah = new SendEmail();
-    }
 
     private class SMTPAuthenticator extends javax.mail.Authenticator
     {
@@ -62,4 +59,3 @@ public class SendEmail {
 
 
 
- */
