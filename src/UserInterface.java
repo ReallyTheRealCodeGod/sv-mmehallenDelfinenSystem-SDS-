@@ -671,7 +671,6 @@ public class UserInterface extends Application {
             }
             table.getColumns().add(col);
         }
-        top.getChildren().add(table);
         return top;
     }
 

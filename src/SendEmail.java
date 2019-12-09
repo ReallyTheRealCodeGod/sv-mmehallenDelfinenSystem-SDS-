@@ -9,8 +9,9 @@ public class SendEmail {
             d_host = "smtp.gmail.com",
             d_port  = "465",
             m_to,
-            m_subject = "hey store fyr",
-            m_text = "tjek mit website pronhub.cum";
+            m_subject = "Her er en regning",
+            m_text = "Send 1600 kr. til vores konto oplysninger.\n" +
+                     "Tak. MVH DelfinTeamet";
 
     public SendEmail(String email) {
         this.m_to = email;
