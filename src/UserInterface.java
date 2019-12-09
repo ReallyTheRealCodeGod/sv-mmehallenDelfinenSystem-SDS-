@@ -247,31 +247,6 @@ public class UserInterface extends Application {
         updateStage(grid);
     }
 
-    public void errorDialog(String title, String message) {
-        // Dialog til forkert login
-        Dialog<Boolean> dialog = new Dialog<>();
-        dialog.setTitle(title);
-
-        Label label = new Label(message);
-        Button button = new Button("OK");
-        VBox vb = new VBox();
-
-        label.setPadding(new Insets(10, 20, 20, 20));
-
-        vb.setAlignment(Pos.CENTER);
-        vb.getChildren().addAll(label, button);
-        dialog.getDialogPane().setContent(vb);
-
-        button.setOnAction(e -> {
-            dialog.close();
-            dialog.setResult(Boolean.TRUE);
-        });
-
-        // ButtonType bt = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
-        // dialog.getDialogPane().getButtonTypes().add(bt);
-        dialog.showAndWait();
-    }
-
     public void kasserStartSide() {
         GridPane grid = new GridPane();
         grid.setGridLinesVisible(false);
@@ -328,6 +303,34 @@ public class UserInterface extends Application {
         grid1.setStyle("-fx-background-color: ALICEBLUE;");
         updateStage(grid1);
     }
+
+    public void errorDialog(String title, String message) {
+        // Dialog til forkert login
+        Dialog<Boolean> dialog = new Dialog<>();
+        dialog.setTitle(title);
+
+        Label label = new Label(message);
+        Button button = new Button("OK");
+        VBox vb = new VBox();
+
+        label.setPadding(new Insets(10, 20, 20, 20));
+        button.setMinSize(75, button.getHeight());
+
+
+        vb.setAlignment(Pos.CENTER);
+        vb.getChildren().addAll(label, button);
+        dialog.getDialogPane().setContent(vb);
+
+        button.setOnAction(e -> {
+            dialog.close();
+            dialog.setResult(Boolean.TRUE);
+        });
+
+        // ButtonType bt = new ButtonType("OK", ButtonBar.ButtonData.OK_DONE);
+        // dialog.getDialogPane().getButtonTypes().add(bt);
+        dialog.showAndWait();
+    }
+
     public void dialogBox (String message){
         //dialogbox til opretmedlem
         Dialog<String> dialogOpret = new Dialog<>();
@@ -581,11 +584,15 @@ public class UserInterface extends Application {
             Button slet = (Button) options.lookup("#slet");
 
             rediger.setOnAction((event ->{
-                Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
-                try {
-                opretMedlemForm(m);
-                }catch(Exception e){
-                    System.out.println("ups");
+                if (tb.getSelectionModel().isEmpty()) {
+                    errorDialog("Fejl", "Du har ikke valgt et medlem at redigere.");
+                } else {
+                    Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
+                    try {
+                        opretMedlemForm(m);
+                    }catch(Exception e){
+                        System.out.println("ups");
+                    }
                 }
             }));
             slet.setOnAction(event ->{
