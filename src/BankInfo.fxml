@@ -11,7 +11,7 @@
     </HBox>
     <TableView id="bankTable"/>
     <HBox>
-        <Button text="Tilføj Betaling"/>
-        <Button text="Aflys"/>
+        <Button text="Tilføj Betaling" id="addBetaling"/>
+        <Button text="Luk" id="lukdialog"/>
     </HBox>
 </VBox>

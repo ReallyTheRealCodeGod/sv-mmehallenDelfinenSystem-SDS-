@@ -588,6 +588,10 @@ public class UserInterface extends Application {
                     }
                 }
             });
+            Button tilbage = (Button) options.lookup("#tilbageButton");
+            tilbage.setOnAction((event ->{
+                sceneManager("formand");
+            }));
         }
         //Lav en udvidelse af eventet, så den finder en liste med restancemedlemmer
         else {
@@ -619,12 +623,12 @@ public class UserInterface extends Application {
                 }
                     });
 
-        }
+            Button tilbage = (Button) options.lookup("#tilbageButton");
+            tilbage.setOnAction((event ->{
+                sceneManager("kasser");
+            }));
 
-        Button tilbage = (Button) options.lookup("#tilbageButton");
-        tilbage.setOnAction((event ->{
-            sceneManager("formand");
-        }));
+        }
 
         root.getChildren().add(tf);
         root.getChildren().add(tb);
@@ -642,6 +646,7 @@ public class UserInterface extends Application {
         Dialog<Boolean> dialog = new Dialog<>();
         dialog.setTitle("Bank Info");
         ObservableList<Betaling> obs = FXCollections.observableArrayList();
+        HBox hbKnapper = new HBox();
 
         VBox top = FXMLLoader.load(getClass().getResource("BankInfo.fxml"));
         TableView table = (TableView) top.lookup("#bankTable");
@@ -656,11 +661,27 @@ public class UserInterface extends Application {
             col.setCellValueFactory(new PropertyValueFactory<>(s));
             if(s.equals("Beloeb")) {
                 col.setText("Bel\u00F8b");
+            } else if (s.equals("BetalingsDato")) {
+                col.setText("Betalings Dato");
+            } else {
+                col.setText("Bank Nummer");
             }
             table.getColumns().add(col);
         }
 
+        Button luk = (Button) top.lookup("#lukdialog");
+        luk.setOnAction(e -> {
+            dialog.setResult(Boolean.TRUE);
+        });
+
+        Button addBetaling = (Button) top.lookup("#addBetaling");
+
+        hbKnapper.setAlignment(Pos.CENTER);
+        hbKnapper.setPadding(new Insets(20, 0, 0, 0));
+        hbKnapper.setSpacing(20);
+        hbKnapper.getChildren().addAll(addBetaling, luk);
         dialog.getDialogPane().setContent(top);
+        top.getChildren().add(hbKnapper);
         dialog.showAndWait();
     }
 
@@ -685,5 +706,4 @@ public class UserInterface extends Application {
             table.getColumns().add(col);
         }
     }
-    }
-
+}
