@@ -484,11 +484,11 @@ public class UserInterface extends Application {
         gridPane.setMinSize(stagesizex / 2, stagesizey);
 
         //padding
-        gridPane.setPadding(new Insets(50));
+        gridPane.setPadding(new Insets(40));
 
         //Setting the vertical and horizontal gaps between the columns
-        gridPane.setVgap(25);
-        gridPane.setHgap(40);
+        gridPane.setVgap(20);
+        gridPane.setHgap(10);
 
         //Setting the Grid alignment
         gridPane.setAlignment(Pos.TOP_LEFT);
@@ -574,9 +574,29 @@ public class UserInterface extends Application {
                 sceneManager("visMedlemmerFormand");
             });
         }
-        else{
+
+        //Lav en udvidelse af eventet, så den finder en liste med restancemedlemmer
+        else {
             options = FXMLLoader.load(getClass().getResource("Kasser.fxml"));
-            columns = new String[] {"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
+            columns = new String[]{"Navn", "Pris", "Adresse", "Email", "Aktivitetstype"};
+            RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
+            AtomicInteger clicked = new AtomicInteger();
+            restance.setOnMouseClicked(event -> {
+                clicked.getAndIncrement();
+                if (clicked.get() == 1) {
+                    System.out.println("it works freak bitches");
+                    updateTable(columns, root, medlemmer.getListe(), "true", tf);
+                    itsclicked = true;
+                } else if (clicked.get() == 2) {
+                    generateTable(columns, root, medlemmer.getListe());
+                    clicked.set(0);
+                    itsclicked = false;
+                }
+
+
+            });
+
+
         }
 
         Button tilbage = (Button) options.lookup("#tilbageButton");

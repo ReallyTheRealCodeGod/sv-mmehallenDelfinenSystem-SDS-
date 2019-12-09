@@ -19,7 +19,7 @@ class MedlemsListe implements ListeInterface{
 		try{
 			// Vælger filen der skal læses fra og variablerne den læses
 			ArrayList<LocalDate> betalingsHistorik = new ArrayList<LocalDate>();
-			String navn, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype;
+			String navn, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype, restancemedlem;
 			LocalDate fodselsdato;
 			Scanner line = new Scanner(f);
 			//Skan gennem filen, indtil der ikke er flere linjer
@@ -28,7 +28,7 @@ class MedlemsListe implements ListeInterface{
 			sc.useDelimiter(";");
 
 			//nulstil variabler
-			navn = gender = adresse = email = medlemsskabstype = aktivitetstype = "";
+			navn = gender = adresse = email = medlemsskabstype = aktivitetstype = restancemedlem = "";
 
 			navn = sc.next();
 			fodselsdato = LocalDate.parse(sc.next());
@@ -39,6 +39,7 @@ class MedlemsListe implements ListeInterface{
 			gender = sc.next();
 			medlemsskabstype = sc.next();
 			aktivitetstype = sc.next();
+			restancemedlem = sc.next();
 			//scanner betalings historiken
 			ArrayList<Betaling> betaling = new ArrayList<>();
 			sc.useDelimiter("]");
@@ -58,7 +59,8 @@ class MedlemsListe implements ListeInterface{
 					}
 			}
 			//lav medlem og adder til arraylisten
-			liste.add(new Medlem(navn, fodselsdato, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype, betaling));
+			liste.add(new Medlem(navn, fodselsdato, gender, adresse, husNr, postNr, email, medlemsskabstype, aktivitetstype, restancemedlem, betaling));
+			id++;
 		}
 		}catch(FileNotFoundException e){
 			System.out.println("Fejl i dannelse af medlemsliste");
