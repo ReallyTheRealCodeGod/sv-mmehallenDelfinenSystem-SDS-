@@ -600,6 +600,15 @@ public class UserInterface extends Application {
             columns = new String[]{"Navn", "Pris", "Adresse", "Email", "Aktivitetstype", "Udloebsdato"};
             RadioButton restance = (RadioButton) options.lookup("#restanceMedlem");
             Button bankInfo = (Button) options.lookup("#bankInfo");
+            Button sendEmail = (Button) options.lookup("#sendRegning");
+            sendEmail.setOnAction((event -> {
+
+                Medlem person = ol.get(tb.getSelectionModel().getSelectedIndex());
+                dialogBox("Email sendt til "+person.getNavn());
+                System.out.println(person.getNavn());
+
+
+            }));
             restance.setOnAction((event -> {
                 if(restance.isSelected()){generateTable(columns, root, medlemmer.restance());}
                 else{generateTable(columns,root,medlemmer.getListe());}

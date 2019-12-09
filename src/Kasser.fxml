@@ -10,7 +10,7 @@
                 <Text text="Restance" />
             </HBox>
 
-            <HBox spacing="450">
+            <HBox spacing="50">
                 <Button text="Bank Info" id="bankInfo" />
                 <Button text="Send Regning" id="sendRegning"/>
                 <Button text="Tilbage" id="tilbageButton" />
