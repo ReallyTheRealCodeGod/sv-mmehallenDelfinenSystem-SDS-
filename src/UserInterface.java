@@ -606,6 +606,7 @@ public class UserInterface extends Application {
                 Medlem person = ol.get(tb.getSelectionModel().getSelectedIndex());
                 dialogBox("Email sendt til "+person.getNavn());
                 System.out.println(person.getNavn());
+                SendEmail blah = new SendEmail(person.getEmail());
 
 
             }));
