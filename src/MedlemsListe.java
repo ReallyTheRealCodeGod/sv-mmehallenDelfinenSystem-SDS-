@@ -69,13 +69,13 @@ class MedlemsListe implements ListeInterface{
 	
 	}
 	//tilføjer et nyt medlems element til arraylisten og kalder derefter for opdateringen af data filen
-	public void addMedlem(String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
-           String aktivitetstype){
+	public void opretMedlem(String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
+							String aktivitetstype){
 		liste.add(new Medlem(navn, dato, gender, adresse, husNr, postNr, email, medlemstype, aktivitetstype));
 		opdaterListe();
 	}
-	public boolean verificerAddMedlemInput(String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
-										   String aktivitetstype){
+	public boolean verificerOpretMedlemInput(String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
+											 String aktivitetstype){
 		ArrayList<String> medlemArray = new ArrayList<>();
 		if (navn.isEmpty()) {
 			medlemArray.add("Fejl i navn - ret venligst");

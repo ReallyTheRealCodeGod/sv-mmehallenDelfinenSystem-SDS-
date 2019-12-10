@@ -465,9 +465,9 @@ public class UserInterface extends Application {
                     String aktivitet = aktivitetsTypeBox.getValue().toString();
                     String medlemtype = medlemsTypeBox.getValue().toString();
 
-                if (medlemmer.verificerAddMedlemInput(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype)) {
+                if (medlemmer.verificerOpretMedlemInput(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype)) {
                     if(!redigere) {
-                        medlemmer.addMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
+                        medlemmer.opretMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
                         dialogBox("", "Medlem oprettet succesfuldt!");
                     }else{
                         medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());

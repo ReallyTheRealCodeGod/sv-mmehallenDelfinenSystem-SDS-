@@ -7,7 +7,7 @@ public interface ListeInterface{
 	public void redigerMedlem(int medlemsIndex, String navn, LocalDate dato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
 							  String aktivitetstype, ArrayList<Betaling> betalingsHistorik);
 	public void sletMedlem(int medlemsIndex);
-	public void addMedlem(String navn, LocalDate dato, String koen, String adresse, String husNr, String postNr, String email, String medlemstype,
-           String aktivitetstype);
+	public void opretMedlem(String navn, LocalDate dato, String koen, String adresse, String husNr, String postNr, String email, String medlemstype,
+                            String aktivitetstype);
 	public void opdaterListe();
 }
