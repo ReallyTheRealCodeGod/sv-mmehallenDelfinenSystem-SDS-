@@ -219,12 +219,9 @@ public class UserInterface extends Application {
 
             result.ifPresent(password -> {
                 if (password.equals(passwordFormand)) {
-                    System.out.println("Formand pass er OK");
                     sceneManager("formand");
                 } else {
                     dialogBox("Fejl", "Forkert kodeord. Prøv igen.");
-                    dialogLogin.showAndWait();
-                    System.out.println("Formand pass ikke OK");
                 }
             });
         });
@@ -234,10 +231,9 @@ public class UserInterface extends Application {
 
             result.ifPresent(password -> {
                 if (password.equals(passwordKasserer)) {
-                    System.out.println("Kasserer pass er OK");
                     sceneManager("kasser");
                 } else {
-                    System.out.println("Kasserer pass ikke OK");
+                    dialogBox("Fejl", "Forkert kodeord. Prøv igen.");
                 }
             });
 
@@ -476,13 +472,12 @@ public class UserInterface extends Application {
 
                     sceneManager("formand");
                 }
-                else System.out.println("");
+                // Nothing
         }
         ));
 
         //Make method go to formand side
         buttonAnnuller.setOnAction((event -> {
-            System.out.println("Go to formand page");
             sceneManager("back");
         }));
 
@@ -577,7 +572,7 @@ public class UserInterface extends Application {
                     try {
                         opretMedlemForm(m);
                     }catch(Exception e){
-                        System.out.println("ups");
+                        dialogBox("Exception", e.toString());
                     }
                 }
             }));
@@ -590,7 +585,7 @@ public class UserInterface extends Application {
                         dialogBox("", "Medlem slettet succesfuldt!");
                         sceneManager("back");
                     }catch(Exception e){
-                        System.out.println("ups");
+                        dialogBox("Exception", e.toString());
                     }
                 }
             });
@@ -607,12 +602,14 @@ public class UserInterface extends Application {
             Button bankInfo = (Button) options.lookup("#bankInfo");
             Button sendEmail = (Button) options.lookup("#sendRegning");
             sendEmail.setOnAction((event -> {
+                if(tb.getSelectionModel().isEmpty()) {
+                    dialogBox("Fejl", "Du har ikke valgt et medlem.");
+                } else {
+                    Medlem person = ol.get(tb.getSelectionModel().getSelectedIndex());
+                    dialogBox("","Email sendt til "+person.getNavn());
+                    SendEmail blah = new SendEmail(person.getEmail());
 
-                Medlem person = ol.get(tb.getSelectionModel().getSelectedIndex());
-                dialogBox("","Email sendt til "+person.getNavn());
-                System.out.println(person.getNavn());
-                SendEmail blah = new SendEmail(person.getEmail());
-
+                }
 
             }));
             restance.setOnAction((event -> {
@@ -620,12 +617,16 @@ public class UserInterface extends Application {
                 else{generateTable(columns,root,medlemmer.getListe());}
             }));
             bankInfo.setOnAction(event ->{
-                try {
-                    Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
-                    popUpBank(m);
+                if(tb.getSelectionModel().isEmpty()) {
+                    dialogBox("Fejl", "Du har ikke valgt et medlem.");
+                } else {
+                    try {
+                        Medlem m = ol.get(tb.getSelectionModel().getSelectedIndex());
+                        popUpBank(m);
 
-                }catch(Exception e){
-                    System.out.println("det virker! \nnot!");
+                    }catch(Exception e){
+                        dialogBox("Exception", e.toString());
+                    }
                 }
                     });
 
@@ -641,7 +642,6 @@ public class UserInterface extends Application {
         root.getChildren().add(options);
 
         tf.setOnAction((event -> {
-            System.out.println(tf.getText());
             generateTable(columns, root, medlemmer.filtrerListe(tf.getText()));
         }));
 
