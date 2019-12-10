@@ -689,14 +689,13 @@ public class UserInterface extends Application {
 
         addBetaling.setOnAction((n -> {
             m.tilføjBetaling(Double.parseDouble(beløbText.getText()), datoText.getValue(), bankText.getText());
+            obs.setAll(m.getBetalingsHistorik());
                 }));
 
 
         dialog.getDialogPane().setContent(top);
         dialog.showAndWait();
     }
-
-
    public void generateTable(String[] columns, Parent root, ArrayList<Medlem> al){
         TableView table = (TableView)root.lookup("#table");
         table.getColumns().clear();
@@ -717,4 +716,8 @@ public class UserInterface extends Application {
             table.getColumns().add(col);
         }
     }
+    public void stop(){
+        medlemmer.opdaterListe();
+    }
+
 }

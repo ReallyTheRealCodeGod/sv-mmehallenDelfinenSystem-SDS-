@@ -134,7 +134,7 @@ class MedlemsListe implements ListeInterface{
 
 
 	//opdater data filen ud fra arraylisten 
-	private void opdaterListe(){
+	public void opdaterListe(){
 		try{
 			//sletter den eksisterende fil og erstatter den med en ny tom fil med samme navn
 			f.delete();

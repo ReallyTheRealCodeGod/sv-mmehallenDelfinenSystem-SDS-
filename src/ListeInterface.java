@@ -9,8 +9,5 @@ public interface ListeInterface{
 	public void sletMedlem(int medlemsIndex);
 	public void addMedlem(String navn, LocalDate dato, String koen, String adresse, String husNr, String postNr, String email, String medlemstype,
            String aktivitetstype);
-
-	private void opdaterListe() {
-
-	}
+	public void opdaterListe();
 }
