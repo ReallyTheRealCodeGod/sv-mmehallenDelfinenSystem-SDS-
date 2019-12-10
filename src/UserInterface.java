@@ -674,6 +674,7 @@ public class UserInterface extends Application {
             }
             table.getColumns().add(col);
         }
+        table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
 
         Button luk = (Button) top.lookup("#lukdialog");
         luk.setOnAction(e -> {
@@ -708,7 +709,7 @@ public class UserInterface extends Application {
 
         ol.setAll(al);
         table.setItems(ol);
-
+       table.setColumnResizePolicy(TableView.CONSTRAINED_RESIZE_POLICY);
         for(String s: columns) {
             TableColumn<String, Medlem> col = new TableColumn<String, Medlem>(s);
             col.setCellValueFactory(new PropertyValueFactory<>(s));
@@ -718,12 +719,10 @@ public class UserInterface extends Application {
             if(s.equals("Udloebsdato")){
                 col.setText("Udl\u00F8bsdato");
             }
-
             table.getColumns().add(col);
         }
     }
     public void stop(){
         medlemmer.opdaterListe();
     }
-
 }
