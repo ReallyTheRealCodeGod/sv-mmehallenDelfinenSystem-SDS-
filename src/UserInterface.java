@@ -29,7 +29,6 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.Optional;
 
 public class UserInterface extends Application {
@@ -647,7 +646,6 @@ public class UserInterface extends Application {
         Dialog<Boolean> dialog = new Dialog<>();
         dialog.setTitle("Bank Info");
         ObservableList<Betaling> obs = FXCollections.observableArrayList();
-        HBox hbKnapper = new HBox();
 
         VBox top = FXMLLoader.load(getClass().getResource("BankInfo.fxml"));
         TableView table = (TableView) top.lookup("#bankTable");
@@ -677,9 +675,9 @@ public class UserInterface extends Application {
 
         Button addBetaling = (Button) top.lookup("#addBetaling");
 
-        TextField beløbText = (TextField) hbKnapper.lookup("#addBeløb");
-        DatePicker datoText = (DatePicker) hbKnapper.lookup("#addDato");
-        TextField bankText = (TextField) hbKnapper.lookup("#addBank");
+        TextField beløbText = (TextField) top.lookup("#addBeløb");
+        DatePicker datoText = (DatePicker) top.lookup("#addDato");
+        TextField bankText = (TextField) top.lookup("#addBank");
         datoText.setPromptText("Dato");
         addBetaling.setDisable(true);
 
@@ -690,21 +688,10 @@ public class UserInterface extends Application {
 ;
 
         addBetaling.setOnAction((n -> {
-
             m.tilføjBetaling(Double.parseDouble(beløbText.getText()), datoText.getValue(), bankText.getText());
-            obs.setAll(m.getBetalingsHistorik());
-
                 }));
 
 
-
-
-
-
-        hbKnapper.setAlignment(Pos.CENTER);
-        hbKnapper.setPadding(new Insets(20, 0, 0, 0));
-        hbKnapper.setSpacing(20);
-        hbKnapper.getChildren().addAll(addBetaling, luk);
         dialog.getDialogPane().setContent(top);
         dialog.showAndWait();
     }
