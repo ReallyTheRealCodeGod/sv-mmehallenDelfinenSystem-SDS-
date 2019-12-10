@@ -141,5 +141,4 @@ Ambrose Chaunceysen;1985-01-21;Greisvej;147;1033;Ambrose Chaunceysen1@mail.dk;Ma
 Elisha Ferdinandsen;1987-08-15;Greisvej;136;6989;Elisha Ferdinandsen8@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-06-18,+8853 852478068140, 1600.0,2019-08-09,+4086 466443049829]
 General Juliansen;1951-12-20;Grøndals Parkvej;135;7469;General Juliansen12@mail.dk;Kvinde;Motionist;Aktiv;[1600.0,2019-11-04,+8210 270084022489, 1600.0,2019-12-16,+0248 711947095871]
 Allie Joshsen;1998-08-23;Grønnegade;178;3092;Allie Joshsen8@mail.dk;Mand;Motionist;Aktiv;[1600.0,2018-04-19,+1275 948120097137, 1600.0,2019-01-02,+7286 285791062024, 1600.0,2019-10-20,+7515 845891077121]
-Dansen hansen;2019-12-26;rådhuspladsen;2;1100;dansehans@gmail.com;Mand;Konkurrence;Passiv;[]
 Mads Christensen;1998-08-23;Amager;178;3092;michael@fuglo.com;Mand;Motionist;Aktiv;[1600.0,2018-04-19,+1275 948120097137, 1600.0,2019-01-02,+7286 285791062024, 1600.0,2019-10-20,+7515 845891077121]
