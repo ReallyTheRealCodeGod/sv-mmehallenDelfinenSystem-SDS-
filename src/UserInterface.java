@@ -648,6 +648,7 @@ public class UserInterface extends Application {
         generateTable(columns, root, medlemmer.getListe());
         updateStage(root);
     }
+
     public void popUpBank(Medlem m) throws Exception{
         Dialog<Boolean> dialog = new Dialog<>();
         dialog.setTitle("Bank Info");
@@ -693,7 +694,7 @@ public class UserInterface extends Application {
 ;
 
         addBetaling.setOnAction((n -> {
-            m.tilføjBetaling(Double.parseDouble(beløbText.getText()), datoText.getValue(), bankText.getText());
+            m.opretBetaling(Double.parseDouble(beløbText.getText()), datoText.getValue(), bankText.getText());
             obs.setAll(m.getBetalingsHistorik());
                 }));
 

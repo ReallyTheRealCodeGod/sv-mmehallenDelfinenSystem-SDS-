@@ -41,16 +41,16 @@ public class Medlem {
                 this.betalinger = new ArrayList<>();
                 //kopiere listen fra variablen til attributen
                 for(Betaling b: betalinger){
-                    tilføjBetaling(b.getBeloeb(), b.getBetalingsDato(), b.getBankNummer());
+                    opretBetaling(b.getBeloeb(), b.getBetalingsDato(), b.getBankNummer());
               }
 		    }
 
-		public void tilføjBetaling(double pris, LocalDate dato, String bankNr){
+		public void opretBetaling(double pris, LocalDate dato, String bankNr){
 			betalinger.add(new Betaling(pris, dato, bankNr));
-			setUdloebsdato();
+			lavUdloebsdato();
         }
 
-	  private void setUdloebsdato() {
+	  private void lavUdloebsdato() {
 			LocalDate udloebsdato;
 		  if (betalinger.isEmpty()) {
 			  this.udloebsdato = "N/A";
@@ -58,10 +58,10 @@ public class Medlem {
 			  udloebsdato = betalinger.get(0).getBetalingsDato();
 			  this.udloebsdato = udloebsdato.plusYears(betalinger.size()).toString();
 		  }
-		  setRestanceMedlem();
+		  lavRestanceMedlem();
 		}
 
-	private void setRestanceMedlem(){
+	private void lavRestanceMedlem(){
 		if(LocalDate.now().isAfter(LocalDate.parse(udloebsdato))){
 			restanceMedlem = true;
 		}else{restanceMedlem = false;}
