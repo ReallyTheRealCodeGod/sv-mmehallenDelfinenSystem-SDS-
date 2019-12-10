@@ -1,4 +1,5 @@
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 
 public class Medlem {
@@ -77,9 +78,7 @@ public class Medlem {
 	public ArrayList<Betaling> getBetalingsHistorik(){
 	    return betalinger;
     }
-	public LocalDate getFodselsdato() {
-		return fodselsdato;
-	}
+	public LocalDate getFodselsdato() { return fodselsdato;	}
 	public String getGender() {
 		return gender;
 	}

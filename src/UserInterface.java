@@ -453,7 +453,7 @@ public class UserInterface extends Application {
 
                     String navn = nameText.getText();
                     LocalDate dato = datepicker.getValue();
-                    String koen = ((RadioButton) groupGender.getSelectedToggle()).getText();
+                    String gender = ((RadioButton) groupGender.getSelectedToggle()).getText();
                     String vejNavn = (vejNavnText.getText());
                     String husNr = nummerText.getText();
                     String postNr = postNummerText.getText();
@@ -461,12 +461,12 @@ public class UserInterface extends Application {
                     String aktivitet = aktivitetsTypeBox.getValue().toString();
                     String medlemtype = medlemsTypeBox.getValue().toString();
 
-                if (medlemmer.verificerOpretMedlemInput(navn, dato, koen, vejNavn, husNr, postNr, mail, aktivitet, medlemtype)) {
+                if (medlemmer.verificerOpretMedlemInput(navn, dato, gender, vejNavn, husNr, postNr, mail, aktivitet, medlemtype)) {
                     if(!redigere) {
-                        medlemmer.opretMedlem(navn, dato, koen, vejNavn, husNr, postNr, mail, aktivitet, medlemtype);
+                        medlemmer.opretMedlem(navn, dato, gender, vejNavn, husNr, postNr, mail, aktivitet, medlemtype);
                         dialogBox("", "Medlem oprettet succesfuldt!");
                     }else{
-                        medlemmer.redigerMedlem(index, navn, dato, koen, vejNavn, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());
+                        medlemmer.redigerMedlem(index, navn, dato, gender, vejNavn, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());
                         dialogBox("", "Medlem redigeret succesfuldt!");
                     }
 
