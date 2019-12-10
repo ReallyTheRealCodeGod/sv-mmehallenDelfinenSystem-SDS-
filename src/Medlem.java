@@ -50,7 +50,7 @@ public class Medlem {
 			setUdloebsdato();
         }
 
-	  public void setUdloebsdato() {
+	  private void setUdloebsdato() {
 			LocalDate udloebsdato;
 		  if (betalinger.isEmpty()) {
 			  this.udloebsdato = "N/A";
@@ -61,7 +61,7 @@ public class Medlem {
 		  setRestanceMedlem();
 		}
 
-	public void setRestanceMedlem(){
+	private void setRestanceMedlem(){
 		if(LocalDate.now().isAfter(LocalDate.parse(udloebsdato))){
 			restanceMedlem = true;
 		}else{restanceMedlem = false;}

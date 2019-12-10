@@ -29,6 +29,7 @@ import java.net.URL;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.Optional;
 
 public class UserInterface extends Application {
@@ -676,12 +677,35 @@ public class UserInterface extends Application {
 
         Button addBetaling = (Button) top.lookup("#addBetaling");
 
+        TextField beløbText = (TextField) hbKnapper.lookup("#addBeløb");
+        DatePicker datoText = (DatePicker) hbKnapper.lookup("#addDato");
+        TextField bankText = (TextField) hbKnapper.lookup("#addBank");
+        datoText.setPromptText("Dato");
+        addBetaling.setDisable(true);
+
+        BooleanBinding booleanBind = beløbText.textProperty().isEmpty().
+                or(datoText.valueProperty().isNull()).
+                or(bankText.textProperty().isEmpty());
+        addBetaling.disableProperty().bind(booleanBind);
+;
+
+        addBetaling.setOnAction((n -> {
+
+            m.tilføjBetaling(Double.parseDouble(beløbText.getText()), datoText.getValue(), bankText.getText());
+            obs.setAll(m.getBetalingsHistorik());
+
+                }));
+
+
+
+
+
+
         hbKnapper.setAlignment(Pos.CENTER);
         hbKnapper.setPadding(new Insets(20, 0, 0, 0));
         hbKnapper.setSpacing(20);
         hbKnapper.getChildren().addAll(addBetaling, luk);
         dialog.getDialogPane().setContent(top);
-        top.getChildren().add(hbKnapper);
         dialog.showAndWait();
     }
 
