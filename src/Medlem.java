@@ -6,7 +6,7 @@ public class Medlem {
 	private String navn;
 	    private LocalDate fodselsdato;
 	    private String gender;
-	    private String adresse;
+	    private String vejNavn;
 		private String husNr;
 	    private String postNr;
 	    private String email;
@@ -17,17 +17,17 @@ public class Medlem {
 	    private ArrayList<Betaling> betalinger;
 	    private double pris;
 
-		Medlem(String navn, LocalDate foedelsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
-		   String aktivitetstype) {
-			this(navn, foedelsdato, gender, adresse, husNr, postNr, email, medlemstype, aktivitetstype, new ArrayList<>());
+		Medlem(String navn, LocalDate foedelsdato, String gender, String vejNavn, String husNr, String postNr, String email, String medlemstype,
+			   String aktivitetstype) {
+			this(navn, foedelsdato, gender, vejNavn, husNr, postNr, email, medlemstype, aktivitetstype, new ArrayList<>());
 	}
 
-	    Medlem(String navn, LocalDate fodselsdato, String gender, String adresse, String husNr, String postNr, String email, String medlemstype,
-		           String aktivitetstype, ArrayList<Betaling> betalinger) {
+	    Medlem(String navn, LocalDate fodselsdato, String gender, String vejNavn, String husNr, String postNr, String email, String medlemstype,
+			   String aktivitetstype, ArrayList<Betaling> betalinger) {
                 this.navn = navn;
 		        this.fodselsdato = fodselsdato;
 		        this.gender = gender;
-		        this.adresse = adresse;
+		        this.vejNavn = vejNavn;
 		        this.husNr = husNr;
 		        this.postNr = postNr;
 		        this.email = email;
@@ -83,9 +83,10 @@ public class Medlem {
 	public String getGender() {
 		return gender;
 	}
-	public String getAdresse() {
-		return adresse;
+	public String getVejNavn() {
+		return vejNavn;
 	}
+	public String getAdresse(){return vejNavn + " " + husNr + ", "+ postNr; }
 	public String getHusNr() { return husNr; }
 	public String getPostNr() { return postNr; }
 	public String getEmail() {
@@ -109,6 +110,6 @@ public class Medlem {
 	// Override af toString. Bare lavet noget som et eksempel p� hvordan vi kunne g�re det.
 	    @Override
 	    public String toString() {
-	        return navn + ";" + fodselsdato +";"+ adresse + ";" + husNr + ";" + postNr + ";" +email+";"+gender+";"+medlemstype+";"+aktivitetstype+";"+betalinger;
+	        return navn + ";" + fodselsdato +";"+ vejNavn + ";" + husNr + ";" + postNr + ";" +email+";"+gender+";"+medlemstype+";"+aktivitetstype+";"+betalinger;
 	    }
 	}

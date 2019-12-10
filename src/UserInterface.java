@@ -342,9 +342,9 @@ public class UserInterface extends Application {
         datepicker.setPromptText("Dato");
         datepicker.setPrefSize(270, 20);
 
-        Text adresseLabel = new Text("Vejnavn");
-        TextField adresseText = new TextField();
-        adresseText.setPromptText("Vejnavn");
+        Text vejNavnLabel = new Text("Vejnavn");
+        TextField vejNavnText = new TextField();
+        vejNavnText.setPromptText("Vejnavn");
 
         Text nummerLabel = new Text("Husnummer");
         TextField nummerText = new TextField();
@@ -399,7 +399,7 @@ public class UserInterface extends Application {
 
             nameText.setText(medlem.getNavn());
             datepicker.setValue(medlem.getFodselsdato());
-            adresseText.setText(medlem.getAdresse());
+            vejNavnText.setText(medlem.getVejNavn());
             nummerText.setText(medlem.getHusNr());
             postNummerText.setText(medlem.getPostNr());
             emailText.setText(medlem.getEmail());
@@ -430,7 +430,7 @@ public class UserInterface extends Application {
 
         // Disabler gem button indtil alle fields er udfyldt
         BooleanBinding booleanBind = nameText.textProperty().isEmpty().
-                or(adresseText.textProperty().isEmpty()).
+                or(vejNavnText.textProperty().isEmpty()).
                 or(emailText.textProperty().isEmpty()).
                 or(nummerText.textProperty().isEmpty()).
                 or(aktivitetsTypeBox.valueProperty().isNull()).
@@ -454,19 +454,19 @@ public class UserInterface extends Application {
                     String navn = nameText.getText();
                     LocalDate dato = datepicker.getValue();
                     String koen = ((RadioButton) groupGender.getSelectedToggle()).getText();
-                    String adresse = (adresseText.getText());
+                    String vejNavn = (vejNavnText.getText());
                     String husNr = nummerText.getText();
                     String postNr = postNummerText.getText();
                     String mail = emailText.getText();
                     String aktivitet = aktivitetsTypeBox.getValue().toString();
                     String medlemtype = medlemsTypeBox.getValue().toString();
 
-                if (medlemmer.verificerOpretMedlemInput(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype)) {
+                if (medlemmer.verificerOpretMedlemInput(navn, dato, koen, vejNavn, husNr, postNr, mail, aktivitet, medlemtype)) {
                     if(!redigere) {
-                        medlemmer.opretMedlem(navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype);
+                        medlemmer.opretMedlem(navn, dato, koen, vejNavn, husNr, postNr, mail, aktivitet, medlemtype);
                         dialogBox("", "Medlem oprettet succesfuldt!");
                     }else{
-                        medlemmer.redigerMedlem(index, navn, dato, koen, adresse, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());
+                        medlemmer.redigerMedlem(index, navn, dato, koen, vejNavn, husNr, postNr, mail, aktivitet, medlemtype, medlem.getBetalingsHistorik());
                         dialogBox("", "Medlem redigeret succesfuldt!");
                     }
 
@@ -502,8 +502,8 @@ public class UserInterface extends Application {
         gridPane.add(ageLabel, 0, 1);
         gridPane.add(datepicker, 1, 1);
 
-        gridPane.add(adresseLabel, 0, 2);
-        gridPane.add(adresseText, 1, 2);
+        gridPane.add(vejNavnLabel, 0, 2);
+        gridPane.add(vejNavnText, 1, 2);
 
         gridPane.add(nummerLabel, 0, 3);
         gridPane.add(nummerText, 1, 3);
