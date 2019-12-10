@@ -123,9 +123,10 @@ class MedlemsListe implements ListeInterface{
 	public Medlem hentMedlem(int medlemsIndex){
 		if(medlemsIndex >= 0 && medlemsIndex < liste.size()){
 		return liste.get(medlemsIndex);
+		} else {
+			System.out.println("Index out of bounds.");
+			return liste.get(0);
 		}
-		System.out.println("medlems index out of bounds");
-		return liste.get(0);
 	}
 
 	public ArrayList<Medlem> getListe(){
@@ -154,7 +155,6 @@ class MedlemsListe implements ListeInterface{
 		ArrayList<Medlem> filterListe = new ArrayList<>();
 		for(Medlem m: liste){
 			if(m.getNavn().toLowerCase().contains(filter.toLowerCase())) {
-				System.out.println(m.getNavn());
 				filterListe.add(m);
 			}
 		}
