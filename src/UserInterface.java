@@ -339,26 +339,31 @@ public class UserInterface extends Application {
 
         Text nameLabel = new Text("Navn");
         TextField nameText = new TextField();
+        nameText.setPromptText("Navn");
 
         Text ageLabel = new Text("Fødselsdato");
         DatePicker datepicker = new DatePicker();
+        datepicker.setPromptText("Dato");
         datepicker.setPrefSize(270, 20);
 
-        Text adresseLabel = new Text("Adresse");
+        Text adresseLabel = new Text("Vejnavn");
         TextField adresseText = new TextField();
+        adresseText.setPromptText("Vejnavn");
 
         Text nummerLabel = new Text("Husnummer");
         TextField nummerText = new TextField();
+        nummerText.setPromptText("Husnummer");
 
         Text postNummerLabel = new Text("Postnummer");
         TextField postNummerText = new TextField();
+        postNummerText.setPromptText("Postnummer");
 
         Text emailLabel = new Text("E-Mail");
         TextField emailText = new TextField();
+        emailText.setPromptText("Dinmail@mail.dk");
 
         //Køn label og en gruppe for denne
         Text genderLabel = new Text("Køn");
-
 
         ToggleGroup groupGender = new ToggleGroup();
         RadioButton maleRadio = new RadioButton("Mand");
@@ -552,7 +557,8 @@ public class UserInterface extends Application {
 
         TableView tb = new TableView();
         tb.setId("table");
-        TextField tf = new TextField("S\u00f8g");
+        TextField tf = new TextField();
+        tf.setPromptText("S\u00f8g");
         tf.setId("Search");
         //opdater
 
@@ -678,7 +684,6 @@ public class UserInterface extends Application {
         TextField beløbText = (TextField) top.lookup("#addBeløb");
         DatePicker datoText = (DatePicker) top.lookup("#addDato");
         TextField bankText = (TextField) top.lookup("#addBank");
-        datoText.setPromptText("Dato");
         addBetaling.setDisable(true);
 
         BooleanBinding booleanBind = beløbText.textProperty().isEmpty().
