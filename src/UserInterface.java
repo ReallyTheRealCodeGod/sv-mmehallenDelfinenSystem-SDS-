@@ -686,6 +686,12 @@ public class UserInterface extends Application {
         TextField beløbText = (TextField) top.lookup("#addBeløb");
         DatePicker datoText = (DatePicker) top.lookup("#addDato");
         TextField bankText = (TextField) top.lookup("#addBank");
+
+        //auto udfylder information for kasseren, der så kan vælge hvad der skal ændres
+        beløbText.setText(Double.toString(m.getPris()));
+        datoText.setValue(LocalDate.now());
+        bankText.setText(m.getBetalingsHistorik().get(m.getBetalingsHistorik().size()-1).getBankNummer());
+
         addBetaling.setDisable(true);
 
         BooleanBinding booleanBind = beløbText.textProperty().isEmpty().
